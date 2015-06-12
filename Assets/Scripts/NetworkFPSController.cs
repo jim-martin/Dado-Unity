@@ -2,8 +2,6 @@
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-namespace UnityStandardAssets.Characters.FirstPerson
-{
 	[RequireComponent(typeof (Rigidbody))]
 	[RequireComponent(typeof (CapsuleCollider))]
 	public class NetworkFPSController : MonoBehaviour
@@ -125,25 +123,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			if (m_PhotonView.isMine) {
 				mouseLook.Init (transform, cam.transform);
+			}else{
+				cam.enabled = false;
+				this.enabled = false;
 			}
 		}
 		
 		
 		private void Update()
 		{
-			if (m_PhotonView.isMine) {
 				RotateView ();
 				
 				if (CrossPlatformInputManager.GetButtonDown ("Jump") && !m_Jump) {
 					m_Jump = true;
 				}
-			}
 		}
 		
 		
 		private void FixedUpdate()
 		{
-			if (m_PhotonView.isMine) {
 				GroundCheck ();
 				Vector2 input = GetInput ();
 				
@@ -181,7 +179,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					}
 				}
 				m_Jump = false;
-			}
 		}
 		
 		
@@ -261,4 +258,3 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 		}
 	}
-}

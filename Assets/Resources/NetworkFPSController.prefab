@@ -10,9 +10,8 @@ GameObject:
   - 4: {fileID: 454070}
   - 20: {fileID: 2048802}
   - 81: {fileID: 8107700}
-  - 114: {fileID: 11409274}
   m_Layer: 0
-  m_Name: MainCamera
+  m_Name: playercam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,14 +25,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447466}
-  - 54: {fileID: 5493504}
-  - 136: {fileID: 13653188}
-  - 114: {fileID: 11474952}
-  - 114: {fileID: 11420976}
-  - 114: {fileID: 11482932}
-  - 114: {fileID: 11488308}
   - 33: {fileID: 3353460}
   - 23: {fileID: 2356836}
+  - 54: {fileID: 5493504}
+  - 136: {fileID: 13653188}
+  - 114: {fileID: 11488308}
+  - 114: {fileID: 11420976}
+  - 114: {fileID: 11482932}
+  - 114: {fileID: 11474952}
   m_Layer: 0
   m_Name: NetworkFPSController
   m_TagString: Untagged
@@ -152,58 +151,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116286}
   m_Enabled: 1
---- !u!114 &11409274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 116286}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83c81407209f85e4c87c0cda8b32868e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 2048802}
-  motionBob:
-    HorizontalBobRange: .100000001
-    VerticalBobRange: .0500000007
-    Bobcurve:
-      serializedVersion: 2
-      m_Curve:
-      - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: .5
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 1.5
-        value: -1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      - time: 2
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-    VerticaltoHorizontalRatio: 2
-  jumpAndLandingBob:
-    BobDuration: .150000006
-    BobAmount: .200000003
-  rigidbodyFirstPersonController: {fileID: 0}
-  StrideInterval: 4
-  RunningStrideLengthen: .722000003
 --- !u!114 &11420976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,6 +238,7 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 11488308}
+  - {fileID: 11420976}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -309,8 +257,8 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
+    TeleportIfDistanceGreaterThan: 1.08000004
+    InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
     InterpolateMoveTowardsAcceleration: 2
@@ -340,14 +288,14 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 0
+    ExtrapolateOption: 2
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
     DrawErrorGizmo: 1
   m_RotationModel:
     SynchronizeEnabled: 1
-    InterpolateOption: 0
+    InterpolateOption: 2
     InterpolateRotateTowardsSpeed: 180
     InterpolateLerpSpeed: 5
   m_ScaleModel:
@@ -377,7 +325,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PositionModel.SynchronizeEnabled
@@ -390,14 +338,50 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.data[1]
       value: 
-      objectReference: {fileID: 11488308}
+      objectReference: {fileID: 11420976}
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.data[0]
       value: 
       objectReference: {fileID: 11488308}
     - target: {fileID: 0}
       propertyPath: m_RotationModel.InterpolateOption
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Name
+      value: playercam
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.TeleportEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.TeleportIfDistanceGreaterThan
+      value: 1.08000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.ExtrapolateOption
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 2048802}
+    - target: {fileID: 0}
+      propertyPath: networkfpscontroller
+      value: 
+      objectReference: {fileID: 11474952}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.InterpolateOption
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_RotationModel.InterpolateLerpSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
