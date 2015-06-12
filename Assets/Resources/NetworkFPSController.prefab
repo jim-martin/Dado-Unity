@@ -35,7 +35,6 @@ GameObject:
   - 114: {fileID: 11482932}
   - 114: {fileID: 11474952}
   - 114: {fileID: 11430718}
-  - 114: {fileID: 11412820}
   m_Layer: 0
   m_Name: NetworkFPSController
   m_TagString: Player
@@ -154,17 +153,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116286}
   m_Enabled: 1
---- !u!114 &11412820
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 139448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306bd57beefee9149ad33955ab1f87fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11420976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -189,10 +177,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6db058f007a6f4b99022783e31eaad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  feedbackSettings:
-    distanceThreshold: 5
-    distAlert: 0
-    ddistAlert: 0
+  feedback:
+    myo:
+      enabled: 1
+      distanceThreshold: 10.1199999
+      distAlert: 0
+      ddistAlert: 0
+      device: {fileID: 0}
+      thalmicMyo: {fileID: 0}
+    audio:
+      enabled: 1
 --- !u!114 &11468032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,6 +426,10 @@ Prefab:
       propertyPath: myo
       value: 
       objectReference: {fileID: 100000, guid: 863250160b56e46dbb2d227833b7338a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: feedback.myo.distanceThreshold
+      value: 10.1199999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139448}
