@@ -120,13 +120,7 @@ using UnityStandardAssets.CrossPlatformInput;
 			m_RigidBody = GetComponent<Rigidbody>();
 			m_Capsule = GetComponent<CapsuleCollider>();
 			m_PhotonView = GetComponent<PhotonView> ();
-
-			if (m_PhotonView.isMine) {
-				mouseLook.Init (transform, cam.transform);
-			}else{
-				cam.enabled = false;
-				this.enabled = false;
-			}
+			mouseLook.Init (transform, cam.transform);
 		}
 		
 		

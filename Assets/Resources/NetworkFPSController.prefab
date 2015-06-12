@@ -31,11 +31,14 @@ GameObject:
   - 136: {fileID: 13653188}
   - 114: {fileID: 11488308}
   - 114: {fileID: 11420976}
+  - 114: {fileID: 11468032}
   - 114: {fileID: 11482932}
   - 114: {fileID: 11474952}
+  - 114: {fileID: 11430718}
+  - 114: {fileID: 11412820}
   m_Layer: 0
   m_Name: NetworkFPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139448}
   m_LocalRotation: {x: 0, y: .883058012, z: 0, w: -.469263881}
-  m_LocalPosition: {x: 22.0469418, y: 25.4587975, z: 42.0523148}
+  m_LocalPosition: {x: 9.06149769, y: -.999997616, z: -11.1083193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454070}
@@ -151,6 +154,17 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116286}
   m_Enabled: 1
+--- !u!114 &11412820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306bd57beefee9149ad33955ab1f87fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11420976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +178,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizeVelocity: 1
   m_SynchronizeAngularVelocity: 1
+--- !u!114 &11430718
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6db058f007a6f4b99022783e31eaad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  feedbackSettings:
+    distanceThreshold: 5
+    distAlert: 0
+    ddistAlert: 0
+--- !u!114 &11468032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b164671f7a383d442aa38824dafc4718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 2048802}
 --- !u!114 &11474952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -383,6 +424,14 @@ Prefab:
       propertyPath: m_RotationModel.InterpolateLerpSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: myo
+      value: 
+      objectReference: {fileID: 100000, guid: 863250160b56e46dbb2d227833b7338a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 139448}
