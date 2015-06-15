@@ -11,6 +11,9 @@ public class AudioComponent : MonoBehaviour {
 	private Transform m_Transform;
 	private AudioSource ping;
 
+	private float ping_frequency;
+	private float interval;
+
 	// Use this for initialization
 	void Start () {
 		//get team data
@@ -22,7 +25,9 @@ public class AudioComponent : MonoBehaviour {
 		ping.minDistance = 1;
 		ping.maxDistance = 100;
 
-		InvokeRepeating ("location_ping", 2, 1);
+		interval = 1;
+
+		Invoke("location_ping", interval);
 	
 
 		//initialize oscillators?
@@ -31,44 +36,26 @@ public class AudioComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		people = t_data.DirectionVectors ();
-
-
-		//rotate by direction of person facing
-
-
-//		AudioSource.PlayClipAtPoint (ping, people[1]);
-
-
 	}
 
 	void location_ping(){
 		people = t_data.DirectionVectors ();
-		Debug.Log (people.Length + " players found");
-		Debug.Log (people [0]);
+//		Debug.Log (people.Length + " players found");
+//		Debug.Log ("using dummy node");
+//		Debug.Log (people [0]);
 
 //		for (int i = 0; i < people.Length; i++) {
 //			Debug.Log (people[i]);
 //		}
 
-
-
 		Vector3 ping_location = new Vector3 (1000, 0, 0);
-//		try{
-//			Debug.Log (people [1]);
-//			AudioSource.PlayClipAtPoint (c_0, ping_location);
-//		}
-//		catch(UnityException e){
-//			Debug.Log (e);
-//		}
 
+		//calculate distance
 		float distance = Vector3.Distance(people[0], m_Transform.position);
 
+		//calculate direction
 		Vector3 targetDir = people[0] - m_Transform.position;
 		Vector3 forward = m_Transform.forward;
-
-//		Debug.Log (targetDir);
-//		Debug.Log (forward);
 
 		float angle = Vector3.Angle(targetDir, forward);
 		int angleDir = 0;
@@ -77,8 +64,9 @@ public class AudioComponent : MonoBehaviour {
 		} else {
 			angleDir = 0; //looking to the left of the target, pan to the right
 		}
-		Debug.Log (angleDir);
-		Debug.Log (angle);
+//		Debug.Log (angleDir);
+//		Debug.Log (angle);
+		//get direction (degrees) + positivity
 
 		float angleRadians = angle * Mathf.PI / 180;
 
@@ -87,36 +75,56 @@ public class AudioComponent : MonoBehaviour {
 		if (angleDir != 0) {
 			panAmount = panAmount * -1;
 		}
-		Debug.Log (panAmount);
-		ping.panStereo = panAmount;
-		ping.panStereo = 1;
+//		Debug.Log (panAmount);
+		ping.panStereo = panAmount; //this shit doesn't seem to work
 
+//		ping.panStereo = 1;
+
+
+		//modulate pitch based on distance
 		ping.pitch = 2.0f - distance / 20;
 		if (ping.pitch < .12f) {
 			ping.pitch = .12f;
 		}
 
+		//modulate interval based on distance
+		set_interval (angle / 180);
+		Debug.Log (get_interval ());
+
+		//modulate volume based on distance
 		Debug.Log (distance);
 		if (distance < 10) {
-			Debug.Log ("near");
+//			Debug.Log ("near");
 //			AudioSource.PlayClipAtPoint (c_0, ping_location);
 			ping.volume = 1;
 		} else if (distance < 50) {
-			Debug.Log ("middle");
+//			Debug.Log ("middle");
 //			AudioSource.PlayClipAtPoint (c_50, ping_location);
 //			ping.volume = 0.5f;
-			ping.volume = 1.0f - distance / 50;
+			ping.volume = 1.0f - distance / 50; 
 		}
 		else{
-			Debug.Log ("far");
+//			Debug.Log ("far");
 //			AudioSource.PlayClipAtPoint (c_100, ping_location);
 			ping.volume = 0.1f;
 		}
 
 		ping.Play ();
 
+
+		Invoke ("location_ping", interval);
 	}
 
-	//create tone
-	//set frequency
+	public float get_interval(){
+		return interval;
+	}
+
+	public void set_interval(float a){
+		interval = a;
+
+		if (interval < .1f) {
+			interval = .1f;
+		}
+	}
+	
 }
