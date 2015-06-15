@@ -228,7 +228,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 863250160b56e46dbb2d227833b7338a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 863250160b56e46dbb2d227833b7338a, type: 2}
       propertyPath: m_TagString
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a10f6d0c3c8764247b52fa9173464601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToInstantiate: {fileID: 447466, guid: 721bcd248ec7bf74299957fc71ea93d5, type: 2}
+  ObjectToInstantiate: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
   InstantiateSceneObjects: 0
   newObj: {fileID: 0}
 --- !u!114 &2064267956
