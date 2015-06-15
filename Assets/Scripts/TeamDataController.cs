@@ -78,14 +78,17 @@ public class TeamDataController : MonoBehaviour
 	}
 
 	//return an array of vectors that point from the supplied m_Transform to every player
-	Vector3[] DirectionVectors()
+	public Vector3[] DirectionVectors()
 	{
 		List<Vector3> positions = new List<Vector3>();
 		GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
 
 		foreach (GameObject p in players) {
-			positions.Add( p.transform.position - m_Transform.position );
+//			positions.Add( p.transform.position - m_Transform.position );
+			positions.Add (p.transform.position);
+//			positions.Add (p.transform.TransformVector);
 		}
+
 		return positions.ToArray();
 	}
 }
