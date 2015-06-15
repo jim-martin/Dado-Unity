@@ -92,8 +92,8 @@ public class AudioComponent : MonoBehaviour {
 		ping.panStereo = 1;
 
 		ping.pitch = 2.0f - distance / 20;
-		if (ping.pitch < 0) {
-			ping.pitch = 0;
+		if (ping.pitch < .12f) {
+			ping.pitch = .12f;
 		}
 
 		Debug.Log (distance);
