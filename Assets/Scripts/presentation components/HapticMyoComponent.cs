@@ -16,8 +16,6 @@ public class HapticMyoComponent : MonoBehaviour
 	public float lowDistanceThreshold = 5.0f;
 	public float medDistanceThreshold = 10.0f;
 	public float highDistanceThreshold = 15.0f;
-	[HideInInspector] public int distState = 1;
-	[HideInInspector] public int ddistState = 1;
 
 	//Location objects
 	private LocationData m_LocationData;
@@ -42,52 +40,43 @@ public class HapticMyoComponent : MonoBehaviour
 			this.enabled = false;
 		}
 
+		InvokeRepeating ("CheckDistance", 5, 1);
+
 	}
 
-	void Update () 
+	void Update (){
+	}
+
+
+	void CheckDistance () 
 	{
-		distState = 4;
+		float distance = 100.0f;
 		float[] team = m_LocationData.getDistances ();
 
 		foreach (float t in team) {
-			//find the lowest distance threshhold for the current team member
-			int tState;
-			if( t < highDistanceThreshold  ){
-				tState = 3;
-			}else if( t < medDistanceThreshold ){
-				tState = 2;
-			}else if( t < lowDistanceThreshold ){
-				tState = 1;
-			}else{
-				tState = 4;
-			}
-
-			//if it's lower than the previous (i.e. this user is closer), use that, otherwise ignore it.
-			if( tState < distState ){
-				distState = tState;
+			//find the nearest teammate's distance
+			if( t < distance ){
+				distance = t;
 			}
 		}
-		Debug.Log (distState);
-		//give appropriate feedback
-		if (distState != ddistState) {
 
-			Debug.LogWarning(distState);
-
-			switch(distState)
-			{
-			case 1:
-				thalmicMyo.Vibrate(VibrationType.Long);
-				break;
-			case 2:
-				thalmicMyo.Vibrate(VibrationType.Medium);
-				break;
-			case 3:
-				thalmicMyo.Vibrate(VibrationType.Short);
-				break;
-			case 4:
-				break;
-			}
-			ddistState = distState;
+		//apply appropriate feedback
+		if (distance < lowDistanceThreshold) {
+			thalmicMyo.Vibrate (VibrationType.Short);
+			return;
 		}
+
+		if (distance < medDistanceThreshold){
+			thalmicMyo.Vibrate (VibrationType.Short);
+			thalmicMyo.Vibrate (VibrationType.Short);
+			return;
+		}
+
+		if (distance < highDistanceThreshold){
+			thalmicMyo.Vibrate (VibrationType.Medium);
+			return;
+		}
+
+		thalmicMyo.Vibrate (VibrationType.Long);		
 	}
 }
