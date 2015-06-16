@@ -17,7 +17,6 @@ GameObject:
   - 114: {fileID: 11443852}
   - 114: {fileID: 11495150}
   - 114: {fileID: 11457658}
-  - 114: {fileID: 11478716}
   m_Layer: 0
   m_Name: NetworkFPSController_jim
   m_TagString: Player
@@ -291,22 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2082388}
---- !u!114 &11478716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a349a4417bb5c245b5242035e923f9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lowDistanceThreshold: 5
-  medDistanceThreshold: 10
-  highDistanceThreshold: 15
-  distState: 1
-  ddistState: 1
 --- !u!114 &11495150
 MonoBehaviour:
   m_ObjectHideFlags: 1

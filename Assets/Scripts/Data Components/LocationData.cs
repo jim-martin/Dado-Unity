@@ -18,7 +18,7 @@ namespace DataComponents
 		public float[] getDistances()
 		{
 			List<float> distances = new List<float>();
-			GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+			GameObject[] players = getPlayers ();
 			
 			foreach (GameObject p in players) {
 				Vector3 vec = p.transform.position - t_Transform.position;
@@ -32,7 +32,7 @@ namespace DataComponents
 		public Vector3[] getRelativePositions()
 		{
 			List<Vector3> positions = new List<Vector3>();
-			GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+			GameObject[] players = getPlayers ();
 			
 			foreach (GameObject p in players) {
 				Vector3 vec = p.transform.position - t_Transform.position;
@@ -47,7 +47,7 @@ namespace DataComponents
 		public Vector3[] getGlobalPositions()
 		{
 			List<Vector3> positions = new List<Vector3>();
-			GameObject[] players = GameObject.FindGameObjectsWithTag ("Player");
+			GameObject[] players = getPlayers ();
 			
 			foreach (GameObject p in players) {
 				Vector3 vec = p.transform.position - t_Transform.position;
@@ -56,6 +56,11 @@ namespace DataComponents
 				}
 			}
 			return positions.ToArray();
+		}
+
+		public GameObject[] getPlayers()
+		{
+			return GameObject.FindGameObjectsWithTag ("Player");
 		}
 
 	}
