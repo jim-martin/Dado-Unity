@@ -57,30 +57,30 @@ public class uScriptAct_PlayAnimationAdditive : uScriptLogic
 
             if (SpeedFactor == 0F)
             {
-                Target.animation[m_Animation].speed = 1.0F;
+                Target.GetComponent<Animation>()[m_Animation].speed = 1.0F;
             }
             else
             {
-                Target.animation[m_Animation].speed = SpeedFactor;
+                Target.GetComponent<Animation>()[m_Animation].speed = SpeedFactor;
             }
 
             if (SpeedFactor < 0)
             {
                 // Needed to play in reverse with a negative speed
-                Target.animation[m_Animation].time = Target.animation[m_Animation].length;
+                Target.GetComponent<Animation>()[m_Animation].time = Target.GetComponent<Animation>()[m_Animation].length;
             }
             else
             {
-                Target.animation[m_Animation].time = 0.0f;
+                Target.GetComponent<Animation>()[m_Animation].time = 0.0f;
             }
 
-            Target.animation[m_Animation].wrapMode = AnimWrapMode;
+            Target.GetComponent<Animation>()[m_Animation].wrapMode = AnimWrapMode;
 
             foreach (GameObject t in MixingTransform)
             {
-                Target.animation[m_Animation].AddMixingTransform(t.transform);
-                Target.animation[m_Animation].layer = setLayer;
-                Target.animation.Blend(m_Animation, BlendWeight, FadeLength);
+                Target.GetComponent<Animation>()[m_Animation].AddMixingTransform(t.transform);
+                Target.GetComponent<Animation>()[m_Animation].layer = setLayer;
+                Target.GetComponent<Animation>().Blend(m_Animation, BlendWeight, FadeLength);
             }
         }
     }
@@ -107,10 +107,10 @@ public class uScriptAct_PlayAnimationAdditive : uScriptLogic
            {
                //TODO: Make the blend complete before removing mixing transform.
             #if (!UNITY_3_0 && !UNITY_3_1 && !UNITY_3_2 && !UNITY_3_3)
-              Target.animation[m_Animation].RemoveMixingTransform(t.transform);
+              Target.GetComponent<Animation>()[m_Animation].RemoveMixingTransform(t.transform);
             #endif
-              Target.animation[m_Animation].layer = setLayer;
-               Target.animation.Blend(m_Animation, 0.0f, FadeLength);
+              Target.GetComponent<Animation>()[m_Animation].layer = setLayer;
+               Target.GetComponent<Animation>().Blend(m_Animation, 0.0f, FadeLength);
            }
 #pragma warning restore 0219
        }
@@ -125,7 +125,7 @@ public class uScriptAct_PlayAnimationAdditive : uScriptLogic
          if (m_playNextTime > 0.0f)
          {
             // Check if play time is longer then the total play length minus pre fire time or if the animation isn't playing.
-            if (m_GameObject.animation[m_Animation].time >= m_GameObject.animation[m_Animation].length - m_playNextTime)
+            if (m_GameObject.GetComponent<Animation>()[m_Animation].time >= m_GameObject.GetComponent<Animation>()[m_Animation].length - m_playNextTime)
             {
                m_GameObject = null;
 
@@ -137,7 +137,7 @@ public class uScriptAct_PlayAnimationAdditive : uScriptLogic
             }
          }
 
-         if (false == m_GameObject.animation.IsPlaying(m_Animation))
+         if (false == m_GameObject.GetComponent<Animation>().IsPlaying(m_Animation))
          {
             m_GameObject = null;
 

@@ -24,6 +24,6 @@ public class uScriptAct_GetRigidBody : uScriptLogic
       out Rigidbody rigidBody
       )
    {
-      rigidBody = Target.rigidbody;
+      rigidBody = Target.GetComponent<Rigidbody>();
    }
 }

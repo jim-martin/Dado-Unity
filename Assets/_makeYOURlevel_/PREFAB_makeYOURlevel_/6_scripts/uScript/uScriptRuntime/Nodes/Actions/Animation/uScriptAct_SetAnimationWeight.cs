@@ -24,11 +24,11 @@ public class uScriptAct_SetAnimationWeight : uScriptLogic {
       )
 	{
 		if (weight >= 0 && weight <= 1)
-			target.animation[animationName].weight = weight;
+			target.GetComponent<Animation>()[animationName].weight = weight;
 		else if (weight < 0)
-			target.animation[animationName].weight = 0;
+			target.GetComponent<Animation>()[animationName].weight = 0;
 		else if (weight > 1)
-			target.animation[animationName].weight = 1;
+			target.GetComponent<Animation>()[animationName].weight = 1;
 		if (Out != null) Out(this, new System.EventArgs());
 	}
 	
