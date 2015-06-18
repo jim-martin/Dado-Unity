@@ -10,6 +10,7 @@ public class AudioPitch : PresentationObject {
 	// Use this for initialization
 	void Start () {
 		Subscribe ();
+
 	}
 	
 	// Update is called once per frame

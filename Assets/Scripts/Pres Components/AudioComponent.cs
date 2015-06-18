@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class AudioComponent : PresentationObject {
+public class AudioComponent : MonoBehaviour {
 
 //	private TeamDataController t_data;
 //	private Vector3[] people;
