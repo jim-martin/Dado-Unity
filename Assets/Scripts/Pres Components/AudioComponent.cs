@@ -5,9 +5,9 @@ public class AudioComponent : MonoBehaviour {
 
 	private TeamDataController t_data;
 	private Vector3[] people;
-	public AudioClip c_0;
-	public AudioClip c_50;
-	public AudioClip c_100;
+//	public AudioClip c_0;
+//	public AudioClip c_50;
+//	public AudioClip c_100;
 	private Transform m_Transform;
 	private AudioSource ping;
 
@@ -23,9 +23,6 @@ public class AudioComponent : MonoBehaviour {
 		ping.maxDistance = 100;
 
 		InvokeRepeating ("location_ping", 2, 1);
-	
-
-		//initialize oscillators?
 
 	}
 	
