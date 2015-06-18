@@ -2,23 +2,11 @@
 using System.Collections.Generic;
 
 public class AudioComponent : MonoBehaviour {
-
-//	private TeamDataController t_data;
-//	private Vector3[] people;
-//	public AudioClip c_0;
-//	public AudioClip c_50;
-//	public AudioClip c_100;
-//	private Transform m_Transform;
 	private AudioSource ping;
 	private float interval;
 	private AudioPingFrequency audio_ping_frequency;
-
-	//ping frequency
-	//pitch
-	//panning
-	//volume
-
-	// Use this for initialization
+	private AudioPitch audio_pitch;
+	
 	void Start () {
 		//get team data
 		//t_data = GetComponent<TeamDataController>();
@@ -26,6 +14,7 @@ public class AudioComponent : MonoBehaviour {
 //		m_Transform = GetComponent<Transform> ();
 
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
+		audio_pitch = GetComponent<AudioPitch> ();
 
 
 		ping = GetComponent<AudioSource> ();
@@ -116,7 +105,6 @@ public class AudioComponent : MonoBehaviour {
 
 
 		//set ping frequency
-		//if ping frequency
 		if (audio_ping_frequency != null) {
 			interval = audio_ping_frequency.get_interval();
 			Debug.Log ("frequency = ");
@@ -127,9 +115,11 @@ public class AudioComponent : MonoBehaviour {
 		}
 
 		//set pitch
-
-
-
+		if (audio_pitch != null) {
+			ping.pitch = audio_pitch.get_pitch();
+		} else {
+			ping.pitch = 1;
+		}
 
 		ping.Play ();
 
