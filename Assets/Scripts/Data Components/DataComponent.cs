@@ -18,8 +18,8 @@ namespace Data
 			GameObject target = getTarget ();
 
 			Vector3 tRot = target.transform.position - transform.position;
-
-			float angle = Vector3.Angle(target.transform.position, transform.forward);
+		
+			float angle = Vector3.Angle(tRot, transform.forward);
 			int angleDir;
 			if (Vector3.Cross (target.transform.position, transform.forward).y > 0) {
 				angleDir = 1; //looking to the right of the target, pan to the left

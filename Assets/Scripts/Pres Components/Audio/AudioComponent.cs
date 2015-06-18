@@ -6,16 +6,12 @@ public class AudioComponent : MonoBehaviour {
 	private float interval;
 	private AudioPingFrequency audio_ping_frequency;
 	private AudioPitch audio_pitch;
+	private AudioVolume audio_volume;
 	
 	void Start () {
-		//get team data
-		//t_data = GetComponent<TeamDataController>();
-//		people = t_data.DirectionVectors ();
-//		m_Transform = GetComponent<Transform> ();
-
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
 		audio_pitch = GetComponent<AudioPitch> ();
-
+		audio_volume = GetComponent<AudioVolume> ();
 
 		ping = GetComponent<AudioSource> ();
 		ping.spatialBlend = 1;
@@ -120,6 +116,15 @@ public class AudioComponent : MonoBehaviour {
 		} else {
 			ping.pitch = 1;
 		}
+
+		//set volume
+		if (audio_volume != null) {
+			ping.volume = audio_volume.get_volume();
+		} else {
+			ping.volume = 1;
+		}
+
+		//set panning
 
 		ping.Play ();
 
