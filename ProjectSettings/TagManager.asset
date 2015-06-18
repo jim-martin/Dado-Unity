@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Myo
+  - Target
   layers:
   - Default
   - TransparentFX
