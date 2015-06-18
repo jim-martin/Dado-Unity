@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StatusController : MonoBehaviour {
+public class DataController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
