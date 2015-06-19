@@ -25855,6 +25855,7 @@ MonoBehaviour:
   ObjectToInstantiate: {fileID: 431240, guid: 55abfc798d17d4d4da3dd1db45bc707e, type: 2}
   spawnTargetTag: Spawn Location
   InstantiateSceneObjects: 1
+  InstantiateOnePerRoom: 1
 --- !u!1 &710950882
 GameObject:
   m_ObjectHideFlags: 0
