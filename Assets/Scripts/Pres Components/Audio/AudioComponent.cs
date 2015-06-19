@@ -7,14 +7,16 @@ public class AudioComponent : MonoBehaviour {
 	private AudioPingFrequency audio_ping_frequency;
 	private AudioPitch audio_pitch;
 	private AudioVolume audio_volume;
+	private AudioPanning audio_panning;
 	
 	void Start () {
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
 		audio_pitch = GetComponent<AudioPitch> ();
 		audio_volume = GetComponent<AudioVolume> ();
+		audio_panning = GetComponent<AudioPanning> ();
 
 		ping = GetComponent<AudioSource> ();
-		ping.spatialBlend = 1;
+		ping.spatialBlend = 0;
 		ping.minDistance = 1;
 		ping.maxDistance = 100;
 
@@ -125,8 +127,16 @@ public class AudioComponent : MonoBehaviour {
 		}
 
 		//set panning
+		if (audio_panning != null) {
+//			AudioSource.PlayClipAtPoint(ping.clip, audio_panning.get_target_location());
+			ping.panStereo = audio_panning.get_panning();
+		} else {
+
+		}
 
 		ping.Play ();
+
+
 
 		Invoke ("location_ping", interval);
 
