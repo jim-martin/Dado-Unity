@@ -26,7 +26,8 @@ public class AudioPanning : MonoBehaviour {
 //			volume = 1.0f - data.getDistance () / 50;
 			//distance doesn't make sense for panning
 		} else if (direction_input == true) {
-			panning = data.getDirection() / 180;
+			float angleRadians = data.getDirection() * Mathf.PI / 180;
+			panning = -1 * Mathf.Sin (angleRadians);
 		}
 		
 		Debug.Log (panning);
