@@ -1,0 +1,4 @@
+2 Demo scenes are included, If you would to understand how the more complicated demo scene works then continue reading.
+The script "Demo.cs" instantiates yellow cubes at the vertex positions.
+It also adds a script to each cube "VBinder.cs" and what this script does is that it Binds each cube to its specific vertex gameObject so when you move any cube arround the vertex will follow.
+The Demo.cs allows you to move any cube with the mouse then it uses the UpdateMesh() function.
