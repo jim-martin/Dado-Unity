@@ -26,7 +26,7 @@ public class HapticFrequency_Myo : MonoBehaviour {
 			this.enabled = false;
 		}
 
-		Invoke ("Vibrate", 2);
+		Invoke ("Vibrate", 0.5f);
 	}
 
 	void Vibrate(){
@@ -34,7 +34,7 @@ public class HapticFrequency_Myo : MonoBehaviour {
 		thalmicMyo.Vibrate (VibrationType.Short);
 
 		float delay = apf.get_interval ();
-		Invoke ("Vibrate", delay);
+		Invoke ("Vibrate", delay );
 
 	}
 }
