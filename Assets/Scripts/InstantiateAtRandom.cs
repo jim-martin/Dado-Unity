@@ -8,11 +8,17 @@ public class InstantiateAtRandom : MonoBehaviour
 	public string spawnTargetTag;
 	
 	public bool InstantiateSceneObjects = false;
+	public bool InstantiateOnePerRoom = false;
 	
 	private GameObject newObj;   // not used but to show that you get the GO as return
 	
 	public void OnJoinedRoom()
 	{
+		bool unique = CheckUnique();
+		if(InstantiateOnePerRoom && !unique){
+			return;
+		}
+
 		GameObject target;
 		GameObject[] targets = GameObject.FindGameObjectsWithTag(spawnTargetTag);
 
@@ -38,6 +44,15 @@ public class InstantiateAtRandom : MonoBehaviour
 			newObj = PhotonNetwork.InstantiateSceneObject(ObjectToInstantiate.name, pos, Quaternion.identity, 0, null);
 			//PhotonView pv = newObj.GetComponent<PhotonView>() as PhotonView;
 			//Debug.Log(pv.ownerId + " " + pv.viewID);
+		}
+	}
+
+	public bool CheckUnique(){
+		GameObject g = GameObject.FindGameObjectWithTag(ObjectToInstantiate.tag);
+		if(g == null){
+			return true;
+		}else{
+			return false;
 		}
 	}
 }
