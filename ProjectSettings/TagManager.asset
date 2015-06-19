@@ -8,6 +8,7 @@ TagManager:
   - Target
   - push
   - Spawn Location
+  - Player Spawn
   layers:
   - Default
   - TransparentFX
