@@ -5,14 +5,15 @@ using System.Collections;
 public class OnJoinInstantiate : MonoBehaviour
 {
     public Transform ObjectToInstantiate;
+	public Transform SpawnTarget;
 
-    public bool InstantiateSceneObjects = false;
+	public bool InstantiateSceneObjects = false;
 
-    public GameObject newObj;   // not used but to show that you get the GO as return
+    private GameObject newObj;   // not used but to show that you get the GO as return
 
     public void OnJoinedRoom()
     {
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = SpawnTarget.position;
         pos.x += PhotonNetwork.player.ID;
 
         if (!InstantiateSceneObjects)
