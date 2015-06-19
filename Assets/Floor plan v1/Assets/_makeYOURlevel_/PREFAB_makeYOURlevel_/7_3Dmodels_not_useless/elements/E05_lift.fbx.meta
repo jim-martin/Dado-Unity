@@ -3,6 +3,18 @@ guid: 1c4cd6fcd19df8046a4e8c0e6f11ed64
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: button_int
+    100002: //RootNode
+    100004: Lift
+    400000: button_int
+    400002: //RootNode
+    400004: Lift
+    2300000: button_int
+    2300002: //RootNode
+    2300004: Lift
+    3300000: button_int
+    3300002: //RootNode
+    3300004: Lift
     4300000: Lift
     4300002: button_int
     4300004: lift_door_RA
@@ -11,6 +23,10 @@ ModelImporter:
     4300010: lift_door_LB
     4300012: Lift_frame
     4300014: Cube
+    6400000: button_int
+    6400002: //RootNode
+    6400004: Lift
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

@@ -3,7 +3,16 @@ guid: 127a1cc16a910084d94c68d9ade075c1
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: simple_door_no_handle
+    400000: //RootNode
+    400002: simple_door_no_handle
+    2300000: simple_door_no_handle
+    3300000: simple_door_no_handle
     4300000: simple_door_no_handle
+    6400000: simple_door_no_handle
+    7400000: C4D Animation Take
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

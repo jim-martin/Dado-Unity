@@ -3,6 +3,72 @@ guid: 641c3b1eed5a934419809813adaf5360
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: Ext_stairs_01
+    100004: Ext_stairs_demi_floor
+    100006: Ext_stairs_handrail_close_last
+    100008: Ext_stairs_handrail_end_floor
+    100010: Ext_stairs_little_floor
+    100012: Ext_stairs_long_floor
+    100014: Ext_stairs_quarter_floor
+    100016: handrail_floor_A_demi
+    100018: handrail_floor_A_long
+    100020: handrail_floor_A_quarter
+    100022: handrail_floor_B_demi
+    100024: handrail_floor_B_long
+    100026: handrail_floor_B_quarter
+    100028: handrail_floor_LA_demi
+    100030: handrail_floor_LB_demi
+    100032: handrail_stairs
+    400000: //RootNode
+    400002: Ext_stairs_01
+    400004: Ext_stairs_demi_floor
+    400006: Ext_stairs_handrail_close_last
+    400008: Ext_stairs_handrail_end_floor
+    400010: Ext_stairs_little_floor
+    400012: Ext_stairs_long_floor
+    400014: Ext_stairs_quarter_floor
+    400016: handrail_floor_A_demi
+    400018: handrail_floor_A_long
+    400020: handrail_floor_A_quarter
+    400022: handrail_floor_B_demi
+    400024: handrail_floor_B_long
+    400026: handrail_floor_B_quarter
+    400028: handrail_floor_LA_demi
+    400030: handrail_floor_LB_demi
+    400032: handrail_stairs
+    2300000: Ext_stairs_01
+    2300002: Ext_stairs_demi_floor
+    2300004: Ext_stairs_handrail_close_last
+    2300006: Ext_stairs_handrail_end_floor
+    2300008: Ext_stairs_little_floor
+    2300010: Ext_stairs_long_floor
+    2300012: Ext_stairs_quarter_floor
+    2300014: handrail_floor_A_demi
+    2300016: handrail_floor_A_long
+    2300018: handrail_floor_A_quarter
+    2300020: handrail_floor_B_demi
+    2300022: handrail_floor_B_long
+    2300024: handrail_floor_B_quarter
+    2300026: handrail_floor_LA_demi
+    2300028: handrail_floor_LB_demi
+    2300030: handrail_stairs
+    3300000: Ext_stairs_01
+    3300002: Ext_stairs_demi_floor
+    3300004: Ext_stairs_handrail_close_last
+    3300006: Ext_stairs_handrail_end_floor
+    3300008: Ext_stairs_little_floor
+    3300010: Ext_stairs_long_floor
+    3300012: Ext_stairs_quarter_floor
+    3300014: handrail_floor_A_demi
+    3300016: handrail_floor_A_long
+    3300018: handrail_floor_A_quarter
+    3300020: handrail_floor_B_demi
+    3300022: handrail_floor_B_long
+    3300024: handrail_floor_B_quarter
+    3300026: handrail_floor_LA_demi
+    3300028: handrail_floor_LB_demi
+    3300030: handrail_stairs
     4300000: Ext_stairs_01
     4300002: Ext_stairs_handrail_close_last
     4300004: handrail_stairs
@@ -48,6 +114,23 @@ ModelImporter:
     4300084: handrail_floor_B_demi_2
     4300086: handrail_floor_LA_demi
     4300088: handrail_floor_LB_demi
+    6400000: Ext_stairs_01
+    6400002: Ext_stairs_demi_floor
+    6400004: Ext_stairs_handrail_close_last
+    6400006: Ext_stairs_handrail_end_floor
+    6400008: Ext_stairs_little_floor
+    6400010: Ext_stairs_long_floor
+    6400012: Ext_stairs_quarter_floor
+    6400014: handrail_floor_A_demi
+    6400016: handrail_floor_A_long
+    6400018: handrail_floor_A_quarter
+    6400020: handrail_floor_B_demi
+    6400022: handrail_floor_B_long
+    6400024: handrail_floor_B_quarter
+    6400026: handrail_floor_LA_demi
+    6400028: handrail_floor_LB_demi
+    6400030: handrail_stairs
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

@@ -3,9 +3,26 @@ guid: 657fdb2150f23b84cb2cdc22a0fc5c57
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: doorknob
+    100004: simple_door
+    400000: //RootNode
+    400002: doorknob
+    400004: simple_door
+    2300000: doorknob
+    2300002: simple_door
+    3300000: doorknob
+    3300002: simple_door
     4300000: porte_simple_G
     4300002: doorknob
     4300004: simple_door
+    6400000: doorknob
+    6400002: simple_door
+    7400000: openF
+    7400002: shutF
+    7400004: openD
+    7400006: shutD
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

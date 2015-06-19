@@ -3,8 +3,19 @@ guid: b12dabb8f98e99642a627ba060060f82
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: torch
+    400000: //RootNode
+    400002: torch
+    2300000: //RootNode
+    2300002: torch
+    3300000: //RootNode
+    3300002: torch
     4300000: E03_support_torch
     4300002: torch
+    6400000: //RootNode
+    6400002: torch
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

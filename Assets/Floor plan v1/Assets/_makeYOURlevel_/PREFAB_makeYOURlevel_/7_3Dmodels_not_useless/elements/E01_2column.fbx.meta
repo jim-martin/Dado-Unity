@@ -3,8 +3,21 @@ guid: c628ec1c6075d3d47aeda97300d0cb2f
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: E01_column_half
+    100004: E01_column_half_2
+    400000: //RootNode
+    400002: E01_column_half
+    400004: E01_column_half_2
+    2300000: E01_column_half
+    2300002: E01_column_half_2
+    3300000: E01_column_half
+    3300002: E01_column_half_2
     4300000: E01_column_half
     4300002: E01_column_half_2
+    6400000: E01_column_half
+    6400002: E01_column_half_2
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

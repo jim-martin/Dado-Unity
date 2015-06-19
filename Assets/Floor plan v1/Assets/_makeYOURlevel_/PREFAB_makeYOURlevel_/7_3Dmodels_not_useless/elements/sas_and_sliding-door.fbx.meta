@@ -3,6 +3,18 @@ guid: 43cf347576796ef4d8070e82523f90d2
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: handle
+    100002: //RootNode
+    100004: sliding_door_active
+    400000: handle
+    400002: //RootNode
+    400004: sliding_door_active
+    2300000: handle
+    2300002: //RootNode
+    2300004: sliding_door_active
+    3300000: handle
+    3300002: //RootNode
+    3300004: sliding_door_active
     4300000: sas02
     4300002: door
     4300004: Extrusion_contr__l__e_NURBS
@@ -10,6 +22,12 @@ ModelImporter:
     4300008: sliding_door
     4300010: handle
     4300012: sliding_door_active
+    6400000: handle
+    6400002: //RootNode
+    6400004: sliding_door_active
+    7400000: open
+    7400002: close
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

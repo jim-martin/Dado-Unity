@@ -3,6 +3,44 @@ guid: 33c9994cf09931d45b96ed552c0808cc
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: colimacon_stairs
+    100002: CS_column_first
+    100004: CS_column_middle_and_last
+    100006: CS_for_collider
+    100008: CS_handrail_floor
+    100010: handrail_close_last_floor
+    100012: handrail_floor
+    100014: handrail_spiral
+    100016: SS_ground_level
+    100018: //RootNode
+    100020: steps
+    400000: colimacon_stairs
+    400002: CS_column_first
+    400004: CS_column_middle_and_last
+    400006: CS_for_collider
+    400008: CS_handrail_floor
+    400010: handrail_close_last_floor
+    400012: handrail_floor
+    400014: handrail_spiral
+    400016: SS_ground_level
+    400018: //RootNode
+    400020: steps
+    2300000: CS_column_first
+    2300002: CS_column_middle_and_last
+    2300004: CS_for_collider
+    2300006: CS_handrail_floor
+    2300008: handrail_close_last_floor
+    2300010: handrail_spiral
+    2300012: SS_ground_level
+    2300014: steps
+    3300000: CS_column_first
+    3300002: CS_column_middle_and_last
+    3300004: CS_for_collider
+    3300006: CS_handrail_floor
+    3300008: handrail_close_last_floor
+    3300010: handrail_spiral
+    3300012: SS_ground_level
+    3300014: steps
     4300000: CS_for_collider
     4300002: CS_column_middle_and_last
     4300004: CS_column_first
@@ -11,6 +49,15 @@ ModelImporter:
     4300010: handrail_close_last_floor
     4300012: steps
     4300014: handrail_spiral
+    6400000: CS_column_first
+    6400002: CS_column_middle_and_last
+    6400004: CS_for_collider
+    6400006: CS_handrail_floor
+    6400008: handrail_close_last_floor
+    6400010: handrail_spiral
+    6400012: SS_ground_level
+    6400014: steps
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

@@ -3,6 +3,68 @@ guid: 6c29278698ad1ce42aa1249de5a83b80
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: Crenel_Corner_Stair_Little
+    100002: Crenel_Corner_Stair_Little_1
+    100004: Crenel_Wall_Stair
+    100006: Crenel_Wall_Stair_2
+    100008: Crenel_Wall_Stair_Little
+    100010: Crenel_Wall_Stair_Little_2
+    100012: Ext_Stair_03
+    100014: Ext_stairs_01
+    100016: Ext_stairs_02
+    100018: Ext_stairs_04
+    100020: Floor
+    100022: HandRail_Left
+    100024: HandRail_Left_2
+    100026: HandRail_Right
+    100028: HandRail_Right_2
+    100030: //RootNode
+    400000: Crenel_Corner_Stair_Little
+    400002: Crenel_Corner_Stair_Little_1
+    400004: Crenel_Wall_Stair
+    400006: Crenel_Wall_Stair_2
+    400008: Crenel_Wall_Stair_Little
+    400010: Crenel_Wall_Stair_Little_2
+    400012: Ext_Stair_03
+    400014: Ext_stairs_01
+    400016: Ext_stairs_02
+    400018: Ext_stairs_04
+    400020: Floor
+    400022: HandRail_Left
+    400024: HandRail_Left_2
+    400026: HandRail_Right
+    400028: HandRail_Right_2
+    400030: //RootNode
+    2300000: Crenel_Corner_Stair_Little
+    2300002: Crenel_Corner_Stair_Little_1
+    2300004: Crenel_Wall_Stair
+    2300006: Crenel_Wall_Stair_2
+    2300008: Crenel_Wall_Stair_Little
+    2300010: Crenel_Wall_Stair_Little_2
+    2300012: Ext_Stair_03
+    2300014: Ext_stairs_01
+    2300016: Ext_stairs_02
+    2300018: Ext_stairs_04
+    2300020: Floor
+    2300022: HandRail_Left
+    2300024: HandRail_Left_2
+    2300026: HandRail_Right
+    2300028: HandRail_Right_2
+    3300000: Crenel_Corner_Stair_Little
+    3300002: Crenel_Corner_Stair_Little_1
+    3300004: Crenel_Wall_Stair
+    3300006: Crenel_Wall_Stair_2
+    3300008: Crenel_Wall_Stair_Little
+    3300010: Crenel_Wall_Stair_Little_2
+    3300012: Ext_Stair_03
+    3300014: Ext_stairs_01
+    3300016: Ext_stairs_02
+    3300018: Ext_stairs_04
+    3300020: Floor
+    3300022: HandRail_Left
+    3300024: HandRail_Left_2
+    3300026: HandRail_Right
+    3300028: HandRail_Right_2
     4300000: Corner_1
     4300002: Handrail_End_Short
     4300004: Handrail_End_Long
@@ -84,6 +146,22 @@ ModelImporter:
     4300156: Ext_Stair_03
     4300158: HandRail_Right_2
     4300160: HandRail_Left_2
+    6400000: Crenel_Corner_Stair_Little
+    6400002: Crenel_Corner_Stair_Little_1
+    6400004: Crenel_Wall_Stair
+    6400006: Crenel_Wall_Stair_2
+    6400008: Crenel_Wall_Stair_Little
+    6400010: Crenel_Wall_Stair_Little_2
+    6400012: Ext_Stair_03
+    6400014: Ext_stairs_01
+    6400016: Ext_stairs_02
+    6400018: Ext_stairs_04
+    6400020: Floor
+    6400022: HandRail_Left
+    6400024: HandRail_Left_2
+    6400026: HandRail_Right
+    6400028: HandRail_Right_2
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

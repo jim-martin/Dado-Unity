@@ -3,12 +3,33 @@ guid: da178689dbf25f741abd5bae879805f0
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: //RootNode
+    100002: gen_luminosity
+    100004: lightbulb
+    100006: luster_part2_1
+    400000: //RootNode
+    400002: gen_luminosity
+    400004: lightbulb
+    400006: luster_part2_1
+    2300000: //RootNode
+    2300002: gen_luminosity
+    2300004: lightbulb
+    2300006: luster_part2_1
+    3300000: //RootNode
+    3300002: gen_luminosity
+    3300004: lightbulb
+    3300006: luster_part2_1
     4300000: lustre
     4300002: gen_luminosity
     4300004: lightbulb
     4300006: lustre_part2_1
     4300008: luster
     4300010: luster_part2_1
+    6400000: //RootNode
+    6400002: gen_luminosity
+    6400004: lightbulb
+    6400006: luster_part2_1
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

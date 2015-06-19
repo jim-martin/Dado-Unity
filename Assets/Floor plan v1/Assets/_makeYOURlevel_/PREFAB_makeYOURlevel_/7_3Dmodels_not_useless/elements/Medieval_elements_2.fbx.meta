@@ -3,6 +3,36 @@ guid: 0ae399046361626429334635ffa7efa3
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: LoopHole
+    100002: M_BigDoor_L
+    100004: M_BigDoor_R
+    100006: M_LittleDoor_L
+    100008: M_LittleDoor_R
+    100010: //RootNode
+    100012: MedievalDoor
+    100014: Window
+    400000: LoopHole
+    400002: M_BigDoor_L
+    400004: M_BigDoor_R
+    400006: M_LittleDoor_L
+    400008: M_LittleDoor_R
+    400010: //RootNode
+    400012: MedievalDoor
+    400014: Window
+    2300000: LoopHole
+    2300002: M_BigDoor_L
+    2300004: M_BigDoor_R
+    2300006: M_LittleDoor_L
+    2300008: M_LittleDoor_R
+    2300010: MedievalDoor
+    2300012: Window
+    3300000: LoopHole
+    3300002: M_BigDoor_L
+    3300004: M_BigDoor_R
+    3300006: M_LittleDoor_L
+    3300008: M_LittleDoor_R
+    3300010: MedievalDoor
+    3300012: Window
     4300000: Window
     4300002: Crenel_Corner
     4300004: Crenel
@@ -15,6 +45,14 @@ ModelImporter:
     4300018: Crenel_A
     4300020: Crenel_B
     4300022: Window_2
+    6400000: LoopHole
+    6400002: M_BigDoor_L
+    6400004: M_BigDoor_R
+    6400006: M_LittleDoor_L
+    6400008: M_LittleDoor_R
+    6400010: MedievalDoor
+    6400012: Window
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

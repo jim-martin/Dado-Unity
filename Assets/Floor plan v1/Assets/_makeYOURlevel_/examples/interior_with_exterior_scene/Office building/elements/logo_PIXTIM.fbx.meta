@@ -3,6 +3,34 @@ guid: 8a2db5cb3bfdf8444a41b7074bb1cdb9
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: I1
+    100002: I2
+    100004: //RootNode
+    100006: M
+    100008: P
+    100010: T
+    100012: X
+    400000: I1
+    400002: I2
+    400004: //RootNode
+    400006: M
+    400008: P
+    400010: T
+    400012: X
+    2300000: I1
+    2300002: I2
+    2300004: //RootNode
+    2300006: M
+    2300008: P
+    2300010: T
+    2300012: X
+    3300000: I1
+    3300002: I2
+    3300004: //RootNode
+    3300006: M
+    3300008: P
+    3300010: T
+    3300012: X
     4300000: PIXTIM
     4300002: P_2
     4300004: I1
@@ -11,6 +39,7 @@ ModelImporter:
     4300010: I2
     4300012: M
     4300014: P
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

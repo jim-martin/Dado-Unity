@@ -25,6 +25,7 @@ GameObject:
   - 114: {fileID: 11482526}
   - 114: {fileID: 11449348}
   - 82: {fileID: 8298222}
+  - 82: {fileID: 8215214}
   m_Layer: 0
   m_Name: NetworkFPSController_jim
   m_TagString: Player
@@ -56,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115948}
   m_LocalRotation: {x: 0, y: .883058012, z: 0, w: -.469263881}
-  m_LocalPosition: {x: .0299999993, y: 3.08957195, z: 11.4499998}
+  m_LocalPosition: {x: 12.2274971, y: 3.08957195, z: 3.43331814}
   m_LocalScale: {x: .600000024, y: 1, z: .600000024}
   m_Children:
   - {fileID: 497870}
@@ -70,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 199622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.10000002, z: -.409999996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .532613754, y: .532613754, z: .532613754}
   m_Children: []
   m_Father: {fileID: 431206}
   m_RootOrder: 0
@@ -90,9 +91,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: .180000007
+  far clip plane: 1000.21997
+  field of view: 98.3000031
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -113,7 +114,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -160,6 +161,75 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199622}
   m_Enabled: 1
+--- !u!82 &8215214
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115948}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b40bb91cae3614d60824b8275db83db8, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!82 &8298222
 AudioSource:
   m_ObjectHideFlags: 1
@@ -265,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aae79cf85af945a88ea4018f580bfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance_input: 1
+  distance_input: 0
   direction_input: 0
 --- !u!114 &11444172
 MonoBehaviour:
@@ -358,7 +428,7 @@ MonoBehaviour:
     groundCheckDistance: 3.32999992
     stickToGroundHelperDistance: 1.36000001
     slowDownRate: 20
-    airControl: 0
+    airControl: 1
 --- !u!114 &11467390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance_input: 0
-  direction_input: 0
+  direction_input: 1
 --- !u!114 &11485064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,10 +560,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: .189999998
-  m_Height: .349999994
+  m_Radius: .550000012
+  m_Height: 1.47000003
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: .730000019, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -536,7 +606,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 513ed6a7a2dda42d496ca2804b56071f, type: 3}
+      objectReference: {fileID: 8300000, guid: b40bb91cae3614d60824b8275db83db8, type: 3}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
       value: .379999995
@@ -564,6 +634,34 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: direction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distance_input
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: direction_input
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: field of view
+      value: 98.3000031
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: near clip plane
+      value: .180000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: far clip plane
+      value: 1000.21997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: advancedSettings.airControl
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

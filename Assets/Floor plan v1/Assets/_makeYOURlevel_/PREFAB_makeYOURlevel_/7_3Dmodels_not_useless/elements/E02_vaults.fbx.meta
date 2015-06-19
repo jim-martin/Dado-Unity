@@ -3,6 +3,72 @@ guid: dd2855b0dfc7a6f4f80586850a7adb7c
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: E02_vault
+    100002: E02_vault_half_L
+    100004: E02_vault_half_lid_R1
+    100006: E02_vault_half_lid_R1_2
+    100008: E02_vault_half_lid_R2
+    100010: E02_vault_half_lid_R2_2
+    100012: E02_vault_half_R
+    100014: E02_vault_lid
+    100016: E02_vault_lid_2
+    100018: E02_vault_turn_ext
+    100020: E02_vault_turn_int
+    100022: //RootNode
+    100024: E02_wall_add_on_01
+    100026: E02_wall_add_on_01_2
+    100028: E02_wall_add_on_02
+    100030: E02_wall_add_on_03
+    100032: vault_wall_corner
+    400000: E02_vault
+    400002: E02_vault_half_L
+    400004: E02_vault_half_lid_R1
+    400006: E02_vault_half_lid_R1_2
+    400008: E02_vault_half_lid_R2
+    400010: E02_vault_half_lid_R2_2
+    400012: E02_vault_half_R
+    400014: E02_vault_lid
+    400016: E02_vault_lid_2
+    400018: E02_vault_turn_ext
+    400020: E02_vault_turn_int
+    400022: //RootNode
+    400024: E02_wall_add_on_01
+    400026: E02_wall_add_on_01_2
+    400028: E02_wall_add_on_02
+    400030: E02_wall_add_on_03
+    400032: vault_wall_corner
+    2300000: E02_vault
+    2300002: E02_vault_half_L
+    2300004: E02_vault_half_lid_R1
+    2300006: E02_vault_half_lid_R1_2
+    2300008: E02_vault_half_lid_R2
+    2300010: E02_vault_half_lid_R2_2
+    2300012: E02_vault_half_R
+    2300014: E02_vault_lid
+    2300016: E02_vault_lid_2
+    2300018: E02_vault_turn_ext
+    2300020: E02_vault_turn_int
+    2300022: E02_wall_add_on_01
+    2300024: E02_wall_add_on_01_2
+    2300026: E02_wall_add_on_02
+    2300028: E02_wall_add_on_03
+    2300030: vault_wall_corner
+    3300000: E02_vault
+    3300002: E02_vault_half_L
+    3300004: E02_vault_half_lid_R1
+    3300006: E02_vault_half_lid_R1_2
+    3300008: E02_vault_half_lid_R2
+    3300010: E02_vault_half_lid_R2_2
+    3300012: E02_vault_half_R
+    3300014: E02_vault_lid
+    3300016: E02_vault_lid_2
+    3300018: E02_vault_turn_ext
+    3300020: E02_vault_turn_int
+    3300022: E02_wall_add_on_01
+    3300024: E02_wall_add_on_01_2
+    3300026: E02_wall_add_on_02
+    3300028: E02_wall_add_on_03
+    3300030: vault_wall_corner
     4300000: E02_vault
     4300002: E05_arch_lid
     4300004: E05_arch_lid_2
@@ -36,6 +102,23 @@ ModelImporter:
     4300060: E02_wall_add_on_02
     4300062: E02_wall_add_on_03
     4300064: vault_wall_corner
+    6400000: E02_vault
+    6400002: E02_vault_half_L
+    6400004: E02_vault_half_lid_R1
+    6400006: E02_vault_half_lid_R1_2
+    6400008: E02_vault_half_lid_R2
+    6400010: E02_vault_half_lid_R2_2
+    6400012: E02_vault_half_R
+    6400014: E02_vault_lid
+    6400016: E02_vault_lid_2
+    6400018: E02_vault_turn_ext
+    6400020: E02_vault_turn_int
+    6400022: E02_wall_add_on_01
+    6400024: E02_wall_add_on_01_2
+    6400026: E02_wall_add_on_02
+    6400028: E02_wall_add_on_03
+    6400030: vault_wall_corner
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

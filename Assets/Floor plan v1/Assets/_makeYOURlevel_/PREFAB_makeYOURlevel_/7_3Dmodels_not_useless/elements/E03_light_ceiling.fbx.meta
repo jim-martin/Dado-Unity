@@ -3,11 +3,22 @@ guid: 28095f7642ad8d744ba5999fd5c2c3ac
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: chains
+    100002: //RootNode
+    400000: chains
+    400002: //RootNode
+    2300000: chains
+    2300002: //RootNode
+    3300000: chains
+    3300002: //RootNode
     4300000: Cloneur_1
     4300002: E03_light_ceiling
     4300004: E03_light_ceiling_1
     4300006: chains
     4300008: chains_2
+    6400000: chains
+    6400002: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

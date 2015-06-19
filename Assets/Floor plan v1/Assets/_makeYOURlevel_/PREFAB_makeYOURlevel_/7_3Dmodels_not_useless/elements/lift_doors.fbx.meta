@@ -3,10 +3,35 @@ guid: c80249f2b562bcd41b50e6f2ed3341fe
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: lift_door_LA
+    100002: lift_door_LB
+    100004: lift_door_RA
+    100006: lift_door_RB
+    100008: //RootNode
+    400000: lift_door_LA
+    400002: lift_door_LB
+    400004: lift_door_RA
+    400006: lift_door_RB
+    400008: //RootNode
+    2300000: lift_door_LA
+    2300002: lift_door_LB
+    2300004: lift_door_RA
+    2300006: lift_door_RB
+    3300000: lift_door_LA
+    3300002: lift_door_LB
+    3300004: lift_door_RA
+    3300006: lift_door_RB
     4300000: lift_door_RA
     4300002: lift_door_RB
     4300004: lift_door_LA
     4300006: lift_door_LB
+    6400000: lift_door_LA
+    6400002: lift_door_LB
+    6400004: lift_door_RA
+    6400006: lift_door_RB
+    7400000: lift_open
+    7400002: lift_close
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0

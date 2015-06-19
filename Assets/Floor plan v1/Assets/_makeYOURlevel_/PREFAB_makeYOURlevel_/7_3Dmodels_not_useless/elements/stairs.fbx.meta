@@ -3,6 +3,88 @@ guid: 0e6be11071d75404eabece1a51a3b34d
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: corridor_ceiling
+    100002: corridor_stairs_first_floor
+    100004: corridor_stairs_middle_floor
+    100006: Cube
+    100008: Cube_2
+    100010: E01_stairs_first
+    100012: E01_stairs_just_1_floor
+    100014: E01_stairs_last
+    100016: E01_stairs_middle
+    100018: E01_stairs_middle_2
+    100020: E02_stairs
+    100022: handrail
+    100024: handrail_2
+    100026: handrail_3
+    100028: handrail_4
+    100030: handrailint
+    100032: handrailint_1
+    100034: handrailint_2
+    100036: handrailint_3
+    100038: make_your_corridor_for_stairs
+    100040: make_your_E01_stairs
+    100042: make_your_stairs
+    100044: //RootNode
+    400000: corridor_ceiling
+    400002: corridor_stairs_first_floor
+    400004: corridor_stairs_middle_floor
+    400006: Cube
+    400008: Cube_2
+    400010: E01_stairs_first
+    400012: E01_stairs_just_1_floor
+    400014: E01_stairs_last
+    400016: E01_stairs_middle
+    400018: E01_stairs_middle_2
+    400020: E02_stairs
+    400022: handrail
+    400024: handrail_2
+    400026: handrail_3
+    400028: handrail_4
+    400030: handrailint
+    400032: handrailint_1
+    400034: handrailint_2
+    400036: handrailint_3
+    400038: make_your_corridor_for_stairs
+    400040: make_your_E01_stairs
+    400042: make_your_stairs
+    400044: //RootNode
+    2300000: corridor_ceiling
+    2300002: corridor_stairs_first_floor
+    2300004: corridor_stairs_middle_floor
+    2300006: Cube
+    2300008: Cube_2
+    2300010: E01_stairs_first
+    2300012: E01_stairs_just_1_floor
+    2300014: E01_stairs_last
+    2300016: E01_stairs_middle_2
+    2300018: E02_stairs
+    2300020: handrail
+    2300022: handrail_2
+    2300024: handrail_3
+    2300026: handrail_4
+    2300028: handrailint
+    2300030: handrailint_1
+    2300032: handrailint_2
+    2300034: handrailint_3
+    3300000: corridor_ceiling
+    3300002: corridor_stairs_first_floor
+    3300004: corridor_stairs_middle_floor
+    3300006: Cube
+    3300008: Cube_2
+    3300010: E01_stairs_first
+    3300012: E01_stairs_just_1_floor
+    3300014: E01_stairs_last
+    3300016: E01_stairs_middle_2
+    3300018: E02_stairs
+    3300020: handrail
+    3300022: handrail_2
+    3300024: handrail_3
+    3300026: handrail_4
+    3300028: handrailint
+    3300030: handrailint_1
+    3300032: handrailint_2
+    3300034: handrailint_3
     4300000: E01_stairs_last
     4300002: handrail
     4300004: handrailint_1
@@ -24,6 +106,25 @@ ModelImporter:
     4300036: handrailint_3
     4300038: E02_stairs
     4300040: corridor_stairs_just_1_floor
+    6400000: corridor_ceiling
+    6400002: corridor_stairs_first_floor
+    6400004: corridor_stairs_middle_floor
+    6400006: Cube
+    6400008: Cube_2
+    6400010: E01_stairs_first
+    6400012: E01_stairs_just_1_floor
+    6400014: E01_stairs_last
+    6400016: E01_stairs_middle_2
+    6400018: E02_stairs
+    6400020: handrail
+    6400022: handrail_2
+    6400024: handrail_3
+    6400026: handrail_4
+    6400028: handrailint
+    6400030: handrailint_1
+    6400032: handrailint_2
+    6400034: handrailint_3
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
