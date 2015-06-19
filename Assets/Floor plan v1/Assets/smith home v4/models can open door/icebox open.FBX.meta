@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: 4645dfd73399c39409fa3bf48e53bd6a
+timeCreated: 1429010916
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: icebox doorA open
+    100002: icebox doorA open 1
+    100004: icebox doorB open
+    100006: icebox doorB open 1
+    100008: //RootNode
+    100010: icebox open
+    100012: icebox boxA
+    100014: icebox boxB
+    400000: icebox doorA open
+    400002: icebox doorA open 1
+    400004: icebox doorB open
+    400006: icebox doorB open 1
+    400008: //RootNode
+    400010: icebox open
+    400012: icebox boxA
+    400014: icebox boxB
+    2300000: icebox doorA open
+    2300002: icebox doorA open 1
+    2300004: icebox doorB open
+    2300006: icebox doorB open 1
+    2300008: icebox open
+    2300010: //RootNode
+    2300012: icebox boxA
+    2300014: icebox boxB
+    3300000: icebox doorA open
+    3300002: icebox doorA open 1
+    3300004: icebox doorB open
+    3300006: icebox doorB open 1
+    3300008: icebox open
+    3300010: //RootNode
+    3300012: icebox boxA
+    3300014: icebox boxB
+    4300000: icebox open
+    4300002: icebox doorA open
+    4300004: icebox doorB open
+    4300006: icebox doorA open
+    4300008: icebox doorB open
+    4300010: icebox boxA
+    4300012: icebox boxB
+    6400000: icebox doorA open
+    6400002: icebox doorA open 1
+    6400004: icebox doorB open
+    6400006: icebox doorB open 1
+    6400008: icebox open
+    6400010: //RootNode
+    6400012: icebox boxA
+    6400014: icebox boxB
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.39999998
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

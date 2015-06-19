@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 9ed0cb22afbae3f4a8eb8e22178a13a9
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: Corner_X2
+    4300002: CornerX3
+    4300004: Corner
+    4300006: simple_external_wall_1X1
+    4300008: simple_external_wall_2X1
+    4300010: simple_external_wall_3X1
+    4300012: simple_external_wall_1X2
+    4300014: simple_external_wall_2X2
+    4300016: simple_external_wall_3X2
+    4300018: simple_external_wall_1X3
+    4300020: simple_external_wall_2X3
+    4300022: simple_external_wall_3X3
+    4300024: Moulding1_Corner
+    4300026: Moulding2_Corner
+    4300028: Moulding2
+    4300030: Moulding1
+    4300032: external_wall_corner_1X1X1_A
+    4300034: external_wall_corner_1X1X1_B
+    4300036: external_wall_corner_1X1X1_C
+    4300038: external_wall_corner_2X1X1_A
+    4300040: external_wall_corner_2X1X1_B
+    4300042: external_wall_corner_2X1X1_C
+    4300044: external_wall_corner_3X1X1_A
+    4300046: external_wall_corner_3X1X1_B
+    4300048: external_wall_corner_3X1X1_C
+    4300050: external_wall_1X1
+    4300052: external_wall_2X1
+    4300054: external_wall_3X1
+    4300056: external_wall_1X2
+    4300058: external_wall_2X2
+    4300060: external_wall_3X2
+    4300062: external_wall_1X3
+    4300064: external_wall_2X3
+    4300066: external_wall_3X3
+    4300068: plateform_angle_2X2
+    4300070: plateform_1X1
+    4300072: plateform_1X2
+    4300074: plateform_1X3
+    4300076: plateform_1X2_2
+    4300078: plateform_2X2
+    4300080: plateform_3X3
+    4300082: handrail_ext_half_A
+    4300084: handrail_ext_half_B
+    4300086: handrail_ext_X1
+    4300088: handrail_ext_X2
+    4300090: handrail_ext_X3
+    4300092: platform_handrail_ext_half_A
+    4300094: platform_handrail_ext_half_B
+    4300096: platform_handrail_ext_X1
+    4300098: platform_handrail_ext_X2
+    4300100: platform_handrail_ext_X3
+    4300102: plateform_half
+    4300104: plateform_quarter
+    4300106: frontage_double_connect
+    4300108: frontage_connection_X1
+    4300110: frontage_connect_X2
+    4300112: frontage_connect_X3
+    4300114: frontage_triple_connect
+    4300116: Cube_0
+    4300118: Cube_1
+    4300120: Cube_2
+    4300122: Cube_3
+    4300124: Cube_4
+    4300126: Cube_5
+    4300128: Cube_6
+    4300130: Cube_7
+    4300132: Cube_8
+    4300134: Cube_9
+    4300136: Cube_10
+    4300138: Cube_11
+    4300140: Cube_12
+    4300142: Cube_13
+    4300144: Cube_14
+    4300146: Cube_15
+    4300148: Cube_16
+    4300150: Cube_17
+    4300152: Cube_18
+    4300154: Cube_19
+    4300156: Cube_20
+    4300158: Cube_21
+    4300160: Cube_22
+    4300162: Cube_23
+    4300164: Cube_24
+    4300166: Cube_25
+    4300168: Cube_26
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

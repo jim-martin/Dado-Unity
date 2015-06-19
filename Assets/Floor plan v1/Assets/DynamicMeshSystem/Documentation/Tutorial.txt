@@ -1,0 +1,20 @@
+To begin modifying your mesh follow this steps :- 
+- Add your gameobject to the scene then go to "Menu > Component > Dynamic Mesh System > Dynamic Mesh "
+- In the inspector press "Build Arrays" from the Dynamic Mesh Component.
+Now you see that your gameobject has many children, each children is a refrence to a vertex, you can now move the children and press "Update Mesh" but this will modify your Asset permanently when done in the Editor so make sure to make a copy first if you want.
+To Modify in run-time :-
+Create a script , for example :-
+/////////////////////////////////////////////
+using UnityEngine;
+using System.Collections;
+public class NewBehaviourScript : MonoBehaviour {
+	public GameObject mygameobject;
+	public DynamicMesh mydynamicmesh;
+	void Start () {
+		mygameobject.transform.position = new Vector3 (10, 10, 10);
+		mydynamicmesh.UpdateMesh();
+	}
+}
+/////////////////////////////////////////////
+Add this to any gameobject in the scene and drag the vertex gameobject to the script and drag your Dynamic Mesh game object to the script.
+so you modify it by modifying the game objects like you normally do.
