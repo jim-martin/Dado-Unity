@@ -33,11 +33,11 @@ public class uScriptAct_StopAnimation : uScriptLogic
          {
 				if ("" != AnimationName)
 				{
-					currentTarget.GetComponent<Animation>().Stop(AnimationName);
+					currentTarget.animation.Stop(AnimationName);
 				}
 				else
 				{
-					currentTarget.GetComponent<Animation>().Stop();
+					currentTarget.animation.Stop();
 				}
 			
 				

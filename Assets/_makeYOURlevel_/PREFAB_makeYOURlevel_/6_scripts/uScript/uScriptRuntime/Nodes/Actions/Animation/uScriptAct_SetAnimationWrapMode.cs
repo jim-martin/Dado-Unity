@@ -24,7 +24,7 @@ public class uScriptAct_SetAnimationWrapMode : uScriptLogic
       [FriendlyName("Wrap Mode", "The wrap mode you wish to set.")][DefaultValue(WrapMode.Once)]WrapMode wrapMode
       )
    {
-      target.GetComponent<Animation>()[animationName].wrapMode = wrapMode;
+      target.animation[animationName].wrapMode = wrapMode;
       if (Out != null) Out(this, new System.EventArgs());
    }
 

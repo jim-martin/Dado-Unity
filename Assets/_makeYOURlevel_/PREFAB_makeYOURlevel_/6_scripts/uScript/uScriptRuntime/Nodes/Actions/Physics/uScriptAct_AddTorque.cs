@@ -36,17 +36,17 @@ public class uScriptAct_AddTorque : uScriptLogic
       ForceMode ForceModeType
       )
    {
-		if  ( null != Target.GetComponent<Rigidbody>() )
+		if  ( null != Target.rigidbody )
 		{
          if (Scale != 0) { Force = Force * Scale; }
 
 			if ( UseForceMode )
 			{
-				Target.GetComponent<Rigidbody>().AddTorque(Force, ForceModeType);
+				Target.rigidbody.AddTorque(Force, ForceModeType);
 			}
 			else
 			{
-				Target.GetComponent<Rigidbody>().AddTorque(Force);
+				Target.rigidbody.AddTorque(Force);
 			}
 		}
 		else

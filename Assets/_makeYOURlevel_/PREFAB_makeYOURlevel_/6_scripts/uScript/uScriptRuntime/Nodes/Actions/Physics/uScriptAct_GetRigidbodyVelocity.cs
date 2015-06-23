@@ -29,7 +29,7 @@ public class uScriptAct_GetRigidbodyVelocity : uScriptLogic
    {
       if (Target != null && Target.GetComponent<Rigidbody>( ))
       {
-         Velocity = Target.GetComponent<Rigidbody>().velocity;
+         Velocity = Target.rigidbody.velocity;
          Magnitude = Velocity.magnitude;
       }
       else

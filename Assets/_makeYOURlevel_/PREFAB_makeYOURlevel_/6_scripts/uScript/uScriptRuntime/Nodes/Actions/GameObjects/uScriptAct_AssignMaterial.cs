@@ -34,10 +34,10 @@ public class uScriptAct_AssignMaterial : uScriptLogic
          try
          {
             // Get the materials on the Target
-            Material[] tmpMaterials = tmpTarget.GetComponent<Renderer>().materials;
+            Material[] tmpMaterials = tmpTarget.renderer.materials;
 
             tmpMaterials[MatChannel] = materialName;
-            tmpTarget.GetComponent<Renderer>().materials = tmpMaterials;
+            tmpTarget.renderer.materials = tmpMaterials;
          }
          catch (System.Exception e)
          {

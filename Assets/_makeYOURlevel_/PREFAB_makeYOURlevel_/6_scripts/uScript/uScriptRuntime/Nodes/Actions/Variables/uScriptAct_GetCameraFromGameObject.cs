@@ -26,7 +26,7 @@ public class uScriptAct_GetCameraFromGameObject : uScriptLogic
    {
 		if (null != Target)
 		{
-			Camera tempCamera = Target.GetComponent<Camera>();
+			Camera tempCamera = Target.camera;
 
 			if ( null != tempCamera)
 			{

@@ -93,10 +93,10 @@ public class uScriptAct_CameraFade : uScriptLogic
 #if UNITY_3_3
 			m_CameraPlane.collider.isTrigger        = true; // Hack because collider.enabled doesn't exist in 3.3
 #else
-         m_CameraPlane.GetComponent<Collider>().enabled = false;
+         m_CameraPlane.collider.enabled = false;
 #endif
 			m_CameraPlane.name                    = "uScriptRuntimeGenerated_CameraFadePlane";
-			m_CameraPlane.GetComponent<Renderer>().material       = m_FadeMaterial;
+			m_CameraPlane.renderer.material       = m_FadeMaterial;
 			m_CameraPlane.transform.position      = m_TargetCamera.transform.position;
 			m_CameraPlane.transform.rotation      = m_TargetCamera.transform.rotation;
 			m_CameraPlane.transform.parent        = m_TargetCamera.transform;
@@ -148,11 +148,11 @@ public class uScriptAct_CameraFade : uScriptLogic
 			
 		 if (m_FadeTo)
 		 {
-			m_CameraPlane.GetComponent<Renderer>().material.color = new Color(m_FadeMaterial.color.r, m_FadeMaterial.color.g, m_FadeMaterial.color.b, Mathf.Lerp(0F, 1F, t));
+			m_CameraPlane.renderer.material.color = new Color(m_FadeMaterial.color.r, m_FadeMaterial.color.g, m_FadeMaterial.color.b, Mathf.Lerp(0F, 1F, t));
 		 }
 		 else
 		 {
-			m_CameraPlane.GetComponent<Renderer>().material.color = new Color(m_FadeMaterial.color.r, m_FadeMaterial.color.g, m_FadeMaterial.color.b, Mathf.Lerp(1F, 0F, t));
+			m_CameraPlane.renderer.material.color = new Color(m_FadeMaterial.color.r, m_FadeMaterial.color.g, m_FadeMaterial.color.b, Mathf.Lerp(1F, 0F, t));
 		 }
       
          if ( m_TimeToTrigger <= 0f ) m_TimeToTrigger = 0f;

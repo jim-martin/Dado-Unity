@@ -28,6 +28,10 @@ public class AudioVolume : MonoBehaviour {
 			//this doesn't really make sense
 		}
 
+		if (volume < 0.2f) {
+			volume = 0.2f;
+
+		}
 		Debug.Log (volume);
 		return volume;
 

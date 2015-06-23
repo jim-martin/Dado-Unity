@@ -23,7 +23,7 @@ public class uScriptAct_SetAnimationLayer : uScriptLogic {
       [FriendlyName("Layer", "The animation layer value you wish to set.")][DefaultValue(0)]int layer
       )
 	{
-		target.GetComponent<Animation>()[animationName].layer = layer;
+		target.animation[animationName].layer = layer;
 		if (Out != null) Out(this, new System.EventArgs());
 	}
 }

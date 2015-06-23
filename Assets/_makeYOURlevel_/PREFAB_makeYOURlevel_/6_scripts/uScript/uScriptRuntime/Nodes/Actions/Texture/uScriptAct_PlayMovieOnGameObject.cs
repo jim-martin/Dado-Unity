@@ -47,7 +47,7 @@ public class uScriptAct_PlayMovieOnGameObject : uScriptLogic
 				m_ReadyCount = 0;
 				foreach (GameObject target in Targets)
 				{
-					MovieTexture mov = (MovieTexture)target.GetComponent<Renderer>().material.mainTexture;
+					MovieTexture mov = (MovieTexture)target.renderer.material.mainTexture;
 					if ( mov.isReadyToPlay )
 					{
 						m_ReadyCount++;
@@ -63,7 +63,7 @@ public class uScriptAct_PlayMovieOnGameObject : uScriptLogic
 			
          for (int i = 0; i < Targets.Length; i++)
          {
-            MovieTexture mov = (MovieTexture)Targets[i].GetComponent<Renderer>().material.mainTexture;
+            MovieTexture mov = (MovieTexture)Targets[i].renderer.material.mainTexture;
 				
 				if ( mov.isReadyToPlay )
 				{

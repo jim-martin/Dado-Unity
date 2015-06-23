@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Myo
   - Target
+  - push
+  - Spawn Location
+  - Player Spawn
   layers:
   - Default
   - TransparentFX

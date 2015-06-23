@@ -35,7 +35,7 @@ public class uScriptAct_AssignMaterialColor : uScriptLogic
       {
          foreach (GameObject tmpGameObject in Target)
          {
-            tmpGameObject.GetComponent<Renderer>().materials[MatChannel].color = MatColor;
+            tmpGameObject.renderer.materials[MatChannel].color = MatColor;
          }
       }
       catch (System.Exception e)

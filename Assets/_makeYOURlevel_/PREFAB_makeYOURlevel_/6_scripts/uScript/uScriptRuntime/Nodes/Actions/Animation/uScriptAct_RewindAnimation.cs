@@ -33,11 +33,11 @@ public class uScriptAct_RewindAnimation : uScriptLogic
          {
 				if ("" != AnimationName)
 				{
-					currentTarget.GetComponent<Animation>().Rewind(AnimationName);
+					currentTarget.animation.Rewind(AnimationName);
 				}
 				else
 				{
-					currentTarget.GetComponent<Animation>().Rewind();
+					currentTarget.animation.Rewind();
 				}
 
          }

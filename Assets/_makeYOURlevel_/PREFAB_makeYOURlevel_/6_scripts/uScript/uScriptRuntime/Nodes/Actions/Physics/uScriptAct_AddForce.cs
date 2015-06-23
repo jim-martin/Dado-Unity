@@ -36,17 +36,17 @@ public class uScriptAct_AddForce : uScriptLogic
       ForceMode ForceModeType
       )
    {
-		if  ( null != Target.GetComponent<Rigidbody>() )
+		if  ( null != Target.rigidbody )
 		{
          if (Scale != 0) { Force = Force * Scale; }
 
 			if ( UseForceMode )
 			{
-				Target.GetComponent<Rigidbody>().AddForce(Force, ForceModeType);
+				Target.rigidbody.AddForce(Force, ForceModeType);
 			}
 			else
 			{
-				Target.GetComponent<Rigidbody>().AddForce(Force);
+				Target.rigidbody.AddForce(Force);
 			}
 		}
 		else

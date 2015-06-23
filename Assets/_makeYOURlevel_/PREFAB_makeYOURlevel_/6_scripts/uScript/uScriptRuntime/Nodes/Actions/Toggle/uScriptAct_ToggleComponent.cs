@@ -49,17 +49,17 @@ public class uScriptAct_ToggleComponent : uScriptLogic
                if (currentComponentName.ToLower() == "collider" )
                {
 #if !UNITY_3_2 && !UNITY_3_3
-                  if ( currentTarget.GetComponent<Collider>() != null )
+                  if ( currentTarget.collider != null )
                   {
-                     currentTarget.GetComponent<Collider>().enabled = true;
+                     currentTarget.collider.enabled = true;
                   }
 #endif
                }
                else if (currentComponentName.ToLower() == "meshrenderer" || currentComponentName.ToLower() == "renderer")
                {
-                  if ( currentTarget.GetComponent<Renderer>() != null )
+                  if ( currentTarget.renderer != null )
                   {
-                     currentTarget.GetComponent<Renderer>().enabled = true;
+                     currentTarget.renderer.enabled = true;
                   }
                }
                else
@@ -103,17 +103,17 @@ public class uScriptAct_ToggleComponent : uScriptLogic
                if (currentComponentName.ToLower() == "collider" )
                {
 #if !UNITY_3_2 && !UNITY_3_3
-                  if ( currentTarget.GetComponent<Collider>() != null )
+                  if ( currentTarget.collider != null )
                   {
-                     currentTarget.GetComponent<Collider>().enabled = false;
+                     currentTarget.collider.enabled = false;
                   }
 #endif
                }
                else if (currentComponentName.ToLower() == "meshrenderer" || currentComponentName.ToLower() == "renderer")
                {
-                  if ( currentTarget.GetComponent<Renderer>() != null )
+                  if ( currentTarget.renderer != null )
                   {
-                     currentTarget.GetComponent<Renderer>().enabled = false;
+                     currentTarget.renderer.enabled = false;
                   }
                }
                else
@@ -165,16 +165,16 @@ public class uScriptAct_ToggleComponent : uScriptLogic
                if (currentComponentName.ToLower() == "collider" )
                {
 #if !UNITY_3_2 && !UNITY_3_3
-                  if ( currentTarget.GetComponent<Collider>() != null )
+                  if ( currentTarget.collider != null )
                   {
-                     if (currentTarget.GetComponent<Collider>().enabled)
+                     if (currentTarget.collider.enabled)
                      {
-                        currentTarget.GetComponent<Collider>().enabled = false;
+                        currentTarget.collider.enabled = false;
                         turnedOff = true;
                      }
                      else
                      {
-                        currentTarget.GetComponent<Collider>().enabled = true;
+                        currentTarget.collider.enabled = true;
                         turnedOn = true;
                      }
                   }
@@ -182,16 +182,16 @@ public class uScriptAct_ToggleComponent : uScriptLogic
                }
                else if (currentComponentName.ToLower() == "meshrenderer" || currentComponentName.ToLower() == "renderer")
                {
-                  if ( currentTarget.GetComponent<Renderer>() != null )
+                  if ( currentTarget.renderer != null )
                   {
-                     if (currentTarget.GetComponent<Renderer>().enabled)
+                     if (currentTarget.renderer.enabled)
                      {
-                        currentTarget.GetComponent<Renderer>().enabled = false;
+                        currentTarget.renderer.enabled = false;
                         turnedOff = true;
                      }
                      else
                      {
-                        currentTarget.GetComponent<Renderer>().enabled = true;
+                        currentTarget.renderer.enabled = true;
                         turnedOn = true;
                      }
                   }
