@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 2d9873ce91d57554cab1f14d135098fd
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Beam_H_Long
+    100004: Beam_H_Short
+    100006: Beam_V_Long
+    100008: Beam_V_Long_1
+    100010: Beam_V_Long_2
+    100012: Beam_V_Long_3
+    100014: Beam_V_Long_4
+    100016: Beam_V_Short
+    100018: Beam_V_Short_1
+    100020: Beam_V_Short_2
+    100022: Beam_V_Short_3
+    100024: Beam_V_Short_4
+    100026: Beam_V_Support
+    400000: //RootNode
+    400002: Beam_H_Long
+    400004: Beam_H_Short
+    400006: Beam_V_Long
+    400008: Beam_V_Long_1
+    400010: Beam_V_Long_2
+    400012: Beam_V_Long_3
+    400014: Beam_V_Long_4
+    400016: Beam_V_Short
+    400018: Beam_V_Short_1
+    400020: Beam_V_Short_2
+    400022: Beam_V_Short_3
+    400024: Beam_V_Short_4
+    400026: Beam_V_Support
+    2300000: Beam_H_Long
+    2300002: Beam_H_Short
+    2300004: Beam_V_Long
+    2300006: Beam_V_Long_1
+    2300008: Beam_V_Long_2
+    2300010: Beam_V_Long_3
+    2300012: Beam_V_Long_4
+    2300014: Beam_V_Short
+    2300016: Beam_V_Short_1
+    2300018: Beam_V_Short_2
+    2300020: Beam_V_Short_3
+    2300022: Beam_V_Short_4
+    2300024: Beam_V_Support
+    3300000: Beam_H_Long
+    3300002: Beam_H_Short
+    3300004: Beam_V_Long
+    3300006: Beam_V_Long_1
+    3300008: Beam_V_Long_2
+    3300010: Beam_V_Long_3
+    3300012: Beam_V_Long_4
+    3300014: Beam_V_Short
+    3300016: Beam_V_Short_1
+    3300018: Beam_V_Short_2
+    3300020: Beam_V_Short_3
+    3300022: Beam_V_Short_4
+    3300024: Beam_V_Support
+    4300000: Beam_H_Short
+    4300002: Beam_H_Long
+    4300004: Beam_V_Short
+    4300006: Beam_V_Short_1
+    4300008: Beam_V_Short_2
+    4300010: Beam_V_Short_3
+    4300012: Beam_V_Short_4
+    4300014: Beam_V_Long
+    4300016: Beam_V_Long_1
+    4300018: Beam_V_Long_2
+    4300020: Beam_V_Long_3
+    4300022: Beam_V_Long_4
+    4300024: Beam_V_Support
+    6400000: Beam_H_Long
+    6400002: Beam_H_Short
+    6400004: Beam_V_Long
+    6400006: Beam_V_Long_1
+    6400008: Beam_V_Long_2
+    6400010: Beam_V_Long_3
+    6400012: Beam_V_Long_4
+    6400014: Beam_V_Short
+    6400016: Beam_V_Short_1
+    6400018: Beam_V_Short_2
+    6400020: Beam_V_Short_3
+    6400022: Beam_V_Short_4
+    6400024: Beam_V_Support
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

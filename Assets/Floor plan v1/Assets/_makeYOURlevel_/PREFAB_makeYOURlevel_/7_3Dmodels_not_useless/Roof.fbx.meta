@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 81c8c7fb09a550b4c9f1cfe60f3b5bec
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Cage_Stair_Roof
+    100002: Ground_Roof
+    100004: Ground_Roof_1X2
+    100006: Ground_Roof_1X3
+    100008: Ground_Roof_2X2
+    100010: Ground_Roof_3X3
+    100012: Ground_Roof_6X6
+    100014: Ground_Roof_Border
+    100016: Ground_Roof_Border_Corner
+    100018: //RootNode
+    100020: Windows_Roof_01
+    100022: Windows_Roof_02
+    100024: Windows_Roof_03
+    400000: Cage_Stair_Roof
+    400002: Ground_Roof
+    400004: Ground_Roof_1X2
+    400006: Ground_Roof_1X3
+    400008: Ground_Roof_2X2
+    400010: Ground_Roof_3X3
+    400012: Ground_Roof_6X6
+    400014: Ground_Roof_Border
+    400016: Ground_Roof_Border_Corner
+    400018: //RootNode
+    400020: Windows_Roof_01
+    400022: Windows_Roof_02
+    400024: Windows_Roof_03
+    2300000: Cage_Stair_Roof
+    2300002: Ground_Roof
+    2300004: Ground_Roof_1X2
+    2300006: Ground_Roof_1X3
+    2300008: Ground_Roof_2X2
+    2300010: Ground_Roof_3X3
+    2300012: Ground_Roof_6X6
+    2300014: Ground_Roof_Border
+    2300016: Ground_Roof_Border_Corner
+    2300018: Windows_Roof_01
+    2300020: Windows_Roof_02
+    2300022: Windows_Roof_03
+    3300000: Cage_Stair_Roof
+    3300002: Ground_Roof
+    3300004: Ground_Roof_1X2
+    3300006: Ground_Roof_1X3
+    3300008: Ground_Roof_2X2
+    3300010: Ground_Roof_3X3
+    3300012: Ground_Roof_6X6
+    3300014: Ground_Roof_Border
+    3300016: Ground_Roof_Border_Corner
+    3300018: Windows_Roof_01
+    3300020: Windows_Roof_02
+    3300022: Windows_Roof_03
+    4300000: Windows_Roof_03
+    4300002: Windows_Roof_01
+    4300004: Windows_Roof_02
+    4300006: Ground_Roof_Border_Corner
+    4300008: Ground_Roof_Border
+    4300010: Ground_Roof
+    4300012: Cage_Stair_Roof
+    4300014: Ground_Roof_2X2
+    4300016: Ground_Roof_3X3
+    4300018: Ground_Roof_6X6
+    4300020: Ground_Roof_1X2
+    4300022: Ground_Roof_1X3
+    6400000: Cage_Stair_Roof
+    6400002: Ground_Roof
+    6400004: Ground_Roof_1X2
+    6400006: Ground_Roof_1X3
+    6400008: Ground_Roof_2X2
+    6400010: Ground_Roof_3X3
+    6400012: Ground_Roof_6X6
+    6400014: Ground_Roof_Border
+    6400016: Ground_Roof_Border_Corner
+    6400018: Windows_Roof_01
+    6400020: Windows_Roof_02
+    6400022: Windows_Roof_03
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
