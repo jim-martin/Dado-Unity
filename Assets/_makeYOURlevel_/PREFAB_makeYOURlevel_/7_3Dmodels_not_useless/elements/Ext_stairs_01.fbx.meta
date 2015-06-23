@@ -1,0 +1,112 @@
+fileFormatVersion: 2
+guid: 641c3b1eed5a934419809813adaf5360
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: Ext_stairs_01
+    4300002: Ext_stairs_handrail_close_last
+    4300004: handrail_stairs
+    4300006: Ext_stairs_long_floor
+    4300008: handrail_floor_A_long
+    4300010: handrail_floor_B_long
+    4300012: Ext_stairs_demi_floor
+    4300014: handrail_floor_A_demi
+    4300016: handrail_floor_B_demi
+    4300018: Ext_stairs_quarter_floor
+    4300020: handrail_floor_A_quarter
+    4300022: handrail_floor_B_quarter
+    4300024: Ext_stairs_handrail_end_floor
+    4300026: Cube_0
+    4300028: Cube_1
+    4300030: Cube_2
+    4300032: Cube_3
+    4300034: Cube_4
+    4300036: Cube_5
+    4300038: Cube_6
+    4300040: Cube_7
+    4300042: Cube_8
+    4300044: Cube_9
+    4300046: Cube_10
+    4300048: Cube_11
+    4300050: Cube_12
+    4300052: Cube_13
+    4300054: Cube_14
+    4300056: Cube_15
+    4300058: Cube_16
+    4300060: Cube_17
+    4300062: Cube_18
+    4300064: Cube_19
+    4300066: Cube_20
+    4300068: Cube_21
+    4300070: Cube_22
+    4300072: Cube_23
+    4300074: Cube_24
+    4300076: Cube_25
+    4300078: Cube_26
+    4300080: Ext_stairs_little_floor
+    4300082: handrail_floor_A_demi_2
+    4300084: handrail_floor_B_demi_2
+    4300086: handrail_floor_LA_demi
+    4300088: handrail_floor_LB_demi
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 0
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

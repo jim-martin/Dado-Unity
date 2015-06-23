@@ -1,11 +1,15 @@
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
 Obj/
 UnityGenerated/
-Library/
-Assets/AssetStoreTools*
+Temp/*
+Library/previews/*
+Library/ScriptAssemblies/*
+Library/cache/*
+Library/metadata/*
+Library/*
+!Library/*.asset
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
