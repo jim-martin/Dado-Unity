@@ -8,11 +8,13 @@ public class canvasDynamics : MonoBehaviour {
 	DataComponent data;
 	Canvas canvas;
 	Text text;  
+	Image hotOrColdImage;
 	/*private GameObject character;
 	  bool change;*/
 	private GameObject teammate;
 	private GameObject radar;
 	private GameObject playerAxis;
+	private GameObject hotOrCold;
 
 	private float distance;
 	private float direction;
@@ -38,6 +40,8 @@ public class canvasDynamics : MonoBehaviour {
 	//	text = GameObject.Find("dynamicText");
 		hudRadius = 200;
 		prevDistance = data.getDistance();
+		hotOrCold = GameObject.Find ("hotOrCold");
+		hotOrColdImage = hotOrCold.GetComponent<Image> ();
 	
 	}
 	
@@ -51,10 +55,12 @@ public class canvasDynamics : MonoBehaviour {
 		if (distance > prevDistance) {
 			//Debug.Log ("colder");
 			text.text = "colder";
+			hotOrColdImage.color = new Color32(255, 0, 0, 255);
 		} else {
 			//Debug.Log ("warmer");
 			text.text = "warmer";
 			prevDistance = distance;
+			hotOrColdImage.color = new Color32(0, 255, 0, 255);
 		}
 		//Debug.Log ("Distance: " + data.getDistance () + " prevDistance: " + prevDistance);
 		float difference = distance - prevDistance;
