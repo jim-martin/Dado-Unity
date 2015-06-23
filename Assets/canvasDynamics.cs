@@ -5,10 +5,21 @@ using Data;
 
 public class canvasDynamics : MonoBehaviour {
 
+	public float Map(float from, float to, float from2, float to2, float value){
+		if(value <= from2){
+			return from;
+		}else if(value >= to2){
+			return to;
+		}else{
+			return (to - from) * ((value - from2) / (to2 - from2)) + from;
+		}
+	}
+
 	DataComponent data;
 	Canvas canvas;
 	Text text;  
 	Image hotOrColdImage;
+	AudioPitch audioPitchObject;
 	/*private GameObject character;
 	  bool change;*/
 	private GameObject teammate;
@@ -22,6 +33,13 @@ public class canvasDynamics : MonoBehaviour {
 	private float proximityToTeammate = 187; // Almost all of radar radius
 	private float maxDistanceFromTeammate = 40;
 	private float prevDistance;
+	private float maxPlayerArrowSize = 4;
+
+	public bool hotWarmDot;
+	public bool textToggle;
+	public bool distanceTextToggle;
+	public bool coldOrHotTextToggle;
+	public bool scaleTargetArrowWithDistance;
 
 	// Use this for initialization
 	void Start () {
@@ -42,23 +60,45 @@ public class canvasDynamics : MonoBehaviour {
 		prevDistance = data.getDistance();
 		hotOrCold = GameObject.Find ("hotOrCold");
 		hotOrColdImage = hotOrCold.GetComponent<Image> ();
+
+		// Toggling on and off
+		if (hotWarmDot == true) {
+			hotOrColdImage.enabled = true;
+		} else {
+			hotOrColdImage.enabled = false;
+		}
+		if (textToggle == true) {
+			text.enabled = true;
+		} else {
+			text.enabled = false;
+		}
+		if (scaleTargetArrowWithDistance) {
+		} else {
+		}
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		distance =  data.getDistance();
-		direction = data.getDirection();
-		Debug.Log (data.getGlobalPosition ());
-		Debug.Log (direction);
-		//text.text = "direction: " + direction + " distance: " + distance;
+		direction = data.getDirectionWithView();
+		//Debug.Log (data.getGlobalPosition ());
+		//Debug.Log (direction);
+		if (distanceTextToggle == true) {
+			text.text = "Distance: " + distance;
+		}
 		if (distance > prevDistance) {
 			//Debug.Log ("colder");
-			text.text = "colder";
+			if(coldOrHotTextToggle == true) {
+				text.text = "colder";
+			}
 			hotOrColdImage.color = new Color32(255, 0, 0, 255);
 		} else {
 			//Debug.Log ("warmer");
-			text.text = "warmer";
+			if(coldOrHotTextToggle == true) {
+				text.text = "warmer";
+			}
 			prevDistance = distance;
 			hotOrColdImage.color = new Color32(0, 255, 0, 255);
 		}
@@ -85,9 +125,14 @@ public class canvasDynamics : MonoBehaviour {
 		Debug.Log ("y: " + teammate.transform.position.y);
 		Debug.Log ("x: " + teammate.transform.position.x);
 		*/
-		proximityToTeammate = (distance * hudRadius) / maxDistanceFromTeammate;
+		//float scale = Map (maxDistanceFromTeammate, 1, 4, 1, maxDistanceFromTeammate - distance);
+		float scaleBy = (maxDistanceFromTeammate - distance) * maxPlayerArrowSize / maxDistanceFromTeammate;
 		//Debug.Log (playerAxis.transform.eulerAngles.y);
-		radar.transform.eulerAngles = new Vector3 (radar.transform.eulerAngles.x, radar.transform.eulerAngles.y, direction);
+		radar.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, direction);
+		if (scaleTargetArrowWithDistance) {
+			//Debug.Log ("SCALE: " + scaleBy);
+			teammate.transform.localScale = new Vector3 (scaleBy, scaleBy, 0);
+		}
 		//teammate.transform.position = new Vector3 (teammate.transform.position.x, proximityToTeammate*0.003292852f, teammate.transform.position.z);
 		//radar.transform.Rotate (0, 0, direction);
 	}
