@@ -3,13 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags: []
-=======
   tags:
-  - Myo
   - Target
->>>>>>> origin/oculus
+  - Spawn Location
   layers:
   - Default
   - TransparentFX
@@ -19,13 +15,8 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - 
   - 
-=======
-  - show always
-  - playerAvatar
->>>>>>> origin/oculus
   - 
   - 
   - 

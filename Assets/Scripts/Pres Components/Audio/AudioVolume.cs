@@ -27,15 +27,13 @@ public class AudioVolume : MonoBehaviour {
 		} else if (direction_input == true) {
 			//this doesn't really make sense
 		}
-
-<<<<<<< HEAD
+		
 		if (volume < 0.2f) {
 			volume = 0.2f;
 
 		}
-=======
->>>>>>> origin/oculus
-		Debug.Log (volume);
+		//
+Debug.Log (volume);
 		return volume;
 
 	}

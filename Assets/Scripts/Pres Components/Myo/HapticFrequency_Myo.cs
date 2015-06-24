@@ -25,13 +25,7 @@ public class HapticFrequency_Myo : MonoBehaviour {
 			Debug.LogError ("Myo not initialized, disabling Myo feedback");
 			this.enabled = false;
 		}
-<<<<<<< HEAD
-		
-		Invoke ("Vibrate", 0.5f);
-=======
-
-		Invoke ("Vibrate", 2);
->>>>>>> origin/oculus
+			Invoke ("Vibrate", 0.5f);
 	}
 
 	void Vibrate(){
@@ -39,10 +33,7 @@ public class HapticFrequency_Myo : MonoBehaviour {
 		thalmicMyo.Vibrate (VibrationType.Short);
 
 		float delay = apf.get_interval ();
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/oculus
 		Invoke ("Vibrate", delay);
 
 	}
