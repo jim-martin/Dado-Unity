@@ -53,8 +53,12 @@ class OVRShimLoader
 		PlayerSettings.d3d11FullscreenMode =
 			(OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport) ? D3D11FullscreenMode.ExclusiveMode : D3D11FullscreenMode.FullscreenWindow;
 #else
+<<<<<<< HEAD
 		//PlayerSettings.d3d11ForceExclusiveMode = OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport;
 		//commmented out manually - don't know what it will affect
+=======
+		PlayerSettings.d3d11ForceExclusiveMode = OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport;
+>>>>>>> origin/oculus
 #endif
 
 		PlayerSettings.d3d9FullscreenMode =

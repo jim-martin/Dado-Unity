@@ -86,7 +86,11 @@ partial class OculusBuildApp
 #if UNITY_5_0
 		EditorUserBuildSettings.androidBuildSubtarget = MobileTextureSubtarget.ETC2;
 #else
+<<<<<<< HEAD
 		EditorUserBuildSettings.androidBuildSubtarget = MobileTextureSubtarget.ETC2;
+=======
+		EditorUserBuildSettings.androidBuildSubtarget = AndroidBuildSubtarget.ETC2;
+>>>>>>> origin/oculus
 #endif
 	if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.Android)
         {

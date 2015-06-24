@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Myo
+  - Target
+>>>>>>> origin/oculus
   layers:
   - Default
   - TransparentFX
@@ -13,8 +19,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - 
   - 
+=======
+  - show always
+  - playerAvatar
+>>>>>>> origin/oculus
   - 
   - 
   - 
