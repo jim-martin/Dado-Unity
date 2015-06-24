@@ -48,7 +48,6 @@ public class onJoinInstantiateAtRandom : MonoBehaviour
 
 	public bool CheckUnique(){
 		GameObject g = GameObject.FindGameObjectWithTag(ObjectToInstantiate.tag);
-		Debug.Log("--------------------------------------------------------------targets = " + g);
 		if(g == null){
 			return true;
 		}else{

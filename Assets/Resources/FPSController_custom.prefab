@@ -43,6 +43,7 @@ GameObject:
   - 114: {fileID: 11470990}
   - 33: {fileID: 3387714}
   - 23: {fileID: 2388464}
+  - 114: {fileID: 11425732}
   m_Layer: 0
   m_Name: FPSController_custom
   m_TagString: Untagged
@@ -299,6 +300,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11425732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cad60ed55530d742819399889f097ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11426196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -563,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aae79cf85af945a88ea4018f580bfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance_input: 0
+  distance_input: 1
   direction_input: 0
 --- !u!114 &11484846
 MonoBehaviour:
@@ -682,6 +694,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PositionModel.InterpolateLerpSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: distance_input
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
