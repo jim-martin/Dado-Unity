@@ -28,10 +28,13 @@ public class AudioVolume : MonoBehaviour {
 			//this doesn't really make sense
 		}
 
+<<<<<<< HEAD
 		if (volume < 0.2f) {
 			volume = 0.2f;
 
 		}
+=======
+>>>>>>> origin/oculus
 		Debug.Log (volume);
 		return volume;
 

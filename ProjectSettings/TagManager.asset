@@ -6,9 +6,12 @@ TagManager:
   tags:
   - Myo
   - Target
+<<<<<<< HEAD
   - push
   - Spawn Location
   - Player Spawn
+=======
+>>>>>>> origin/oculus
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - 
   - 
   - show always
-  - 
+  - playerAvatar
   - 
   - 
   - 
