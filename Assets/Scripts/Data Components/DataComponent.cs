@@ -7,11 +7,7 @@ namespace Data
 	public class DataComponent : MonoBehaviour
 	{
 		Transform t_Transform;
-<<<<<<< HEAD
 
-		void Start(){
-			t_Transform = GetComponent<Transform> ();
-=======
 		public Transform view_Transform;
 
 		void Start(){
@@ -54,7 +50,6 @@ namespace Data
 			GameObject target = getTarget ();
 			Vector3 vec = target.transform.position - view_Transform.position;
 			return vec;
->>>>>>> origin/oculus
 		}
 
 		public float getDirection()
@@ -64,11 +59,6 @@ namespace Data
 
 			Vector3 tRot = target.transform.position - transform.position;
 
-<<<<<<< HEAD
-			float angle = Vector3.Angle(target.transform.position, transform.forward);
-			int angleDir;
-			if (Vector3.Cross (target.transform.position, transform.forward).y > 0) {
-=======
 			Vector2 target_vec = new Vector2 (getRelativePosition().x, getRelativePosition().z);
 //			Debug.Log (target_vec);
 			Vector2 facing_vec = new Vector2 (transform.forward.x, transform.forward.z);
@@ -80,19 +70,13 @@ namespace Data
 //			Debug.Log (angle);
 			int angleDir = 1;
 			if (Vector3.Cross (getRelativePosition(), transform.forward).y > 0) {
->>>>>>> origin/oculus
 				angleDir = 1; //looking to the right of the target, pan to the left
 			} else {
 				angleDir = -1; //looking to the left of the target, pan to the right
 			}
-<<<<<<< HEAD
-				
-			direction = angle*angleDir;
-=======
 
 			direction = angle*angleDir;
 			//Debug.Log (direction);
->>>>>>> origin/oculus
 			return direction;
 		}
 		

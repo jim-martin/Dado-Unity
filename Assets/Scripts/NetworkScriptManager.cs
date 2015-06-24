@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Data;
-<<<<<<< HEAD
 using UnityStandardAssets.Characters.FirstPerson;
-=======
->>>>>>> origin/oculus
 
 public class NetworkScriptManager : MonoBehaviour {
 
