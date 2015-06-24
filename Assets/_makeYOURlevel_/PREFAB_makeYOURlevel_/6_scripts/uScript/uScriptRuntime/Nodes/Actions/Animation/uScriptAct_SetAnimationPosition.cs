@@ -24,11 +24,11 @@ public class uScriptAct_SetAnimationPosition : uScriptLogic {
       )
 	{
 		if (normalizedPosition >= 0 && normalizedPosition <= 1)
-			target.animation[animationName].normalizedTime = normalizedPosition;
+			target.GetComponent<Animation>()[animationName].normalizedTime = normalizedPosition;
 		else if (normalizedPosition < 0)
-			target.animation[animationName].normalizedTime = 0;
+			target.GetComponent<Animation>()[animationName].normalizedTime = 0;
 		else if (normalizedPosition > 1)
-			target.animation[animationName].normalizedTime = 1;
+			target.GetComponent<Animation>()[animationName].normalizedTime = 1;
 		if (Out != null) Out(this, new System.EventArgs());
 	}
 	
