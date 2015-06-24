@@ -49,16 +49,13 @@ class OVRShimLoader
 		//Debug.Log("Use Auto Patcher? " + _useAutoPatcher);
 		//Debug.Log("Use Exclusive mode D3D11? " + OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport);
 
-#if (UNITY_5_0)
-		PlayerSettings.d3d11FullscreenMode =
-			(OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport) ? D3D11FullscreenMode.ExclusiveMode : D3D11FullscreenMode.FullscreenWindow;
+#if (UNITY_5)
+		PlayerSettings.d3d11FullscreenMode = (OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport) ? D3D11FullscreenMode.ExclusiveMode : D3D11FullscreenMode.FullscreenWindow;
 #else
-<<<<<<< HEAD
-		//PlayerSettings.d3d11ForceExclusiveMode = OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport;
+
+		PlayerSettings.d3d11FullscreenMode = OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport;
 		//commmented out manually - don't know what it will affect
-=======
-		PlayerSettings.d3d11ForceExclusiveMode = OVRUnityVersionChecker.hasD3D11ExclusiveModeSupport;
->>>>>>> origin/oculus
+
 #endif
 
 		PlayerSettings.d3d9FullscreenMode =

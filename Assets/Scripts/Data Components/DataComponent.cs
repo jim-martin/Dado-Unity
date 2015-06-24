@@ -7,10 +7,6 @@ namespace Data
 	public class DataComponent : MonoBehaviour
 	{
 		Transform t_Transform;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/oculus
 		public Transform view_Transform;
 
 		void Start(){
