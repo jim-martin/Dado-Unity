@@ -1,8 +1,8 @@
 ﻿//using UnityEngine;
 //using System.Collections;
 //
-////MenuItem("Test/FindAssetsUsingSearchFilter")
-//	static void FindAssetsUsingSearchFilter ()
+//MenuItem("Test/FindAssetsUsingSearchFilter")
+//	static function FindAssetsUsingSearchFilter () 
 //{
 //	// Find all assets labelled with 'concrete' : 
 //	var guids = AssetDatabase.FindAssets ("l:concrete", null);

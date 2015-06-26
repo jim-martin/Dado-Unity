@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Data;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class NetworkScriptManager : MonoBehaviour {
 
@@ -12,7 +13,7 @@ public class NetworkScriptManager : MonoBehaviour {
 		m_PhotonView = GetComponent<PhotonView> ();
 		if (!m_PhotonView.isMine) {
 
-			NetworkFPSController m_NetworkFPSController = GetComponent<NetworkFPSController>();
+			FirstPersonController m_NetworkFPSController = GetComponent<FirstPersonController>();
 			m_NetworkFPSController.enabled = false;
 
 			DataComponent d = GetComponent<DataComponent>();
