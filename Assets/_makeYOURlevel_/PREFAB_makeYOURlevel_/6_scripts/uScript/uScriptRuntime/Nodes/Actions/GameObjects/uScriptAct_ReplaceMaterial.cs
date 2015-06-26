@@ -36,13 +36,13 @@ public class uScriptAct_ReplaceMaterial : uScriptLogic
             {
                try
                {
-                  Material[] tmpMaterials = tmpTarget.renderer.materials;
+                  Material[] tmpMaterials = tmpTarget.GetComponent<Renderer>().materials;
 
                   // Check to make sure the specified index is in range
                   if (materialIndex < tmpMaterials.Length && materialIndex > -1)
                   {
                      tmpMaterials[materialIndex] = newMaterial;
-                     tmpTarget.renderer.materials = tmpMaterials;
+                     tmpTarget.GetComponent<Renderer>().materials = tmpMaterials;
                   }
                   else
                   {

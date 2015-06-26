@@ -33,7 +33,7 @@ public class uScriptAct_RemoveMaterial : uScriptLogic
             try
             {
                List<Material> MatList = new List<Material>();
-               Material[] tmpMaterials = tmpTarget.renderer.materials;
+               Material[] tmpMaterials = tmpTarget.GetComponent<Renderer>().materials;
 
                // Check to make sure the specified index is in range
                if (materialIndex < tmpMaterials.Length && materialIndex > -1)
@@ -45,7 +45,7 @@ public class uScriptAct_RemoveMaterial : uScriptLogic
 
                   MatList.RemoveAt(materialIndex);
 
-                  tmpTarget.renderer.materials = MatList.ToArray();
+                  tmpTarget.GetComponent<Renderer>().materials = MatList.ToArray();
                }
                else
                {

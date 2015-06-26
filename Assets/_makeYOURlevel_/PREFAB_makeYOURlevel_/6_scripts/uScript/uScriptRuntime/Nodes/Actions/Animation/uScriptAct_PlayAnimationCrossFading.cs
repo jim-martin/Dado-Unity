@@ -54,27 +54,27 @@ public class uScriptAct_PlayAnimationCrossFading : uScriptLogic
 
             if (SpeedFactor == 0F)
             {
-               currentTarget.animation[Animation].speed = 1.0F;
+               currentTarget.GetComponent<Animation>()[Animation].speed = 1.0F;
             }
             else
             {
-               currentTarget.animation[Animation].speed = SpeedFactor;
+               currentTarget.GetComponent<Animation>()[Animation].speed = SpeedFactor;
             }
 
             if (StopOtherAnimations)
             {
-               currentTarget.animation.Play(PlayMode.StopAll);
+               currentTarget.GetComponent<Animation>().Play(PlayMode.StopAll);
             }
 
             if (SpeedFactor < 0)
             {
                // Needed to play in reverse with a negative speed
-               currentTarget.animation[Animation].time = currentTarget.animation[Animation].length;
+               currentTarget.GetComponent<Animation>()[Animation].time = currentTarget.GetComponent<Animation>()[Animation].length;
             }
 
 
-            currentTarget.animation[Animation].wrapMode = AnimWrapMode;
-            currentTarget.animation.CrossFade(Animation, FadeLength);
+            currentTarget.GetComponent<Animation>()[Animation].wrapMode = AnimWrapMode;
+            currentTarget.GetComponent<Animation>().CrossFade(Animation, FadeLength);
          }
       }
    }
@@ -86,7 +86,7 @@ public class uScriptAct_PlayAnimationCrossFading : uScriptLogic
          if (m_playNextTime > 0.0f)
          {
             // Check if play time is longer then the total play length minus pre fire time or if the animation isn't playing.
-            if (m_GameObject.animation[m_Animation].time >= m_GameObject.animation[m_Animation].length - m_playNextTime)
+            if (m_GameObject.GetComponent<Animation>()[m_Animation].time >= m_GameObject.GetComponent<Animation>()[m_Animation].length - m_playNextTime)
             {
                m_GameObject = null;
 
@@ -98,7 +98,7 @@ public class uScriptAct_PlayAnimationCrossFading : uScriptLogic
             }
          }
 
-         if (false == m_GameObject.animation.IsPlaying(m_Animation))
+         if (false == m_GameObject.GetComponent<Animation>().IsPlaying(m_Animation))
          {
             m_GameObject = null;
 

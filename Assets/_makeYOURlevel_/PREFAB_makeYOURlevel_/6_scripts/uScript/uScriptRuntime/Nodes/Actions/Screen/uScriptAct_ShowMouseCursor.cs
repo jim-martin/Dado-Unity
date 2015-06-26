@@ -22,6 +22,6 @@ public class uScriptAct_ShowMouseCursor : uScriptLogic
       bool show
       )
    {
-      Screen.showCursor = show;
+      Cursor.visible = show;
    }
 }

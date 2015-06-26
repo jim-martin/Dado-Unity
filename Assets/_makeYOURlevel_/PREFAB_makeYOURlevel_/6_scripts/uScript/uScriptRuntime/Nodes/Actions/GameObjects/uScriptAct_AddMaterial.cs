@@ -42,13 +42,13 @@ public class uScriptAct_AddMaterial : uScriptLogic
 						if(null != tmpMaterialName)
 						{
 							List<Material> MatList = new List<Material>();
-				            Material[] tmpMaterials = tmpTarget.renderer.materials;
+				            Material[] tmpMaterials = tmpTarget.GetComponent<Renderer>().materials;
 							MatList.AddRange(tmpMaterials);
 							Material newMaterial = new Material(tmpMaterialName);
 							MatList.Add(newMaterial);
 				
-				            tmpTarget.renderer.materials = MatList.ToArray();
-							tempIndex = tmpTarget.renderer.materials.Length - 1;
+				            tmpTarget.GetComponent<Renderer>().materials = MatList.ToArray();
+							tempIndex = tmpTarget.GetComponent<Renderer>().materials.Length - 1;
 						}
 					}
 		         }

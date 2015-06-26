@@ -338,6 +338,10 @@ Prefab:
       propertyPath: instantiationId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11497054, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11467390, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
     - {fileID: 11495956, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
@@ -419,7 +423,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aae79cf85af945a88ea4018f580bfec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
-  dataInput: []
   distance_input: 0
   direction_input: 0
