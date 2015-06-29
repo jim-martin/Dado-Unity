@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using Data;
 
 public class AudioComponent : MonoBehaviour {
 	private AudioSource ping;
@@ -8,6 +10,7 @@ public class AudioComponent : MonoBehaviour {
 	private AudioPitch audio_pitch;
 	private AudioVolume audio_volume;
 	private AudioPanning audio_panning;
+	private DataComponent data;
 	
 	void Start () {
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
@@ -15,92 +18,24 @@ public class AudioComponent : MonoBehaviour {
 		audio_volume = GetComponent<AudioVolume> ();
 		audio_panning = GetComponent<AudioPanning> ();
 
+		data = GetComponent<DataComponent> ();
+
 		ping = GetComponent<AudioSource> ();
 		ping.spatialBlend = 0;
 		ping.minDistance = 1;
 		ping.maxDistance = 100;
 
 		interval = 1;
-		Invoke ("location_ping", interval);
-
+//		Invoke ("location_ping", interval);
+		Invoke ("team_location_ping", 2);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
+	//find target
 	void location_ping(){
-//		people = t_data.DirectionVectors ();
-//		Debug.Log (people.Length + " players found");
-//		Debug.Log (people [0]);
-//
-////		for (int i = 0; i < people.Length; i++) {
-////			Debug.Log (people[i]);
-////		}
-//
-//
-//
-//		Vector3 ping_location = new Vector3 (1000, 0, 0);
-////		try{
-////			Debug.Log (people [1]);
-////			AudioSource.PlayClipAtPoint (c_0, ping_location);
-////		}
-////		catch(UnityException e){
-////			Debug.Log (e);
-////		}
-//
-//		float distance = Vector3.Distance(people[0], m_Transform.position);
-//
-//		Vector3 targetDir = people[0] - m_Transform.position;
-//		Vector3 forward = m_Transform.forward;
-//
-////		Debug.Log (targetDir);
-////		Debug.Log (forward);
-//
-//		float angle = Vector3.Angle(targetDir, forward);
-//		int angleDir = 0;
-//		if (Vector3.Cross (targetDir, forward).y > 0) {
-//			angleDir = 1; //looking to the right of the target, pan to the left
-//		} else {
-//			angleDir = 0; //looking to the left of the target, pan to the right
-//		}
-//		Debug.Log (angleDir);
-//		Debug.Log (angle);
-//
-//		float angleRadians = angle * Mathf.PI / 180;
-//
-//		//pan by the sin(angle)
-//		float panAmount = Mathf.Sin (angleRadians);
-//		if (angleDir != 0) {
-//			panAmount = panAmount * -1;
-//		}
-//		Debug.Log (panAmount);
-//		ping.panStereo = panAmount;
-//		ping.panStereo = 1;
-//
-//		ping.pitch = 2.0f - distance / 20;
-//		if (ping.pitch < 0) {
-//			ping.pitch = 0;
-//		}
-//
-//		Debug.Log (distance);
-//		if (distance < 10) {
-//			Debug.Log ("near");
-////			AudioSource.PlayClipAtPoint (c_0, ping_location);
-//			ping.volume = 1;
-//		} else if (distance < 50) {
-//			Debug.Log ("middle");
-////			AudioSource.PlayClipAtPoint (c_50, ping_location);
-////			ping.volume = 0.5f;
-//			ping.volume = 1.0f - distance / 50;
-//		}
-//		else{
-//			Debug.Log ("far");
-////			AudioSource.PlayClipAtPoint (c_100, ping_location);
-//			ping.volume = 0.1f;
-//		}
-
-
 
 		//set ping frequency
 		if (audio_ping_frequency != null) {
@@ -136,9 +71,74 @@ public class AudioComponent : MonoBehaviour {
 
 		ping.Play ();
 
-
-
 		Invoke ("location_ping", interval);
+	}
 
+	//accept a GameObject target and pass it through to the recipes
+	void location_ping(GameObject target){
+		//frequency not included in this since it will be controlled by team_location_ping()
+
+		//set pitch
+		if (audio_pitch != null) {
+			ping.pitch = audio_pitch.get_pitch(target);
+		} else {
+			ping.pitch = 1;
+		}
+		
+		//set volume
+		if (audio_volume != null) {
+			ping.volume = audio_volume.get_volume(target);
+		} else {
+			ping.volume = 1;
+		}
+		
+		//set panning
+		if (audio_panning != null) {
+			//			AudioSource.PlayClipAtPoint(ping.clip, audio_panning.get_target_location());
+			ping.panStereo = audio_panning.get_panning(target);
+		} else {
+			
+		}
+		
+		ping.Play ();
+	}
+
+	//ping around in a sonar fashion
+	void team_location_ping(){
+		//get team objects
+		GameObject[] gos = data.getTeam ();
+
+		//for each team object
+		for (int i = 0; i < gos.Length; i++) {
+			//get angle around
+			float direction = data.getDirection (gos[i]);
+			Debug.Log (direction);
+
+
+
+			//-1 = 0
+			//-180 or 180 = 1
+			//1 = 2
+			float time_interval = 0f;
+			if(direction < 0){
+				time_interval = Mathf.Abs (direction) / 180;
+			}
+			else if(direction > 0){
+				time_interval = 1f;
+				time_interval = 1f + (1 - Mathf.Abs (direction) / 180);
+			}
+
+			//start coroutine instead of using invoke
+			StartCoroutine(PingWithObject(gos[i], time_interval));
+//			invoke location_ping(myTeammate, time_interval)
+		}
+
+
+		Invoke("team_location_ping", 3);
+	}
+			              
+	IEnumerator PingWithObject(GameObject go, float time_interval){
+				yield return new WaitForSeconds (time_interval);
+				location_ping (go);
 	}
 }

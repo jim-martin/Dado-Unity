@@ -28,6 +28,23 @@ public class AudioPanning : MonoBehaviour {
 		} else if (direction_input == true) {
 			float angleRadians = data.getDirection() * Mathf.PI / 180;
 			panning = -1 * Mathf.Sin (angleRadians);
+			//negative = looking to the left of the target (I think?)
+		}
+		
+		Debug.Log (panning);
+		return panning;
+	}
+
+	public float get_panning(GameObject go){
+		float panning = 0;
+		
+		if (distance_input == true) {
+			//			volume = 1.0f - data.getDistance () / 50;
+			//distance doesn't make sense for panning
+		} else if (direction_input == true) {
+			float angleRadians = data.getDirection(go) * Mathf.PI / 180;
+			panning = -1 * Mathf.Sin (angleRadians);
+			//negative = looking to the left of the target (I think?)
 		}
 		
 		Debug.Log (panning);

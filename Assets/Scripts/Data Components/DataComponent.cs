@@ -65,5 +65,42 @@ namespace Data
 			return target;
 		}
 
+		//returns list of all GameObjects tagged as "team"
+		//changed to array from list because FindGameObjectsWithTag already returns an array
+		public GameObject[] getTeam(){
+			GameObject[] gos;
+			gos = GameObject.FindGameObjectsWithTag ("Team");
+			return gos;
+		}
+
+		//returns direction to given GameObject
+		public float getDirection(GameObject myGO){
+			float direction;
+			GameObject target = myGO;
+			
+			Vector3 tRot = target.transform.position - transform.position;
+			
+			float angle = Vector3.Angle(target.transform.position, transform.forward);
+			int angleDir;
+			if (Vector3.Cross (target.transform.position, transform.forward).y > 0) {
+				angleDir = 1; //looking to the right of the target, pan to the left
+			} else {
+				angleDir = -1; //looking to the left of the target, pan to the right
+			}
+			
+			direction = angle*angleDir;
+			return direction;
+		}
+
+		//returns distance to given GameObject
+		public float getDistance(GameObject myGO){
+			float distance;
+			GameObject target = myGO;
+			
+			Vector3 vec = target.transform.position - t_Transform.position;
+			distance = Vector3.Magnitude (target.transform.position - t_Transform.position);
+			return distance;
+		}
+
 	}
 }
