@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using Data;
@@ -13,6 +13,7 @@ public class canvasDynamics : MonoBehaviour {
 		}else{
 			return (to - from) * ((value - from2) / (to2 - from2)) + from;
 		}
+
 	}
 
 	DataComponent data;
@@ -50,7 +51,6 @@ public class canvasDynamics : MonoBehaviour {
 		GameObject textContainer = GameObject.Find("dynamicText");
 		teammate = GameObject.Find("teammate");
 		radar = GameObject.Find("radar");
-		playerAxis = GameObject.Find ("OVRCameraRig 1");
 		//character = GameObject.Find("character");
 		text = textContainer.GetComponent<Text> ();
 		//Debug.Log( text );
@@ -59,7 +59,9 @@ public class canvasDynamics : MonoBehaviour {
 		hudRadius = 200;
 		prevDistance = data.getDistance();
 		hotOrCold = GameObject.Find ("hotOrCold");
+	//	Debug.LogWarning (hotOrCold);
 		hotOrColdImage = hotOrCold.GetComponent<Image> ();
+		Debug.Log (hotOrColdImage);
 
 		// Toggling on and off
 		if (hotWarmDot == true) {
@@ -127,7 +129,6 @@ public class canvasDynamics : MonoBehaviour {
 		*/
 		//float scale = Map (maxDistanceFromTeammate, 1, 4, 1, maxDistanceFromTeammate - distance);
 		float scaleBy = (maxDistanceFromTeammate - distance) * maxPlayerArrowSize / maxDistanceFromTeammate;
-		//Debug.Log (playerAxis.transform.eulerAngles.y);
 		radar.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, direction);
 		if (scaleTargetArrowWithDistance) {
 			//Debug.Log ("SCALE: " + scaleBy);

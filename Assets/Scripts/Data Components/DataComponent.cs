@@ -12,6 +12,8 @@ namespace Data
 		void Start(){
 			t_Transform = GetComponent<Transform> ();
 
+			Debug.Log (t_Transform);
+
 			if (view_Transform == null) {
 				view_Transform = t_Transform;
 			}
@@ -84,8 +86,8 @@ namespace Data
 			float distance;
 			GameObject target = getTarget ();
 		
-			Vector3 vec = target.transform.position - t_Transform.position;
-			distance = Vector3.Magnitude (target.transform.position - t_Transform.position);
+			Vector3 vec = target.transform.position - transform.position;
+			distance = Vector3.Magnitude (target.transform.position - transform.position);
 			return distance;
 		}
 
