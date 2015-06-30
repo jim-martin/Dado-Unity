@@ -9,6 +9,7 @@ TagManager:
   - push
   - Spawn Location
   - Player Spawn
+  - Team
   layers:
   - Default
   - TransparentFX
