@@ -8,6 +8,7 @@ public class AudioComponent : MonoBehaviour {
 	private AudioSource team1;
 	private AudioSource team2;
 	private AudioSource team3;
+	private AudioSource me_ping;
 	private float interval;
 	private AudioPingFrequency audio_ping_frequency;
 	private AudioPitch audio_pitch;
@@ -17,6 +18,9 @@ public class AudioComponent : MonoBehaviour {
 
 	public bool target_search;
 	public bool team_sonar;
+	public bool self_ping;
+
+	public float total_interval;
 	
 	void Start () {
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
@@ -32,6 +36,7 @@ public class AudioComponent : MonoBehaviour {
 		team1 = audio_sources [1];
 		team2 = audio_sources [2];
 		team3 = audio_sources [3];
+		me_ping = audio_sources [4];
 		ping.spatialBlend = 0;
 		ping.minDistance = 1;
 		ping.maxDistance = 100;
@@ -102,10 +107,63 @@ public class AudioComponent : MonoBehaviour {
 		Invoke ("location_ping", interval);
 	}
 
+
+
+	//ping around in a sonar fashion
+	void team_location_ping(){
+		//get team objects
+		GameObject[] gos = data.getTeam ();
+
+		if (total_interval == null) {
+			total_interval = 1f;
+		}
+
+		//for each team object
+		for (int i = 0; i < gos.Length; i++) {
+			//get angle around
+			float direction = data.getDirection (gos[i]);
+			Debug.Log (direction);
+
+
+
+			//-1 -> 0s
+			//-180 or 180 -> 1s
+			//1 -> 2s
+			float time_interval = 0f;
+			if(direction < 0){
+				time_interval = Mathf.Abs (direction) / 180 * total_interval / 2;
+			}
+			else if(direction > 0){
+				time_interval = total_interval / 2;
+				time_interval = (total_interval / 2) + ((total_interval / 2) - Mathf.Abs (direction) / 180 * (total_interval / 2));
+			}
+
+			//start coroutine instead of using invoke
+			StartCoroutine(PingWithObject(gos[i], time_interval, i));
+//			invoke location_ping(myTeammate, time_interval)
+		}
+
+		float reinvoke_interval = total_interval;
+
+		if (self_ping == true) {
+			me_ping.Play ();
+		}
+
+		Invoke("team_location_ping", reinvoke_interval);
+	}
+			              
+	IEnumerator PingWithObject(GameObject go, float time_interval, int team_index){
+				yield return new WaitForSeconds (time_interval);
+				location_ping (go, team_index);
+
+		//this needs multiple sound sources to play overlapping
+	}
+
 	//accept a GameObject target and pass it through to the recipes
+	//used for team location ping
 	void location_ping(GameObject target, int team_index){
 		//frequency not included in this since it will be controlled by team_location_ping()
-
+		
 		AudioSource myPing = ping;
 		switch (team_index) {
 		case 0:
@@ -124,7 +182,7 @@ public class AudioComponent : MonoBehaviour {
 			myPing = ping;
 			break;
 		}
-
+		
 		//set pitch
 		if (audio_pitch != null) {
 			myPing.pitch = audio_pitch.get_pitch(target);
@@ -148,45 +206,5 @@ public class AudioComponent : MonoBehaviour {
 		}
 		
 		myPing.Play ();
-	}
-
-	//ping around in a sonar fashion
-	void team_location_ping(){
-		//get team objects
-		GameObject[] gos = data.getTeam ();
-
-		//for each team object
-		for (int i = 0; i < gos.Length; i++) {
-			//get angle around
-			float direction = data.getDirection (gos[i]);
-			Debug.Log (direction);
-
-
-
-			//-1 -> 0s
-			//-180 or 180 -> 1s
-			//1 -> 2s
-			float time_interval = 0f;
-			if(direction < 0){
-				time_interval = Mathf.Abs (direction) / 180;
-			}
-			else if(direction > 0){
-				time_interval = 1f;
-				time_interval = 1f + (1 - Mathf.Abs (direction) / 180);
-			}
-
-			//start coroutine instead of using invoke
-			StartCoroutine(PingWithObject(gos[i], time_interval, i));
-//			invoke location_ping(myTeammate, time_interval)
-		}
-
-		Invoke("team_location_ping", 3);
-	}
-			              
-	IEnumerator PingWithObject(GameObject go, float time_interval, int team_index){
-				yield return new WaitForSeconds (time_interval);
-				location_ping (go, team_index);
-
-		//this needs multiple sound sources to play overlapping
 	}
 }
