@@ -449,8 +449,70 @@ Transform:
   m_LocalPosition: {x: 29.25, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD:Assets/Test B.unity
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+--- !u!1001 &1702577426
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.09000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.00000095
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.64507848
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.764116406
+      objectReference: {fileID: 0}
+    - target: {fileID: 431206, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495956, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11495956, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: instantiationId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497054, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11467390, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+    - {fileID: 11495956, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+    - {fileID: 11451060, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: e1a9714874684954aa4db0a0a786554d, type: 2}
+  m_IsPrefabParent: 0
+=======
   m_Father: {fileID: 397978331}
   m_RootOrder: 2
+>>>>>>> origin/master:Assets/Practic Space.unity
 --- !u!1 &1735904410
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +607,16 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
+<<<<<<< HEAD:Assets/Test B.unity
+  m_GameObject: {fileID: 2015013473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aae79cf85af945a88ea4018f580bfec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance_input: 0
+  direction_input: 0
+=======
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2046704458}
@@ -567,3 +639,4 @@ Transform:
   m_Children: []
   m_Father: {fileID: 397978331}
   m_RootOrder: 3
+>>>>>>> origin/master:Assets/Practic Space.unity

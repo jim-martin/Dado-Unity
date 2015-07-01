@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Target
   - Spawn Location
+<<<<<<< HEAD
+=======
+  - Player Spawn
   - Team
+>>>>>>> master
   layers:
   - Default
   - TransparentFX

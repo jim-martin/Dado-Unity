@@ -56,10 +56,15 @@ public class AudioComponent : MonoBehaviour {
 	void Update () {
 		//check if audio is playing
 
+<<<<<<< HEAD
+	void location_ping(){
+=======
 		//get time sample
+
 		//adjust parameters
 
 		//adjust pitch based on rate of change in distance
+
 		//adjust panning in rate of change in direction
 
 
@@ -67,6 +72,8 @@ public class AudioComponent : MonoBehaviour {
 
 	//find target
 	void location_ping(){
+
+>>>>>>> master
 		//set ping frequency
 		if (audio_ping_frequency != null) {
 			interval = audio_ping_frequency.get_interval();
@@ -104,7 +111,26 @@ public class AudioComponent : MonoBehaviour {
 		Invoke ("location_ping", interval);
 	}
 
+	//takes an angle that it is currently at
+	//can probably increment by 10 degrees?
+	private int cur_loc = 0;
+	void all_players_ping(){
+		//reset
+		if (cur_loc >= 360) {
+			cur_loc = 0;
+			Invoke("all_players_ping", 2);
+		}
+			
+		//loop around in 360 degrees
+		//if cur_loc > player_loc && player_loc == unpinged
+			//ping_player(i)
 
+
+<<<<<<< HEAD
+		//call for the next 10 degrees
+		cur_loc += 10;
+		Invoke ("all_players_ping", .05f);
+=======
 	//ping around in a sonar fashion
 	void team_location_ping(){
 		//get team objects
@@ -212,5 +238,6 @@ public class AudioComponent : MonoBehaviour {
 		//freshness
 
 		//time spent
+>>>>>>> master
 	}
 }

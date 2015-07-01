@@ -32,6 +32,8 @@ public class AudioPanning : MonoBehaviour {
 		}
 		
 //		Debug.Log (panning);
+<<<<<<< HEAD
+=======
 		return panning;
 	}
 
@@ -47,6 +49,8 @@ public class AudioPanning : MonoBehaviour {
 			//negative = looking to the left of the target (I think?)
 		}
 		Debug.Log ("panning:");
+		Debug.Log (panning);
+>>>>>>> master
 		return panning;
 	}
 

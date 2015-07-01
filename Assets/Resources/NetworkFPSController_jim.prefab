@@ -57,8 +57,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115948}
-  m_LocalRotation: {x: 0, y: .883058012, z: 0, w: -.469263881}
-  m_LocalPosition: {x: 11.5626068, y: 3.08957195, z: 2.52191806}
+  m_LocalRotation: {x: 0, y: .133103102, z: 0, w: .991102219}
+  m_LocalPosition: {x: -.0816148818, y: -6.07999992, z: -2.66000009}
   m_LocalScale: {x: .600000024, y: 1, z: .600000024}
   m_Children:
   - {fileID: 497870}
@@ -312,14 +312,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance_input: 0
-  direction_input: 1
+  direction_input: 0
 --- !u!114 &11415978
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b164671f7a383d442aa38824dafc4718, type: 3}
   m_Name: 
@@ -390,9 +390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2082388}
   movementSettings:
-    ForwardSpeed: 8
-    BackwardSpeed: 5
-    StrafeSpeed: 5
+    ForwardSpeed: 2.95000005
+    BackwardSpeed: 2
+    StrafeSpeed: 2
     RunMultiplier: 2
     RunKey: 304
     JumpForce: 30
@@ -426,9 +426,9 @@ MonoBehaviour:
     smooth: 0
     smoothTime: 5
   advancedSettings:
-    groundCheckDistance: 3.32999992
-    stickToGroundHelperDistance: 1.36000001
-    slowDownRate: 80
+    groundCheckDistance: 3.21000004
+    stickToGroundHelperDistance: 3.01999998
+    slowDownRate: 200
     airControl: 1
 --- !u!114 &11467390
 MonoBehaviour:
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance_input: 0
-  direction_input: 1
+  direction_input: 0
 --- !u!114 &11485064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -569,7 +569,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115948}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 70b9377b34001494f822809327113eed, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .550000012
@@ -693,19 +693,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSettings.BackwardSpeed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSettings.StrafeSpeed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSettings.ForwardSpeed
-      value: 8
+      value: 2.95000005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movementSettings.SlopeCurveModifier.m_Curve.Array.data[1].time
