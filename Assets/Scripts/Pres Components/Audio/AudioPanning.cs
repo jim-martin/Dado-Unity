@@ -30,7 +30,7 @@ public class AudioPanning : MonoBehaviour {
 			panning = -1 * Mathf.Sin (angleRadians);
 		}
 		
-		Debug.Log (panning);
+//		Debug.Log (panning);
 		return panning;
 	}
 

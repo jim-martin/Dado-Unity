@@ -94,7 +94,7 @@ namespace Data
 		public Vector3 getRelativePosition()
 		{
 			GameObject target = getTarget ();
-			Vector3 vec = target.transform.position - t_Transform.position;
+			Vector3 vec = target.transform.position - transform.position;
 			return vec;
 		}
 

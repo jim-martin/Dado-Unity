@@ -33,8 +33,8 @@ public class AudioComponent : MonoBehaviour {
 		//set ping frequency
 		if (audio_ping_frequency != null) {
 			interval = audio_ping_frequency.get_interval();
-			Debug.Log ("frequency = ");
-			Debug.Log (interval);
+//			Debug.Log ("frequency = ");
+//			Debug.Log (interval);
 		} else {
 			Debug.Log ("Audio Ping Frequency is disabled");
 			interval = 1;

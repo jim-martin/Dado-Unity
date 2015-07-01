@@ -33,7 +33,7 @@ public class AudioVolume : MonoBehaviour {
 
 		}
 		//
-Debug.Log (volume);
+//Debug.Log (volume);
 		return volume;
 
 	}
