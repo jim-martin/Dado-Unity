@@ -207,4 +207,14 @@ public class AudioComponent : MonoBehaviour {
 		
 		myPing.Play ();
 	}
+
+	void historical_ping(){
+		//get list of points from teammates
+
+		//check which ones are within the bounding radius
+
+		//freshness
+
+		//time spent
+	}
 }
