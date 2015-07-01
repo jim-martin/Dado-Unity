@@ -61,7 +61,7 @@ public class canvasDynamics : MonoBehaviour {
 		hotOrCold = GameObject.Find ("hotOrCold");
 	//	Debug.LogWarning (hotOrCold);
 		hotOrColdImage = hotOrCold.GetComponent<Image> ();
-		Debug.Log (hotOrColdImage);
+//		Debug.Log (hotOrColdImage);
 
 		// Toggling on and off
 		if (hotWarmDot == true) {
