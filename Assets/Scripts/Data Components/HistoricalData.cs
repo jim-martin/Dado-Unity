@@ -24,6 +24,11 @@ namespace Data
 		}
 
 		void Update(){
+			if (view_Transform == null) {
+				DataComponent d = GetComponent<DataComponent> ();
+				view_Transform = d.view_Transform;
+			}
+
 			DrawDebugTrail ();
 		}
 
