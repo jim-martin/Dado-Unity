@@ -12,7 +12,7 @@ namespace Data
 		void Start(){
 			t_Transform = GetComponent<Transform> ();
 
-			Debug.Log (t_Transform);
+//			Debug.Log (t_Transform);
 
 			if (view_Transform == null) {
 				view_Transform = t_Transform;
