@@ -15,10 +15,12 @@ public class AudioComponent : MonoBehaviour {
 	private AudioVolume audio_volume;
 	private AudioPanning audio_panning;
 	private DataComponent data;
+	private Transform myTransform;
 
 	public bool target_search;
 	public bool team_sonar;
 	public bool self_ping;
+	public bool historical_ping_toggle;
 
 	public float total_interval;
 	
@@ -29,6 +31,7 @@ public class AudioComponent : MonoBehaviour {
 		audio_panning = GetComponent<AudioPanning> ();
 
 		data = GetComponent<DataComponent> ();
+		myTransform = GetComponent<Transform> ();
 
 		AudioSource[] audio_sources = GetComponents<AudioSource> ();
 
@@ -49,6 +52,10 @@ public class AudioComponent : MonoBehaviour {
 
 		if (team_sonar) {
 			Invoke ("team_location_ping", 2);
+		}
+
+		if (historical_ping_toggle) {
+			Invoke("historical_ping", 2);
 		}
 	}
 	
@@ -205,12 +212,38 @@ public class AudioComponent : MonoBehaviour {
 	}
 
 	void historical_ping(){
-		//get list of points from teammates
+		//get my location
+		Vector3 myPos = myTransform.position;
 
-		//check which ones are within the bounding radius
 
-		//freshness
+		float freshness = 0f;
 
-		//time spent
+		//get teammates
+		GameObject[] gos = data.getTeam ();
+		for (int i = 0; i < gos.Length; i++) {
+			//get points for each teammate
+			List<Marker> team_markers = data.get_trail (gos[i]);
+
+			foreach(Marker mark in team_markers){
+				//check which ones are within the bounding radius
+//				Debug.Log (mark);
+				float dist = Vector3.Distance(myPos, mark.position);
+//				Debug.Log (dist);
+				if(dist < 4){
+					Debug.Log ("close");
+				//update freshness
+				//update time spent
+				}
+			}
+
+
+		}
+		//how do you deal with self data?
+
+		//log freshness
+
+		//log time spent
+
+		Invoke ("historical_ping", 1f);
 	}
 }
