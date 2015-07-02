@@ -265,9 +265,13 @@ namespace Data
 			//if first or last
 			csv_line += key_frame.ToString() + "\n";
 			
-			//Debug.Log (csv_line);
+			Debug.Log (csv_line);
 			
 			return csv_line;
+		}
+
+		public string csv_header_line(){
+			return "";
 		}
 	}
 	

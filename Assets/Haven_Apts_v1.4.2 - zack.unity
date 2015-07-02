@@ -43482,7 +43482,7 @@ MonoBehaviour:
   target_search: 0
   team_sonar: 0
   self_ping: 0
-  historical_ping_toggle: 1
+  historical_ping_toggle: 0
   total_interval: 1
 --- !u!114 &821332237
 MonoBehaviour:

@@ -223,7 +223,7 @@ public class AudioComponent : MonoBehaviour {
 		for (int i = 0; i < gos.Length; i++) {
 			//get points for each teammate
 			List<Marker> team_markers = data.get_trail (gos[i]);
-
+			if(team_markers.Count > 0){
 			foreach(Marker mark in team_markers){
 				//check which ones are within the bounding radius
 //				Debug.Log (mark);
@@ -234,6 +234,7 @@ public class AudioComponent : MonoBehaviour {
 				//update freshness
 				//update time spent
 				}
+			}
 			}
 
 
