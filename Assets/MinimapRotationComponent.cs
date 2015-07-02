@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ProfileComponentEditor : MonoBehaviour {
+public class MinimapRotationComponent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
