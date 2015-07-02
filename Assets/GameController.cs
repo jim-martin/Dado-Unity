@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Data;
 
 public class GameController : MonoBehaviour {
 
@@ -8,13 +9,14 @@ public class GameController : MonoBehaviour {
 	public string p3_targets = "p3 target";
 	public string p4_targets = "p4 target";
 
-	int currentPhase = -1;
+	int currentPhase = 2;
 
 	Phase[] phases;
 	Phase clearFloor;
 	Phase incident;
 	Phase targetSearch;
 	Phase exit;
+	int ended;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,10 @@ public class GameController : MonoBehaviour {
 		exit = new Phase (p4_targets);
 
 		phases = new Phase[]{clearFloor, incident, targetSearch, exit};
+		Debug.Log ("phases length: "+phases.Length);
 		//start the first phase
+
+		ended = 0;
 
 		StepPhase();
 
@@ -43,19 +48,36 @@ public class GameController : MonoBehaviour {
 			phases [currentPhase].StartPhase ();
 			Debug.Log("NEW PHASE : " + currentPhase);
 		} else {
+//			currentPhase++;
+			Debug.Log("calling end game()");
 			EndGame();
 		}
 	}
 
 	void EndGame(){
 		//show logs?, move to new scene maybe
-		Debug.Log ("GAME OVER MUTHAFUCKA");
+		Debug.Log ("endGame() called");
+		Debug.Log (ended);
+		if (ended == 0) {
+					Debug.Log ("GAME OVER MUTHAFUCKA");
+			//get all historicaldata components and call write log
+			GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+			foreach(GameObject player in players){
+				player.GetComponent<HistoricalData>().export_all_markers_to_csv();
+			}
+
+			ended = 1;
+		}
 	}
 
 
 
 	public int getPhase(){
 		return currentPhase;
+	}
+
+	public int getEnded(){
+		return ended;
 	}
 
 	public int[] getTargetsHit(){
