@@ -9,6 +9,7 @@ TagManager:
   - push
   - Spawn Location
   - Player Spawn
+  - Burnable 1
   layers:
   - Default
   - TransparentFX
