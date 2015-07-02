@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.IO;
 
 namespace Data
 {
@@ -152,5 +154,12 @@ namespace Data
 			return distance;
 		}
 
+		public List<Marker> get_trail(GameObject go){
+			//for GO
+			//get HistoricalData
+			Debug.Log (go);
+			HistoricalData go_history = go.GetComponent<HistoricalData> ();
+			return go_history.get_trail();
+		}
 	}
 }

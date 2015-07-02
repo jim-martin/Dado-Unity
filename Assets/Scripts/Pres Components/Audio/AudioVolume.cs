@@ -51,7 +51,7 @@ public class AudioVolume : MonoBehaviour {
 			volume = 0.2f;
 			
 		}
-		Debug.Log (volume);
+//		Debug.Log (volume);
 		return volume;
 		
 	}

@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour {
 
 		phases = new Phase[]{idle, clearFloor, targetSearch, exit, idle};
 		//start the first phase
+		StepPhase ();
 
 	}
 

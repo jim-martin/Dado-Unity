@@ -5,7 +5,8 @@ using Data;
 
 namespace Data
 {
-	public class HistoricalData : MonoBehaviour {
+	public class HistoricalData : MonoBehaviour
+	{
 		
 		public float logIncrement = 1.0f;
 		private List<Marker> trail;
@@ -31,19 +32,21 @@ namespace Data
 		
 		
 		// Use this for initialization
-		void Start () {
+		void Start ()
+		{
 			trail = new List<Marker> ();
 			
 			//get the viewTransform (to log where the player was looking)
-			try{
+			try {
 				DataComponent d = GetComponent<DataComponent> ();
-				if(d != null){
+				if (d != null) {
 					view_Transform = d.view_Transform;
 				}
-			}
-			catch(UnityException e){
+			} catch (UnityException e) {
 				Debug.Log (e);
 			}
+
+			gc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 			
 			total_distance = 0f;
 			total_idle = 0;
@@ -56,128 +59,156 @@ namespace Data
 			StartLogging ();
 		}
 		
-		void Update(){
+		void Update ()
+		{
 			if (view_Transform == null) {
-				view_Transform =  GetComponent<Transform> ();
+				view_Transform = GetComponent<Transform> ();
 			}
 			
 			DrawDebugTrail ();
 		}
 		
-		void StartLogging(){
+		void StartLogging ()
+		{
 			InvokeRepeating ("LogMarker", 0.1f, logIncrement);
 		}
 		
-		void StopLogging(){
+		void StopLogging ()
+		{
 			CancelInvoke ("LogMarker");
 		}
 		
-		void UpdateAir(float distance_change){
+		void UpdateAir (float distance_change)
+		{
 			air -= 1;
 			//todo: needs to be scaled
 			
 		}
 		
-		
-		void LogMarker(){
-			//create a new marker
-			Marker m = new Marker ();
-			m.position = view_Transform.position;
-			m.rotation = view_Transform.rotation;
-			m.timeCreated = Time.time;
-			
-			//set total_distance
-			m.distance_change = 0;
-			if (trail.Count > 0) {
-				//difference from past marker
-				m.distance_change = Vector3.Distance(trail[trail.Count - 1].position, m.position);
-				total_distance += m.distance_change;
-			}
-			m.total_distance = total_distance;
-			//total_idle
-			
-			
-			UpdateAir (m.distance_change);
-			m.air_level = air;
-			
-			//get phase from gamecontroller
-			//phase
-			//check phase
-			//compare phase to previous marker
-			//if phase1 != phase2
-			if (false) {
-				//mark keyframe
-				m.key_frame = 1;
-				//mark previous as keyframe
-				
-				//reset phase_distance
-				phase_distance = m.distance_change;
-				
-				//reset phase_idle
-				phase_idle = 0;
+		void LogMarker ()
+		{
+			if (gc.getPhase() == 4) {
+				Debug.Log ("Idle phase");
+//				export_all_markers_to_csv();
 			} else {
-				m.key_frame = 0;
-				phase_distance += m.distance_change;
+
+				//create a new marker
+				Marker m = new Marker ();
+				m.position = view_Transform.position;
+				m.rotation = view_Transform.rotation;
+				m.timeCreated = Time.time;
+			
+				//set total_distance
+				m.distance_change = 0;
+				if (trail.Count > 0) {
+					//difference from past marker
+					m.distance_change = Vector3.Distance (trail [trail.Count - 1].position, m.position);
+					total_distance += m.distance_change;
+				}
+				m.total_distance = total_distance;
+				//total_idle
+			
+			
+				UpdateAir (m.distance_change);
+				m.air_level = air;
+			
+				//get phase from gamecontroller
+				m.phase = gc.getPhase ();
+				Debug.Log ("phase: " + gc.getPhase ());
+				//check phase
+				//compare phase to previous marker
+				//if phase1 != phase2
+				if (false) {
+					//mark keyframe
+					m.key_frame = 1;
+					//mark previous as keyframe
+				
+					//reset phase_distance
+					phase_distance = m.distance_change;
+				
+					//reset phase_idle
+					phase_idle = 0;
+				} else {
+					m.key_frame = 0;
+					phase_distance += m.distance_change;
+				}
+			
+				if (m.distance_change == 0) {
+					total_idle ++;
+					phase_idle ++;
+				}
+			
+				m.phase_traveled = phase_distance;
+			
+			
+				m.mobility = mobility;
+			
+			
+				//targets
+				//target distance
+			
+				//need a functions for:
+				//closest target distance
+				//air
+				//targets
+				//gc.getTargets() -- returns array
+				//encode as "100010101" etc, based on the target array length
+			
+				//key frame
+			
+				m.export_marker_to_csv_line ();
+			
+				//add it to the list
+				trail.Add (m);
 			}
-			
-			if (m.distance_change == 0) {
-				total_idle ++;
-				phase_idle ++;
-			}
-			
-			m.phase_traveled = phase_distance;
-			
-			
-			m.mobility = mobility;
-			
-			
-			//targets
-			//target distance
-			
-			//need a functions for:
-			//closest target distance
-			//air
-			//targets
-			
-			//key frame
-			
-			m.export_marker_to_csv_line ();
-			
-			//add it to the list
-			trail.Add (m);
 		}
 		
-		void DrawDebugTrail(){
+		void DrawDebugTrail ()
+		{
 			if (trail.Count > 2) {
 				for (int i = 0; i < trail.Count - 2; i++) {
 					Color c = Color.red;
-					if( Time.time - trail[i].timeCreated < 4)
+					if (Time.time - trail [i].timeCreated < 4)
 						c = Color.yellow;
-					if(Time.time - trail[i].timeCreated < 2)
+					if (Time.time - trail [i].timeCreated < 2)
 						c = Color.green;
-					Debug.DrawLine(	trail[i].position, trail[i+1].position, c);
-					Debug.DrawRay( trail[i].position, trail[i].rotation * Vector3.forward );
+					Debug.DrawLine (trail [i].position, trail [i + 1].position, c);
+					Debug.DrawRay (trail [i].position, trail [i].rotation * Vector3.forward);
 				}
 			}
 		}
 		
-		public List<Marker> get_trail(){
+		public List<Marker> get_trail ()
+		{
 			return trail;
 		}
 		
-		public void export_all_markers_to_csv(){
+		public void export_all_markers_to_csv ()
+		{
+			Debug.Log ("export to CSV");
 			//export the current scenario / presentation profile
 			
 			//choose file
-			
-			//write header line
-			
-			//for each marker
-			//call marker.export_marker_to_csv_line();
+
+
+
+			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/test_log_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
+				//write header line
+				file.WriteLine (trail [0].csv_header_line ());
+				
+				//for each marker
+				//call marker.export_marker_to_csv_line();
+				foreach (Marker mark in trail) {
+					file.WriteLine (mark.export_marker_to_csv_line());
+				}
+
+
+			}
 		}
 	}
 	
-	public class Marker{
+	public class Marker
+	{
 		//current position
 		public Vector3 position;
 		
@@ -192,7 +223,6 @@ namespace Data
 		
 		//targets hit
 		public int[] targets;
-		
 		public float distance_change;
 		
 		//total distance traveled
@@ -212,15 +242,14 @@ namespace Data
 		
 		//current air level
 		public float air_level;
-		
 		public float mobility;
 		//status?
 		
 		//if first or last
 		public int key_frame;
 		
-		
-		public string export_marker_to_csv_line(){
+		public string export_marker_to_csv_line ()
+		{
 			string csv_line = "";
 			//add timestamp - 1
 			csv_line += timeCreated.ToString () + ",";
@@ -232,42 +261,73 @@ namespace Data
 			csv_line += distance_change.ToString () + ",";
 			
 			//total distance traveled - 4
-			csv_line += total_distance.ToString() + ",";
+			csv_line += total_distance.ToString () + ",";
 			
-			//current position
+			//current position 5,6,7
 			//			public Vector3 position;
+//			Debug.Log (position);
+			csv_line += position.x.ToString () + "," + position.y.ToString () + "," + position.z.ToString () + ",";
+			//xpos, ypos, zpos
 			
-			//current direction
+			//current direction 8,9,10,11
 			//			public Quaternion rotation;
+			Debug.Log (rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",");
+			//q1, q2, q3, q4
+			csv_line += rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",";
+
+			//total time idle - 12
+			csv_line += total_idle.ToString () + ",";
 			
+			//phase distance traveled
+			csv_line += phase_traveled.ToString () + ",";
+			
+			//phase time idle
+			csv_line += phase_idle.ToString () + ",";
+			
+			//distance from target(s)
+			csv_line += target_distance.ToString () + ",";
+			
+			//current air level
+			csv_line += air_level.ToString () + ",";
+			
+			csv_line += mobility.ToString () + ",";
+			
+			//if first or last
+			csv_line += key_frame.ToString ();
+
 			//targets hit
 			//			public int[] targets;
 			
-			
-			
-			//total time idle
-			csv_line +=  total_idle.ToString() + ",";
-			
-			//phase distance traveled
-			csv_line += phase_traveled.ToString() + ",";
-			
-			//phase time idle
-			csv_line += phase_idle.ToString() + ",";
-			
-			//distance from target(s)
-			csv_line += target_distance.ToString() + ",";
-			
-			//current air level
-			csv_line += air_level.ToString() + ",";
-			
-			csv_line += mobility.ToString() + ",";
-			
-			//if first or last
-			csv_line += key_frame.ToString() + "\n";
-			
-			//Debug.Log (csv_line);
+			Debug.Log (csv_line);
 			
 			return csv_line;
+		}
+
+		public string csv_header_line ()
+		{
+			/* 1 - timestamp
+			 * 2 - phase
+			 * 3 - distance change
+			 * 4 - total distance traveled
+			 * 5 - position X
+			 * 6 - position Y
+			 * 7 - position Z
+			 * 8 - quaternion X
+			 * 9 - quaternion Y
+			 * 10 - quaternion Z
+			 * 11 - quaternion W
+			 * 12 - Total steps idle
+			 * 13 - Phase distance traveled
+			 * 14 - Phase steps idle
+			 * 15 - Distance from target
+			 * 16 - Air level
+			 * 17 - Mobility
+			 * 18 - Key frame
+			 * 19-? - Targets
+			 * 
+			 */
+
+			return "Timestamp,Current Phase,Distance Change,Total Distance Traveled,Position X,Position Y,Position Z,Quaternion X,Quaternion Y,Quaternion Z,Quaternion W,Total Steps Idle,Phase Distance Traveled,Phase Steps Idle,Distance from Target,Air Level, Mobility,Key Frame";
 		}
 	}
 	

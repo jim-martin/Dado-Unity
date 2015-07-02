@@ -46,7 +46,7 @@ public class AudioPanning : MonoBehaviour {
 			panning = -1 * Mathf.Sin (angleRadians);
 			//negative = looking to the left of the target (I think?)
 		}
-		Debug.Log ("panning:");
+//		Debug.Log ("panning:");
 		return panning;
 	}
 
