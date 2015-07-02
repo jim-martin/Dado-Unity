@@ -75,9 +75,6 @@ public class canvasDynamics : MonoBehaviour {
 		} else {
 			text.enabled = false;
 		}
-		if (scaleTargetArrowWithDistance) {
-		} else {
-		}
 
 	
 	}
@@ -130,6 +127,7 @@ public class canvasDynamics : MonoBehaviour {
 		*/
 		//float scale = Map (maxDistanceFromTeammate, 1, 4, 1, maxDistanceFromTeammate - distance);
 		if (showRadar) {
+			radar.SetActive(true);
 			float scaleBy = (maxDistanceFromTeammate - distance) * maxPlayerArrowSize / maxDistanceFromTeammate;
 			radar.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, direction);
 			if (scaleTargetArrowWithDistance) {

@@ -14,12 +14,12 @@ public class ProfileComponentEditor : Editor {
 
 		p.saveFileName = EditorGUILayout.TextField("Save File : ", p.saveFileName);
 		if (GUILayout.Button ("Save Profile to " + p.saveFileName + ".dat")) {
-			p.saveProfile();
+			p.saveProfile( p.saveFileName );
 		}
 
 		p.loadFileName = EditorGUILayout.TextField("Load File : ", p.loadFileName);
 		if (GUILayout.Button ("Load Profile from " + p.loadFileName + ".dat")) {
-			p.loadProfile();
+			p.loadProfile( p.loadFileName );
 		}
 	}
 }

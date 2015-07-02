@@ -13,13 +13,13 @@ public class ProfileComponent : MonoBehaviour {
 	public string saveFileName = "default";
 	public string loadFileName = "default";
 
-	public void saveProfile( ){
-
-
+	public void saveProfile( string filename ){
+		
+		
 		
 		//create serializer
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath + "/" + saveFileName + ".dat");
+		FileStream file = File.Create (Application.persistentDataPath + "/" + filename + ".dat");
 		
 		//get components (of type monobehavior)
 		Profile p = Introspect ();
@@ -29,28 +29,30 @@ public class ProfileComponent : MonoBehaviour {
 		file.Close ();
 	}
 	
-	public void loadProfile( ){
+	public void loadProfile( string filename ){
 		
 		Profile p;
 		
 		//find serialized profile on default datapath
-		if (File.Exists (Application.persistentDataPath + "/" + loadFileName + ".dat")) {
+		if (File.Exists (Application.persistentDataPath + "/" + filename + ".dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/" + loadFileName + ".dat", FileMode.Open);
+			FileStream file = File.Open (Application.persistentDataPath + "/" + filename + ".dat", FileMode.Open);
 			p = (Profile)bf.Deserialize (file);
 			file.Close ();
-
+			
 			//adjust "profile" Class settings
-			for( int i = 0; i < p.entries.Length; i++){
+			for (int i = 0; i < p.entries.Length; i++) {
 				
-//				Debug.Log(p.entries[i].component);
-//				Debug.Log("\t" + p.entries[i].key);
-//				Debug.Log("\t" + p.entries[i].value);
-
-				Component c = GetComponent(p.entries[i].component);
-				c.GetType().GetField(p.entries[i].key).SetValue(c, p.entries[i].value);
+				//				Debug.Log(p.entries[i].component);
+				//				Debug.Log("\t" + p.entries[i].key);
+				//				Debug.Log("\t" + p.entries[i].value);
+				
+				Component c = GetComponent (p.entries [i].component);
+				c.GetType ().GetField (p.entries [i].key).SetValue (c, p.entries [i].value);
 			}			
-		}		
+		} else {
+			Debug.Log ("PROFILE DATA" + filename + ".dat NOT FOUND");
+		}
 	}
 	
 	Profile Introspect(){
