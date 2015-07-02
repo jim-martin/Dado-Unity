@@ -27407,12 +27407,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 520298945}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3edf6e39035d081459b8d397a2a8392b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logIncrement: 1
+  total_distance: 0
+  total_idle: 0
+  phase_distance: 0
+  phase_idle: 0
+  air: 0
+  mobility: 0
 --- !u!1 &521438978
 GameObject:
   m_ObjectHideFlags: 0
@@ -44075,6 +44081,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logIncrement: 1
+  total_distance: 0
+  total_idle: 0
+  phase_distance: 0
+  phase_idle: 0
+  air: 0
+  mobility: 0
 --- !u!1001 &821729914
 Prefab:
   m_ObjectHideFlags: 0
@@ -77682,12 +77694,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1432925256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3edf6e39035d081459b8d397a2a8392b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logIncrement: 1
+  total_distance: 0
+  total_idle: 0
+  phase_distance: 0
+  phase_idle: 0
+  air: 0
+  mobility: 0
 --- !u!1001 &1435802656
 Prefab:
   m_ObjectHideFlags: 0
@@ -88751,12 +88769,18 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1640549656}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3edf6e39035d081459b8d397a2a8392b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   logIncrement: 1
+  total_distance: 0
+  total_idle: 0
+  phase_distance: 0
+  phase_idle: 0
+  air: 0
+  mobility: 0
 --- !u!1 &1641395794
 GameObject:
   m_ObjectHideFlags: 0
