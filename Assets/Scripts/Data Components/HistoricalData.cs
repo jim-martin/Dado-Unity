@@ -22,6 +22,8 @@ namespace Data
 		public int phase_idle;
 		public float air;
 		public float mobility;
+
+		int exported = 0;
 		
 		//game controller:
 		//phase
@@ -89,7 +91,12 @@ namespace Data
 		{
 			if (gc.getPhase() == 4) {
 				Debug.Log ("Idle phase");
-//				export_all_markers_to_csv();
+				if(exported == 0){
+					Debug.Log ("Exporting");
+					export_all_markers_to_csv();
+					exported = 1;
+				}
+
 			} else {
 
 				//create a new marker
@@ -114,13 +121,18 @@ namespace Data
 			
 				//get phase from gamecontroller
 				m.phase = gc.getPhase ();
-				Debug.Log ("phase: " + gc.getPhase ());
+//				Debug.Log ("phase: " + gc.getPhase ());
 				//check phase
 				//compare phase to previous marker
-				//if phase1 != phase2
-				if (false) {
+//				if phase1 != phase2
+
+				if(trail.Count == 0){
+					m.key_frame = 1;
+				}
+				else if (m.phase > trail[trail.Count-1].phase) {
 					//mark keyframe
 					m.key_frame = 1;
+					trail[trail.Count-1].key_frame = 2;
 					//mark previous as keyframe
 				
 					//reset phase_distance
@@ -150,9 +162,13 @@ namespace Data
 				//need a functions for:
 				//closest target distance
 				//air
+
 				//targets
 				//gc.getTargets() -- returns array
-				//encode as "100010101" etc, based on the target array length
+				int[] targets_hit = gc.getTargetsHit();
+				Debug.Log (targets_hit);
+				m.targets = targets_hit;
+
 			
 				//key frame
 			
@@ -189,6 +205,8 @@ namespace Data
 			//export the current scenario / presentation profile
 			
 			//choose file
+
+			//make the last frame key_frame=2
 
 
 
@@ -293,10 +311,14 @@ namespace Data
 			csv_line += mobility.ToString () + ",";
 			
 			//if first or last
-			csv_line += key_frame.ToString ();
+			csv_line += key_frame.ToString () + ",";
 
 			//targets hit
+			//encode as "100010101" etc, based on the target array length
 			//			public int[] targets;
+			foreach (int targ in targets) {
+				csv_line += targ.ToString();
+			}
 			
 			Debug.Log (csv_line);
 			
