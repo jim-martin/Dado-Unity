@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Data;
 
 public class GameController : MonoBehaviour {
 
@@ -9,75 +8,59 @@ public class GameController : MonoBehaviour {
 	public string p3_targets = "p3 target";
 	public string p4_targets = "p4 target";
 
-	int currentPhase = 2;
+	int currentPhase = 0;
+	int phaseTime = 10;
 
 	Phase[] phases;
 	Phase clearFloor;
 	Phase incident;
 	Phase targetSearch;
 	Phase exit;
-	int ended;
+	Phase idle;
 
 	// Use this for initialization
 	void Start () {
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets);
-		incident = new Phase (p2_targets);
-		targetSearch = new Phase (p3_targets);
-		exit = new Phase (p4_targets);
+		clearFloor = new Phase (p1_targets, phaseTime);
+		incident = new Phase (p2_targets, phaseTime);
+		targetSearch = new Phase (p3_targets, phaseTime);
+		exit = new Phase (p4_targets, phaseTime);
+		idle = new Phase ();
 
-		phases = new Phase[]{clearFloor, incident, targetSearch, exit};
-		Debug.Log ("phases length: "+phases.Length);
+		phases = new Phase[]{idle, clearFloor, incident, targetSearch, exit, idle};
 		//start the first phase
-
-		ended = 0;
-
-		StepPhase();
 
 	}
 
 	void Update (){
 		if (phases [currentPhase].CheckComplete ()) {
-			StepPhase();
+			if(phases[currentPhase].success){
+				StepPhase();
+			}else{
+				EndGame();
+			}
 		}
 	}
 
-	void StepPhase(){
+	public void StepPhase(){
 		if (currentPhase < phases.Length - 1) {
 			currentPhase++;
 			phases [currentPhase].StartPhase ();
 			Debug.Log("NEW PHASE : " + currentPhase);
 		} else {
-//			currentPhase++;
-			Debug.Log("calling end game()");
 			EndGame();
 		}
 	}
 
-	void EndGame(){
+	public void EndGame(){
 		//show logs?, move to new scene maybe
-		Debug.Log ("endGame() called");
-		Debug.Log (ended);
-		if (ended == 0) {
-					Debug.Log ("GAME OVER MUTHAFUCKA");
-			//get all historicaldata components and call write log
-			GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-			foreach(GameObject player in players){
-				player.GetComponent<HistoricalData>().export_all_markers_to_csv();
-			}
-
-			ended = 1;
-		}
+		Debug.Log ("GAME OVER MUTHAFUCKA");
+		currentPhase = 0;
 	}
 
-
-
+	
 	public int getPhase(){
 		return currentPhase;
-	}
-
-	public int getEnded(){
-		return ended;
 	}
 
 	public int[] getTargetsHit(){
@@ -86,7 +69,7 @@ public class GameController : MonoBehaviour {
 
 
 	class Phase{
-		public float timeLimit = 10;
+		public float timeLimit;
 			   float timeStart;
 
 		public string targetTag;
@@ -94,9 +77,28 @@ public class GameController : MonoBehaviour {
 		public int[] targetsHit;
 		public int targetsLeft;
 
-		public Phase( string tag ){
+		public bool success = true;
+
+
+		//Constructor for a target/timelimit phase
+		public Phase( string tag, int t ){
+			timeLimit = t;
 			targetTag = tag;
 			FindTargets();
+		}
+
+		//constructor for a time unlimitted phase
+		public Phase( string tag ){
+			timeLimit = -1;
+			targetTag = tag;
+			FindTargets();
+		}
+
+
+		//constructor for the idle phase ( no parameters means no constraints )
+		public Phase( ){
+			targetsLeft = 1;
+			timeLimit = -1;
 		}
 
 		public void StartPhase(){
@@ -105,26 +107,30 @@ public class GameController : MonoBehaviour {
 
 		public bool CheckComplete(){
 
-			for (int i = 0; i < targets.Length; i++) {
+			if (targets != null) {
 
-				TriggerTarget t = targets [i].GetComponent<TriggerTarget> ();
+				for (int i = 0; i < targets.Length; i++) {
 
-				if ( t == null) {
-					Debug.Log ("Target " + i + " doesn't have a TriggerTarget");
-				}else{
+					TriggerTarget t = targets [i].GetComponent<TriggerTarget> ();
 
-					if(t.isTriggered == true && targetsHit[i] == 0){
+					if (t == null) {
+						Debug.Log ("Target " + i + " doesn't have a TriggerTarget");
+					} else {
 
-						Debug.Log("target triggered");
-						targetsHit[i] = 1;
-						targetsLeft--;
+						if (t.isTriggered == true && targetsHit [i] == 0) {
+
+							Debug.Log ("target triggered");
+							targetsHit [i] = 1;
+							targetsLeft--;
+						}
 					}
 				}
 			}
 
-			//return true if the target was reached or if the time is up (include other failure conditions here)
+			//return true if the target was reached or if the time is up 
+			//(include other failure conditions here)
 			if (targetsLeft < 1 || 						//target(s) are found
-			    Time.time - timeStart > timeLimit ) {	//timelimit for phase is up
+			    (Time.time - timeStart > timeLimit && timeLimit > 0)) {	//timelimit for phase is up, assuming time is limited
 				return true;
 			} else {
 				return false;
