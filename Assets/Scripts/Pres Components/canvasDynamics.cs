@@ -40,6 +40,7 @@ public class canvasDynamics : MonoBehaviour {
 	public bool textToggle;
 	public bool distanceTextToggle;
 	public bool coldOrHotTextToggle;
+	public bool showRadar;
 	public bool scaleTargetArrowWithDistance;
 
 	// Use this for initialization
@@ -128,13 +129,17 @@ public class canvasDynamics : MonoBehaviour {
 		Debug.Log ("x: " + teammate.transform.position.x);
 		*/
 		//float scale = Map (maxDistanceFromTeammate, 1, 4, 1, maxDistanceFromTeammate - distance);
-		float scaleBy = (maxDistanceFromTeammate - distance) * maxPlayerArrowSize / maxDistanceFromTeammate;
-		radar.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, direction);
-		if (scaleTargetArrowWithDistance) {
-			//Debug.Log ("SCALE: " + scaleBy);
-			teammate.transform.localScale = new Vector3 (scaleBy, scaleBy, 0);
+		if (showRadar) {
+			float scaleBy = (maxDistanceFromTeammate - distance) * maxPlayerArrowSize / maxDistanceFromTeammate;
+			radar.transform.localEulerAngles = new Vector3 (0.0f, 0.0f, direction);
+			if (scaleTargetArrowWithDistance) {
+				//Debug.Log ("SCALE: " + scaleBy);
+				teammate.transform.localScale = new Vector3 (scaleBy, scaleBy, 0);
+			}
+			//teammate.transform.position = new Vector3 (teammate.transform.position.x, proximityToTeammate*0.003292852f, teammate.transform.position.z);
+			//radar.transform.Rotate (0, 0, direction);
+		} else {
+			radar.SetActive (false);
 		}
-		//teammate.transform.position = new Vector3 (teammate.transform.position.x, proximityToTeammate*0.003292852f, teammate.transform.position.z);
-		//radar.transform.Rotate (0, 0, direction);
 	}
 }

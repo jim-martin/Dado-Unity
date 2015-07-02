@@ -8,14 +8,17 @@ public class ProfileComponentEditor : Editor {
 
 	public override void OnInspectorGUI(){
 
-		DrawDefaultInspector ();
+		//DrawDefaultInspector ();
 
 		ProfileComponent p = (ProfileComponent)target;
 
-		if (GUILayout.Button ("Save Profile")) {
+		p.saveFileName = EditorGUILayout.TextField("Save File : ", p.saveFileName);
+		if (GUILayout.Button ("Save Profile to " + p.saveFileName + ".dat")) {
 			p.saveProfile();
 		}
-		if (GUILayout.Button ("Load Profile")) {
+
+		p.loadFileName = EditorGUILayout.TextField("Load File : ", p.loadFileName);
+		if (GUILayout.Button ("Load Profile from " + p.loadFileName + ".dat")) {
 			p.loadProfile();
 		}
 	}

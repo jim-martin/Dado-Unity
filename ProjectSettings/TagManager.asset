@@ -7,6 +7,11 @@ TagManager:
   - Target
   - Spawn Location
   - Team
+  - push
+  - p1 target
+  - p2 target
+  - p3 target
+  - p4 target
   layers:
   - Default
   - TransparentFX

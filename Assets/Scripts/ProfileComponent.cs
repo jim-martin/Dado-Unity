@@ -9,16 +9,17 @@ using UnityEditor;
 using System.Reflection;
 
 public class ProfileComponent : MonoBehaviour {
-	
-	void Start(){
 
-	}
-	
+	public string saveFileName = "default";
+	public string loadFileName = "default";
+
 	public void saveProfile( ){
+
+
 		
 		//create serializer
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
+		FileStream file = File.Create (Application.persistentDataPath + "/" + saveFileName + ".dat");
 		
 		//get components (of type monobehavior)
 		Profile p = Introspect ();
@@ -33,9 +34,9 @@ public class ProfileComponent : MonoBehaviour {
 		Profile p;
 		
 		//find serialized profile on default datapath
-		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
+		if (File.Exists (Application.persistentDataPath + "/" + loadFileName + ".dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+			FileStream file = File.Open (Application.persistentDataPath + "/" + loadFileName + ".dat", FileMode.Open);
 			p = (Profile)bf.Deserialize (file);
 			file.Close ();
 
