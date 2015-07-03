@@ -25,6 +25,8 @@ namespace Data
 		public float mobility;
 		public TextAsset import_csv;
 
+		public bool NPC; //don't log if NPC == true
+
 		public float air_constant_decrease;
 		public float air_movement_decrease;
 
@@ -102,7 +104,7 @@ namespace Data
 			air -= air_constant_decrease;
 //			Debug.Log ("distance change: " + distance_change);
 			air -= distance_change * air_movement_decrease;
-			Debug.Log ("new air: " + air);
+//			Debug.Log ("new air: " + air);
 			//todo: needs to be scaled	
 		}
 
@@ -115,7 +117,7 @@ namespace Data
 		{
 			if (gc.getPhase () == 4) {
 				Debug.Log ("Idle phase");
-				if (exported == 0) {
+				if (exported == 0 && NPC == false) {
 					Debug.Log ("Exporting");
 					export_all_markers_to_csv ();
 					exported = 1;
@@ -131,11 +133,11 @@ namespace Data
 			
 				//set total_distance
 				m.distance_change = 0;
-				Debug.Log ("trail count: " + trail.Count);
+//				Debug.Log ("trail count: " + trail.Count);
 				if (trail.Count > 0) {
 					//difference from past marker
 					m.distance_change = Vector3.Distance (trail [trail.Count - 1].position, m.position);
-					Debug.Log ("distance change: " + m.distance_change);
+//					Debug.Log ("distance change: " + m.distance_change);
 					total_distance += m.distance_change;
 				}
 				m.total_distance = total_distance;
@@ -374,7 +376,7 @@ namespace Data
 				}
 			}
 			
-			Debug.Log (csv_line);
+//			Debug.Log (csv_line);
 			
 			return csv_line;
 		}
