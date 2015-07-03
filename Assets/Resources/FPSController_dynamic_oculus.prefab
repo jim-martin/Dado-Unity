@@ -65,7 +65,7 @@ GameObject:
   - 95: {fileID: 9516618}
   m_Layer: 0
   m_Name: Kicker
-  m_TagString: Untagged
+  m_TagString: push
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,11 +253,11 @@ GameObject:
   - 82: {fileID: 8289436}
   m_Layer: 0
   m_Name: FPSController_dynamic_oculus
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &165880
 GameObject:
   m_ObjectHideFlags: 1
@@ -522,7 +522,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
   m_LocalRotation: {x: 0, y: .0379878171, z: 0, w: .999278247}
-  m_LocalPosition: {x: -.0766540021, y: -2.70000005, z: -2.97530007}
+  m_LocalPosition: {x: -.300000012, y: -2.70000005, z: -3.5999999}
   m_LocalScale: {x: .766680539, y: .766680539, z: .766680539}
   m_Children:
   - {fileID: 427160}
@@ -865,7 +865,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -961,7 +961,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 513ed6a7a2dda42d496ca2804b56071f, type: 3}
@@ -1030,7 +1030,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 513ed6a7a2dda42d496ca2804b56071f, type: 3}
@@ -1099,7 +1099,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 513ed6a7a2dda42d496ca2804b56071f, type: 3}
@@ -1168,7 +1168,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164072}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 513ed6a7a2dda42d496ca2804b56071f, type: 3}
@@ -1338,6 +1338,7 @@ MonoBehaviour:
   target_search: 0
   team_sonar: 0
   self_ping: 0
+  historical_ping_toggle: 0
   total_interval: 0
 --- !u!114 &11417344
 MonoBehaviour:
@@ -1466,6 +1467,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
+  import_csv: {fileID: 4900000, guid: 5647e5ab00f894dc1abd6d42e0df4289, type: 3}
 --- !u!114 &11430718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1557,6 +1559,7 @@ MonoBehaviour:
   coldOrHotTextToggle: 0
   showRadar: 0
   scaleTargetArrowWithDistance: 0
+  showTrails: 0
 --- !u!114 &11450720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1924,8 +1927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b55b0bcbb9a0648825f08d538c7c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveFileName: alloff
-  loadFileName: alloff
+  saveFileName: radar
+  loadFileName: control
 --- !u!114 &11499110
 MonoBehaviour:
   m_ObjectHideFlags: 1

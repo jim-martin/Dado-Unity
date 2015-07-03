@@ -1,0 +1,2 @@
+Timestamp,Current Phase,Distance Change,Total Distance Traveled,Position X,Position Y,Position Z,Quaternion X,Quaternion Y,Quaternion Z,Quaternion W,Total Steps Idle,Phase Distance Traveled,Phase Steps Idle,Distance from Target,Air Level, Mobility,Key Frame,Targets
+69.64,2,0,0,-0.3205471,-2.583005,-3.869857,0.0, 0.0, 0.0, 1.0,0,0,0,0,99,1,1,

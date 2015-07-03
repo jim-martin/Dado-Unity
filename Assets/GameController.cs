@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 
 	
 	int currentPhase = 0;
-	int phaseTime = 10;
+	int phaseTime = 60;
 
 	//condition
 //	static int _CONTROL = 0;
@@ -38,9 +38,9 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, phaseTime);
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, phaseTime);
-		exit = new Phase (p4_targets, exitProfiles, phaseTime);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 60);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
+		exit = new Phase (p4_targets, exitProfiles, 180);
 		idle = new Phase (idleProfiles);
 
 		phases = new Phase[]{idle, clearFloor, targetSearch, exit, idle};
@@ -59,6 +59,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void StepPhase(){
+		//end current phase 
+		phases [currentPhase].EndPhase ();
+
+		//start next phase if there is one, otherwise, end the game (return to idle phase);
 		if (currentPhase < phases.Length - 1) {
 			currentPhase++;
 			phases [currentPhase].StartPhase (condition);
@@ -144,6 +148,24 @@ class Phase{
 		//update feedback profiles
 		ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
 		player.loadProfile (profiles [condition]);
+
+		//ensure that the targets for this phase are enabled
+		if (targets != null) {
+			for(int i = 0; i < targets.Length; i++){
+				targets[i].GetComponent<MeshRenderer>().enabled = true;
+			}
+		}
+	}
+
+	public void EndPhase(){
+
+		//disable the targets for this phase
+		if (targets != null) {
+			for(int i = 0; i < targets.Length; i++){
+				targets[i].GetComponent<MeshRenderer>().enabled = false;
+			}
+		}
+
 	}
 	
 	public bool CheckComplete(){

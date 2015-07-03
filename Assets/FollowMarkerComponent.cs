@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Data;
 
 public class FollowMarkerComponent : MonoBehaviour {
+
+	public TextAsset import_csv;
 
 	int currentStep = 0;
 
@@ -13,7 +15,7 @@ public class FollowMarkerComponent : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		Invoke ("CheckForData", 1);
+			Invoke ("CheckForData", 1);
 
 	}
 
@@ -35,16 +37,24 @@ public class FollowMarkerComponent : MonoBehaviour {
 			}
 		}
 
-		if (trail == null) {
-			try{
-				trail = hdata.get_trail();
-			}
-			catch(UnityException e){
-				Invoke ("CheckForData", 1);
-				Debug.LogWarning(e);
-				return;
+		if(import_csv != null){
+
+			trail = hdata.import_csv_into_markers(import_csv);
+		}else{
+
+			if (trail == null) {
+				try {
+					trail = hdata.get_trail ();
+				} catch (UnityException e) {
+					Invoke ("CheckForData", 1);
+					Debug.LogWarning (e);
+					return;
+				}
 			}
 		}
+
+
+		
 
 		if (trail.Count < 2) {
 			Invoke("CheckForData", 1);
@@ -60,7 +70,5 @@ public class FollowMarkerComponent : MonoBehaviour {
 		currentStep++;
 		transform.position = trail [currentStep].position;
 		transform.rotation = trail [currentStep].rotation;
-
-		Debug.Log (transform.position);
 	}
 }
