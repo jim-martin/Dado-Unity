@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
 //	static int _VISUAL = 1;
 //	static int _AUDIO = 2;
 
-	int condition = 1;
+	int condition;
 
 
 	//profile arrays for all conditions defined for each phase (profile names)
