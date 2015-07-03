@@ -81647,6 +81647,18 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11445156, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: showRadar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445156, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: scaleTargetArrowWithDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445156, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: showTrails
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
   m_IsPrefabParent: 0

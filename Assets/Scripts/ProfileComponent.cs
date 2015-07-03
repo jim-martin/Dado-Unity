@@ -19,7 +19,7 @@ public class ProfileComponent : MonoBehaviour {
 		
 		//create serializer
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create (Application.persistentDataPath + "/" + filename + ".dat");
+		FileStream file = File.Create (@"./Assets/logs/profiles" + "/" + filename + ".dat");
 		
 		//get components (of type monobehavior)
 		Profile p = Introspect ();
@@ -36,9 +36,9 @@ public class ProfileComponent : MonoBehaviour {
 		Debug.Log (Application.persistentDataPath);
 		
 		//find serialized profile on default datapath
-		if (File.Exists (Application.persistentDataPath + "/" + filename + ".dat")) {
+		if (File.Exists (@"./Assets/logs/profiles" + "/" + filename + ".dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();
-			FileStream file = File.Open (Application.persistentDataPath + "/" + filename + ".dat", FileMode.Open);
+			FileStream file = File.Open (@"./Assets/logs/profiles" + "/" + filename + ".dat", FileMode.Open);
 			p = (Profile)bf.Deserialize (file);
 			file.Close ();
 			
