@@ -44,8 +44,8 @@ namespace Data
 		void Start ()
 		{
 			if (import_csv != null) {
-				imported_trail = import_csv_into_markers (import_csv);
-				test_imported_markers ();
+			//	imported_trail = import_csv_into_markers (import_csv);
+			//	test_imported_markers ();
 			}
 
 			if (air_constant_decrease == null || air_constant_decrease == 0) {
