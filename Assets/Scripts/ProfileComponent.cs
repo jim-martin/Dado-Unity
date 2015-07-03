@@ -32,6 +32,8 @@ public class ProfileComponent : MonoBehaviour {
 	public void loadProfile( string filename ){
 		
 		Profile p;
+
+		Debug.Log (Application.persistentDataPath);
 		
 		//find serialized profile on default datapath
 		if (File.Exists (Application.persistentDataPath + "/" + filename + ".dat")) {

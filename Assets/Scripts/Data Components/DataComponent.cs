@@ -110,7 +110,7 @@ namespace Data
 
 		public GameObject getTarget()
 		{
-			GameObject target =  GameObject.FindGameObjectWithTag ("p1 target");
+			GameObject target =  GameObject.FindGameObjectWithTag ("p3 target");
 			if (target == null) {
 				Debug.LogWarning ("Target not found, assign something in the scene to the 'Target' tag to begin tracking.");
 			}
