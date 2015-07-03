@@ -27497,6 +27497,9 @@ MonoBehaviour:
   air: 0
   mobility: 0
   import_csv: {fileID: 0}
+  NPC: 0
+  air_constant_decrease: 0
+  air_movement_decrease: 0
 --- !u!1 &521438978
 GameObject:
   m_ObjectHideFlags: 0
@@ -44175,6 +44178,9 @@ MonoBehaviour:
   air: 0
   mobility: 0
   import_csv: {fileID: 4900000, guid: 55fcfc8b126d44197a6ae7371e7a3a9c, type: 3}
+  NPC: 0
+  air_constant_decrease: 0
+  air_movement_decrease: 0
 --- !u!1001 &821729914
 Prefab:
   m_ObjectHideFlags: 0
@@ -45721,6 +45727,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22414130, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414154, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: historical_ping_toggle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -78086,7 +78096,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1432925256}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3edf6e39035d081459b8d397a2a8392b, type: 3}
   m_Name: 
@@ -78099,6 +78109,9 @@ MonoBehaviour:
   air: 0
   mobility: 0
   import_csv: {fileID: 0}
+  NPC: 1
+  air_constant_decrease: 0
+  air_movement_decrease: 0
 --- !u!1001 &1435802656
 Prefab:
   m_ObjectHideFlags: 0
@@ -89253,6 +89266,9 @@ MonoBehaviour:
   air: 0
   mobility: 0
   import_csv: {fileID: 0}
+  NPC: 0
+  air_constant_decrease: 0
+  air_movement_decrease: 0
 --- !u!1 &1641395794
 GameObject:
   m_ObjectHideFlags: 0
