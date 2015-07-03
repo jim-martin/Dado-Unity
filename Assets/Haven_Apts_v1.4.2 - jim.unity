@@ -81639,6 +81639,14 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 164072, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289436, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b893fa374943994086d8066c4a4f252, type: 2}
   m_IsPrefabParent: 0
