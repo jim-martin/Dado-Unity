@@ -27,6 +27,7 @@ public class canvasDynamics : MonoBehaviour {
 	private GameObject radar;
 	private GameObject playerAxis;
 	private GameObject hotOrCold;
+	private GameObject[] trails;
 
 	private float distance;
 	private float direction;
@@ -42,6 +43,7 @@ public class canvasDynamics : MonoBehaviour {
 	public bool coldOrHotTextToggle;
 	public bool showRadar;
 	public bool scaleTargetArrowWithDistance;
+	public bool showTrails;
 
 	// Use this for initialization
 	void Start () {
@@ -139,5 +141,27 @@ public class canvasDynamics : MonoBehaviour {
 		} else {
 			radar.SetActive (false);
 		}
+
+		try{
+			trails = GameObject.FindGameObjectsWithTag("TeamTrail");
+		}catch(UnityException e){
+			Debug.Log(e);
+			return;
+		}
+
+		if (showTrails) {
+
+			for (int i = 0; i < trails.Length; i++) {
+				trails [i].GetComponent<TrailRenderer> ().enabled = true;
+			}
+
+		} else {
+
+			for( int i = 0; i < trails.Length; i++){
+				trails[i].GetComponent<TrailRenderer>().enabled = false;
+			}
+
+		}
+
 	}
 }

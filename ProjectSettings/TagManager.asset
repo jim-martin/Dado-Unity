@@ -12,6 +12,7 @@ TagManager:
   - p2 target
   - p3 target
   - p4 target
+  - TeamTrail
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Paths
   - 
   - 
   - 

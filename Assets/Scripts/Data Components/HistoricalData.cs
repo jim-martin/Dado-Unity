@@ -37,8 +37,8 @@ namespace Data
 		// Use this for initialization
 		void Start ()
 		{
-			imported_trail = import_csv_into_markers (import_csv);
-			test_imported_markers ();
+			//imported_trail = import_csv_into_markers (import_csv);
+			//test_imported_markers ();
 
 
 			trail = new List<Marker> ();
@@ -170,7 +170,7 @@ namespace Data
 				//targets
 				//gc.getTargets() -- returns array
 				int[] targets_hit = gc.getTargetsHit ();
-				Debug.Log (targets_hit);
+//				Debug.Log (targets_hit);
 				m.targets = targets_hit;
 
 			
@@ -320,7 +320,7 @@ namespace Data
 			
 			//current direction 8,9,10,11
 			//			public Quaternion rotation;
-			Debug.Log (rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",");
+//			Debug.Log (rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",");
 			//q1, q2, q3, q4
 			csv_line += rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",";
 
@@ -386,7 +386,7 @@ namespace Data
 		public void import_from_csv_line (string line)
 		{
 
-			Debug.Log (line);
+//			Debug.Log (line);
 
 			string[] fields = line.Split ("," [0]); //split on ','
 			if (fields.Length > 0) {
@@ -437,7 +437,9 @@ namespace Data
 
 				// 18-? - Targets
 				targets = new int[fields [18].Length];
+				Debug.Log ("Targets length: "+fields[18].Length);
 				for (int i = 0; i < fields[18].Length; i++) {
+					Debug.Log (fields[18].Substring (i,1));
 					targets [i] = int.Parse (fields [18].Substring (i, 1));
 				}
 			}
