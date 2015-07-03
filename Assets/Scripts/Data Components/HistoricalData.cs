@@ -21,9 +21,13 @@ namespace Data
 		public int total_idle;
 		public float phase_distance;
 		public int phase_idle;
-		public float air;
+		public float air = 100f;
 		public float mobility;
 		public TextAsset import_csv;
+
+		public float air_constant_decrease;
+		public float air_movement_decrease;
+
 		int exported = 0;
 		
 		//game controller:
@@ -37,9 +41,17 @@ namespace Data
 		// Use this for initialization
 		void Start ()
 		{
-			imported_trail = import_csv_into_markers (import_csv);
-			test_imported_markers ();
+			if (import_csv != null) {
+				imported_trail = import_csv_into_markers (import_csv);
+				test_imported_markers ();
+			}
 
+			if (air_constant_decrease == null || air_constant_decrease == 0) {
+				air_constant_decrease = 0.05f;
+			}
+			if (air_movement_decrease == null || air_movement_decrease == 0) {
+				air_movement_decrease = 0.3f;
+			}
 
 			trail = new List<Marker> ();
 			
@@ -87,9 +99,16 @@ namespace Data
 		
 		void UpdateAir (float distance_change)
 		{
-			air -= 1;
-			//todo: needs to be scaled
-			
+			air -= air_constant_decrease;
+//			Debug.Log ("distance change: " + distance_change);
+			air -= distance_change * air_movement_decrease;
+			Debug.Log ("new air: " + air);
+			//todo: needs to be scaled	
+		}
+
+		public float getAir ()
+		{
+			return air;
 		}
 		
 		void LogMarker ()
@@ -112,9 +131,11 @@ namespace Data
 			
 				//set total_distance
 				m.distance_change = 0;
+				Debug.Log ("trail count: " + trail.Count);
 				if (trail.Count > 0) {
 					//difference from past marker
 					m.distance_change = Vector3.Distance (trail [trail.Count - 1].position, m.position);
+					Debug.Log ("distance change: " + m.distance_change);
 					total_distance += m.distance_change;
 				}
 				m.total_distance = total_distance;
@@ -175,7 +196,6 @@ namespace Data
 
 			
 				//key frame
-			
 				m.export_marker_to_csv_line ();
 			
 				//add it to the list
@@ -320,7 +340,7 @@ namespace Data
 			
 			//current direction 8,9,10,11
 			//			public Quaternion rotation;
-			Debug.Log (rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",");
+//			Debug.Log (rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",");
 			//q1, q2, q3, q4
 			csv_line += rotation.ToString ().Substring (1, rotation.ToString ().Length - 2) + ",";
 
@@ -342,16 +362,19 @@ namespace Data
 			csv_line += mobility.ToString () + ",";
 			
 			//if first or last
-			csv_line += key_frame.ToString () + ",";
+			csv_line += key_frame.ToString ();
 
 			//targets hit
 			//encode as "100010101" etc, based on the target array length
 			//			public int[] targets;
-			foreach (int targ in targets) {
-				csv_line += targ.ToString ();
+			if (targets != null) {
+				csv_line += ",";
+				foreach (int targ in targets) {
+					csv_line += targ.ToString ();
+				}
 			}
 			
-//			Debug.Log (csv_line);
+			Debug.Log (csv_line);
 			
 			return csv_line;
 		}

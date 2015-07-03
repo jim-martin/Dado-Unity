@@ -21,6 +21,10 @@ public class canvasDynamics : MonoBehaviour {
 	Text text;  
 	Image hotOrColdImage;
 	AudioPitch audioPitchObject;
+
+	HistoricalData historical_data;
+	Text airText;
+
 	/*private GameObject character;
 	  bool change;*/
 	private GameObject teammate;
@@ -47,6 +51,10 @@ public class canvasDynamics : MonoBehaviour {
 	void Start () {
 		data = GetComponent<DataComponent> ();
 		canvas = GetComponent<Canvas> ();
+
+		historical_data = GetComponent<HistoricalData> ();
+		airText = GameObject.Find ("airLevel").GetComponent<Text> ();
+
 		//Debug.Log (canvas);
 		//text = GetComponent<Text> ();\
 		GameObject textContainer = GameObject.Find("dynamicText");
@@ -81,6 +89,9 @@ public class canvasDynamics : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		airText.text = historical_data.getAir ().ToString();
+
 		distance =  data.getDistance();
 		direction = data.getDirectionWithView();
 		//Debug.Log (data.getGlobalPosition ());
