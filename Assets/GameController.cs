@@ -45,7 +45,6 @@ public class GameController : MonoBehaviour {
 
 		phases = new Phase[]{idle, clearFloor, targetSearch, exit, idle};
 		//start the first phase
-		StepPhase ();
 
 	}
 
@@ -94,99 +93,99 @@ public class GameController : MonoBehaviour {
 	public int getCondition(){
 		return condition;
 	}
+	
+}
 
-
-	class Phase{
-		public float timeLimit;
-			   float timeStart;
-
-		public string targetTag;
-		public GameObject[] targets;
-		public int[] targetsHit;
-		public int targetsLeft;
-
-		public bool success = true;
-
-		public string[] profiles;
-		public int condition;
-
-
-		//Constructor for a target/timelimit phase
-		public Phase( string tag, string[] p, int t ){
-			timeLimit = t;
-			targetTag = tag;
-			FindTargets();
-
-			profiles = p;
-		}
-
-		//constructor for a time unlimitted phase
-		public Phase( string tag, string[] p ){
-			timeLimit = -1;
-			targetTag = tag;
-			FindTargets();
-
-			profiles = p;
-		}
-
-
-		//constructor for the idle phase ( no parameters means no constraints )
-		public Phase( string[] p ){
-			targetsLeft = 1;
-			timeLimit = -1;
-
-			profiles = p;
-		}
-
-		public void StartPhase( int condition ){
-			timeStart = Time.time;
-
-			//update feedback profiles
-			ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
-//			player.loadProfile (profiles [condition]);
-		}
-
-		public bool CheckComplete(){
-
-			if (targets != null) {
-
-				for (int i = 0; i < targets.Length; i++) {
-
-					TriggerTarget t = targets [i].GetComponent<TriggerTarget> ();
-
-					if (t == null) {
-						Debug.Log ("Target " + i + " doesn't have a TriggerTarget");
-					} else {
-
-						if (t.isTriggered == true && targetsHit [i] == 0) {
-
-							Debug.Log ("target triggered");
-							targetsHit [i] = 1;
-							targetsLeft--;
-						}
+class Phase{
+	public float timeLimit;
+	float timeStart;
+	
+	public string targetTag;
+	public GameObject[] targets;
+	public int[] targetsHit;
+	public int targetsLeft;
+	
+	public bool success = true;
+	
+	public string[] profiles;
+	public int condition;
+	
+	
+	//Constructor for a target/timelimit phase
+	public Phase( string tag, string[] p, int t ){
+		timeLimit = t;
+		targetTag = tag;
+		FindTargets();
+		
+		profiles = p;
+	}
+	
+	//constructor for a time unlimitted phase
+	public Phase( string tag, string[] p ){
+		timeLimit = -1;
+		targetTag = tag;
+		FindTargets();
+		
+		profiles = p;
+	}
+	
+	
+	//constructor for the idle phase ( no parameters means no constraints )
+	public Phase( string[] p ){
+		targetsLeft = 1;
+		timeLimit = -1;
+		
+		profiles = p;
+	}
+	
+	public void StartPhase( int condition ){
+		timeStart = Time.time;
+		
+		//update feedback profiles
+		ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
+		player.loadProfile (profiles [condition]);
+	}
+	
+	public bool CheckComplete(){
+		
+		if (targets != null) {
+			
+			for (int i = 0; i < targets.Length; i++) {
+				
+				TriggerTarget t = targets [i].GetComponent<TriggerTarget> ();
+				
+				if (t == null) {
+					Debug.Log ("Target " + i + " doesn't have a TriggerTarget");
+				} else {
+					
+					if (t.isTriggered == true && targetsHit [i] == 0) {
+						
+						Debug.Log ("target triggered");
+						targetsHit [i] = 1;
+						targetsLeft--;
 					}
 				}
 			}
-
-			//return true if the target was reached or if the time is up 
-			//(include other failure conditions here)
-			if (targetsLeft < 1 || 						//target(s) are found
-			    (Time.time - timeStart > timeLimit && timeLimit > 0)) {	//timelimit for phase is up, assuming time is limited
-				return true;
-			} else {
-				return false;
-			}
 		}
-
-		public void FindTargets(){
-			targets = GameObject.FindGameObjectsWithTag (targetTag);
-			targetsHit = new int[targets.Length];
-
-			for (int i = 0; i < targetsHit.Length; i++) {
-				targetsHit[i] = 0;
-			}
-
-			targetsLeft = targets.Length;
+		
+		//return true if the target was reached or if the time is up 
+		//(include other failure conditions here)
+		if (targetsLeft < 1 || 						//target(s) are found
+		    (Time.time - timeStart > timeLimit && timeLimit > 0)) {	//timelimit for phase is up, assuming time is limited
+			return true;
+		} else {
+			return false;
 		}
+	}
+	
+	public void FindTargets(){
+		targets = GameObject.FindGameObjectsWithTag (targetTag);
+		targetsHit = new int[targets.Length];
+		
+		for (int i = 0; i < targetsHit.Length; i++) {
+			targetsHit[i] = 0;
+		}
+		
+		targetsLeft = targets.Length;
 	}
 }
