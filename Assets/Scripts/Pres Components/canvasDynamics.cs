@@ -92,7 +92,7 @@ public class canvasDynamics : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		airText.text = historical_data.getAir ().ToString();
+		airText.text = Mathf.Round (historical_data.getAir ()).ToString();
 
 		distance =  data.getDistance();
 		direction = data.getDirectionWithView();
