@@ -18911,6 +18911,10 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 106790, guid: 9f230da7d7d0749598886da43c3ee876, type: 2}
+      propertyPath: m_TagString
+      value: p1 target
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f230da7d7d0749598886da43c3ee876, type: 2}
   m_IsPrefabParent: 0
@@ -27423,6 +27427,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
+  import_csv: {fileID: 0}
 --- !u!1 &521438978
 GameObject:
   m_ObjectHideFlags: 0
@@ -44095,6 +44100,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
+  import_csv: {fileID: 4900000, guid: 55fcfc8b126d44197a6ae7371e7a3a9c, type: 3}
 --- !u!1001 &821729914
 Prefab:
   m_ObjectHideFlags: 0
@@ -64946,7 +64952,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
 --- !u!1 &1169734892
 GameObject:
   m_ObjectHideFlags: 0
@@ -77920,6 +77926,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
+  import_csv: {fileID: 0}
 --- !u!1001 &1435802656
 Prefab:
   m_ObjectHideFlags: 0
@@ -89073,6 +89080,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
+  import_csv: {fileID: 0}
 --- !u!1 &1641395794
 GameObject:
   m_ObjectHideFlags: 0
@@ -89204,6 +89212,10 @@ Prefab:
     - target: {fileID: 106790, guid: 9f230da7d7d0749598886da43c3ee876, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 106790, guid: 9f230da7d7d0749598886da43c3ee876, type: 2}
+      propertyPath: m_TagString
+      value: p1 target
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f230da7d7d0749598886da43c3ee876, type: 2}

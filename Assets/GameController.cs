@@ -143,7 +143,7 @@ public class GameController : MonoBehaviour {
 
 			//update feedback profiles
 			ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
-			player.loadProfile (profiles [condition]);
+//			player.loadProfile (profiles [condition]);
 		}
 
 		public bool CheckComplete(){
