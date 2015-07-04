@@ -566,6 +566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f1f0f7f35824c08a6f05a259eb6e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target_search: 0
+  team_sonar: 0
+  self_ping: 0
+  historical_ping_toggle: 0
+  total_interval: 0
 --- !u!114 &11455916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -677,7 +682,9 @@ MonoBehaviour:
   textToggle: 1
   distanceTextToggle: 1
   coldOrHotTextToggle: 1
+  showRadar: 0
   scaleTargetArrowWithDistance: 1
+  showTrails: 0
 --- !u!114 &11481142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -703,6 +710,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance_input: 0
   direction_input: 0
+  zAxis_input: 0
+  minimumPitchScale: 0
+  maximumPitchScale: 0
 --- !u!114 &11484846
 MonoBehaviour:
   m_ObjectHideFlags: 1

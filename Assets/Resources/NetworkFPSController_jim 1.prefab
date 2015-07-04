@@ -954,7 +954,9 @@ MonoBehaviour:
   textToggle: 1
   distanceTextToggle: 0
   coldOrHotTextToggle: 1
+  showRadar: 0
   scaleTargetArrowWithDistance: 1
+  showTrails: 0
 --- !u!114 &11401556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1000,6 +1002,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance_input: 0
   direction_input: 0
+  zAxis_input: 0
+  minimumPitchScale: 0
+  maximumPitchScale: 0
 --- !u!114 &11407260
 MonoBehaviour:
   m_ObjectHideFlags: 1
