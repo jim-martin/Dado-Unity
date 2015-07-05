@@ -17,12 +17,12 @@ public class GameController : MonoBehaviour {
 //	static int _VISUAL = 1;
 //	static int _AUDIO = 2;
 
-	int condition = 1;
+	int condition;
 
 
 	//profile arrays for all conditions defined for each phase (profile names)
 	//
-	string [] clearFloorProfiles = new string[]{"control", "paths", "audio_history"};
+	string [] clearFloorProfiles = new string[]{"control", "paths", "control"};
 	string [] targetSearchProfiles = new string[]{"control", "radar", "pings"};
 	string [] exitProfiles = new string[]{"control", "control", "control"};
 	string [] idleProfiles = new string[]{"control", "control", "control"};

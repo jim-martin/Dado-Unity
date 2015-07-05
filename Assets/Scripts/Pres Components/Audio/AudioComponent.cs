@@ -23,6 +23,8 @@ public class AudioComponent : MonoBehaviour {
 	public bool historical_ping_toggle;
 
 	public float total_interval;
+
+	private bool pinging = false;
 	
 	void Start () {
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
@@ -36,6 +38,7 @@ public class AudioComponent : MonoBehaviour {
 		AudioSource[] audio_sources = GetComponents<AudioSource> ();
 
 		ping = audio_sources [0];
+		Debug.Log (ping);
 		team1 = audio_sources [1];
 		team2 = audio_sources [2];
 		team3 = audio_sources [3];
@@ -61,6 +64,22 @@ public class AudioComponent : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (target_search && !pinging) {
+			Invoke ("location_ping", interval);
+			pinging = true;
+		}
+		
+		if (team_sonar && !pinging) {
+			Invoke ("team_location_ping", 2);
+			pinging = true;
+		}
+		
+		if (historical_ping_toggle && !pinging) {
+			Invoke("historical_ping", 2);
+			pinging = true;
+		}
+		//ping.Play ();
 		//check if audio is playing
 
 		//get time sample
@@ -74,6 +93,7 @@ public class AudioComponent : MonoBehaviour {
 
 	//find target
 	void location_ping(){
+		Debug.Log ("calling location_ping");
 		//set ping frequency
 		if (audio_ping_frequency != null) {
 			interval = audio_ping_frequency.get_interval();
