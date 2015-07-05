@@ -3,7 +3,7 @@ var firePoints : Transform[]; //Fire particles will be created at these position
 var fuel : float = 100.0; //The amount of fuel stored in this object. Fuel will burn out over time.
 var fuelConsumption : float = 30.0; //The amount of fuel consumed per second by the object.
 var fireSpread : float = 2.0; //The radius at which fire will spread
-var spreadTime : float = 3.0; //The time after which fire will spread
+var spreadTime : float = 6.0; //The time after which fire will spread
 var randomRange : float = 1.2; //The random maximum time after the spreadTime
 var fallOutC : float = .05; //The chance that a Fire Point will fall out after some burn time
 private var fireStarted : boolean = false;

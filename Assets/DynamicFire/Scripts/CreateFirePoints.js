@@ -15,9 +15,9 @@ private var containingTag : String = "";
 
 function Create(){
 	
-	Debug.Log("Creating points for " + Selection.activeGameObject.name + " and all children...");
+	Debug.Log("Creating points for " + gameObject.name + " and all children...");
 
-	var targets : List.<GameObject> = GetBurnableChildren( Selection.activeGameObject );	
+	var targets : List.<GameObject> = GetBurnableChildren( gameObject );	
 	if(targets.Count < 1)
 	{
 		Debug.Log("No Burnable Objects Found");
@@ -100,9 +100,9 @@ function MakePoints( go : GameObject )
 
 function DestroyP()
 {
-	Debug.Log("Destroying points for " + Selection.activeGameObject.name + " and all children.");
+	Debug.Log("Destroying points for " + gameObject.name + " and all children.");
 
-	var targets : List.<GameObject> = GetBurnableChildren( Selection.activeGameObject );	
+	var targets : List.<GameObject> = GetBurnableChildren( gameObject );	
 	
 	for(var i: int = 0; i < targets.Count; i++){
 		//Debug.Log(targets[i].name);
