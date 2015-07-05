@@ -1,31 +1,76 @@
 @script ExecuteInEditMode
+
+
+import System.Collections.Generic;
+
+
 var FireDot : Transform;
 private var count : int = 0;
 private var warning = false;
-private var TString : String = "";
+private var TString : String = "2";
 private var createRatio : int = 0;
 private var looper : int = 1;
 
-function Create()
+private var containingTag : String = "";
+
+function Create(){
+	
+	Debug.Log("Creating points for " + Selection.activeGameObject.name + " and all children...");
+
+	var targets : List.<GameObject> = GetBurnableChildren( Selection.activeGameObject );	
+	if(targets.Count < 1)
+	{
+		Debug.Log("No Burnable Objects Found");
+	}
+	
+	
+	for(var i: int = 0; i < targets.Count; i++){
+		//Debug.Log(targets[i].name);
+		MakePoints(targets[i]);
+	}
+
+}
+
+function GetBurnableChildren( go : GameObject ) : List.<GameObject>
 {
-	if (gameObject.GetComponent(MeshFilter))
+	//list to be returned
+	var burnableChildren : List.<GameObject> = new List.<GameObject>();
+	
+	//get all children of the selected object
+	var children = go.GetComponentsInChildren(Transform);	
+	
+	//check that they meet the criteria for burnable and commit them to the return list
+	for( var child : Transform in children ){
+		go = child.gameObject;
+		if(go.GetComponent(MeshFilter) != null 
+		&& go.name.Contains(containingTag)){
+			burnableChildren.Add(go);
+		}
+	}
+	
+	return burnableChildren;
+}
+
+function MakePoints( go : GameObject )
+{
+	if (go.GetComponent(MeshFilter))
 		{
-			if (!transform.Find("FirePoints"))
+			if (!go.transform.Find("FirePoints"))
 				{
 					count = 0;
-					var myMesh : Mesh = GetComponent(MeshFilter).sharedMesh;
+					var myMesh : Mesh = go.GetComponent(MeshFilter).sharedMesh;
 					if (myMesh.vertexCount <= 2000 || warning)
 						{
 							if (int.TryParse(TString, createRatio))
 								{
 									var subC : GameObject = new GameObject("FirePoints");
-									subC.transform.parent = transform;
-									subC.transform.position = transform.position;
+									subC.transform.parent = go.transform;
+									subC.transform.position = go.transform.position;
 									for (var vert : Vector3 in myMesh.vertices)
 										{
 											if (looper == 1)
 												{
-													var dot : Transform = Instantiate(FireDot, transform.TransformPoint(vert), Quaternion.identity);
+													var dot : Transform = Instantiate(FireDot, go.transform.TransformPoint(vert), Quaternion.identity);
 													dot.name = "FirePoint"+count;
 													dot.parent = subC.transform;
 													count++;
@@ -55,9 +100,21 @@ function Create()
 
 function DestroyP()
 {
-	if (transform.Find("FirePoints"))
+	Debug.Log("Destroying points for " + Selection.activeGameObject.name + " and all children.");
+
+	var targets : List.<GameObject> = GetBurnableChildren( Selection.activeGameObject );	
+	
+	for(var i: int = 0; i < targets.Count; i++){
+		//Debug.Log(targets[i].name);
+		DestroyPoints(targets[i]);
+	}
+}
+
+function DestroyPoints( go : GameObject )
+{
+	if (go.transform.Find("FirePoints"))
 		{
-			DestroyImmediate(transform.Find("FirePoints").gameObject);
+			DestroyImmediate(go.transform.Find("FirePoints").gameObject);
 			Debug.Log("Fire Points destroyed.");
 		}
 }
