@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .550066531, y: 2.91168846e-16, z: -26.9559174}
+  m_LocalPosition: {x: -23.2099991, y: -3.6099999, z: 7.82999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -296,8 +296,8 @@ EllipsoidParticleEmitter:
   maxSize: 1.43999994
   minEnergy: 3
   maxEnergy: 6
-  minEmission: 6
-  maxEmission: 10
+  minEmission: 4
+  maxEmission: 6
   worldVelocity: {x: 0, y: 0, z: 0}
   localVelocity: {x: 0, y: 3.14999986, z: 0}
   rndVelocity: {x: 1.25999999, y: 1.25999999, z: 1.25999999}
@@ -381,7 +381,7 @@ ParticleRenderer:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: eb5315e2f77c540b6bf545720e84d3a5, type: 2}
   m_SubsetIndices: 
@@ -416,7 +416,7 @@ ParticleRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -507,7 +507,7 @@ WorldParticleCollider:
   m_CollisionEnergyLoss: .00999999978
   m_CollidesWith:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966985
   m_SendCollisionMessage: 0
   m_MinKillVelocity: 0
 --- !u!76 &7600004
@@ -529,7 +529,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: .55505687, b: .350746274, a: 1}
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5f1d64c1e3564d55a5eb33c20072bcf, type: 3}
   m_Name: 
