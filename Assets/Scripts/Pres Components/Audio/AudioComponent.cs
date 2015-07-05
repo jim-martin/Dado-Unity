@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Data;
 
-public class AudioComponent : MonoBehaviour {
+public class AudioComponent : MonoBehaviour
+{
 	private AudioSource ping;
 	private AudioSource team1;
 	private AudioSource team2;
@@ -16,23 +17,23 @@ public class AudioComponent : MonoBehaviour {
 	private AudioPanning audio_panning;
 	private DataComponent data;
 	private Transform myTransform;
-
+	private HistoricalData historical_data;
 	public bool target_search;
 	public bool team_sonar;
 	public bool self_ping;
 	public bool historical_ping_toggle;
-
 	public float total_interval;
-
 	private bool pinging = false;
 	
-	void Start () {
+	void Start ()
+	{
 		audio_ping_frequency = GetComponent<AudioPingFrequency> ();
 		audio_pitch = GetComponent<AudioPitch> ();
 		audio_volume = GetComponent<AudioVolume> ();
 		audio_panning = GetComponent<AudioPanning> ();
 
 		data = GetComponent<DataComponent> ();
+		historical_data = GetComponent<HistoricalData> ();
 		myTransform = GetComponent<Transform> ();
 
 		AudioSource[] audio_sources = GetComponents<AudioSource> ();
@@ -58,12 +59,13 @@ public class AudioComponent : MonoBehaviour {
 		}
 
 		if (historical_ping_toggle) {
-			Invoke("historical_ping", 2);
+			Invoke ("historical_ping", 2);
 		}
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
 		if (target_search && !pinging) {
 			Invoke ("location_ping", interval);
@@ -76,7 +78,7 @@ public class AudioComponent : MonoBehaviour {
 		}
 		
 		if (historical_ping_toggle && !pinging) {
-			Invoke("historical_ping", 2);
+			Invoke ("historical_ping", 2);
 			pinging = true;
 		}
 		//ping.Play ();
@@ -92,11 +94,12 @@ public class AudioComponent : MonoBehaviour {
 	}
 
 	//find target
-	void location_ping(){
+	void location_ping ()
+	{
 		Debug.Log ("calling location_ping");
 		//set ping frequency
 		if (audio_ping_frequency != null) {
-			interval = audio_ping_frequency.get_interval();
+			interval = audio_ping_frequency.get_interval ();
 //			Debug.Log ("frequency = ");
 //			Debug.Log (interval);
 		} else {
@@ -106,14 +109,14 @@ public class AudioComponent : MonoBehaviour {
 
 		//set pitch
 		if (audio_pitch != null) {
-			ping.pitch = audio_pitch.get_pitch();
+			ping.pitch = audio_pitch.get_pitch ();
 		} else {
 			ping.pitch = 1;
 		}
 
 		//set volume
 		if (audio_volume != null) {
-			ping.volume = audio_volume.get_volume();
+			ping.volume = audio_volume.get_volume ();
 		} else {
 			ping.volume = 1;
 		}
@@ -121,7 +124,7 @@ public class AudioComponent : MonoBehaviour {
 		//set panning
 		if (audio_panning != null) {
 //			AudioSource.PlayClipAtPoint(ping.clip, audio_panning.get_target_location());
-			ping.panStereo = audio_panning.get_panning();
+			ping.panStereo = audio_panning.get_panning ();
 		} else {
 
 		}
@@ -133,7 +136,8 @@ public class AudioComponent : MonoBehaviour {
 
 
 	//ping around in a sonar fashion
-	void team_location_ping(){
+	void team_location_ping ()
+	{
 		//get team objects
 		GameObject[] gos = data.getTeam ();
 
@@ -144,7 +148,7 @@ public class AudioComponent : MonoBehaviour {
 		//for each team object
 		for (int i = 0; i < gos.Length; i++) {
 			//get angle around
-			float direction = data.getDirection (gos[i]);
+			float direction = data.getDirection (gos [i]);
 			Debug.Log (direction);
 
 
@@ -153,16 +157,15 @@ public class AudioComponent : MonoBehaviour {
 			//-180 or 180 -> 1s
 			//1 -> 2s
 			float time_interval = 0f;
-			if(direction < 0){
+			if (direction < 0) {
 				time_interval = Mathf.Abs (direction) / 180 * total_interval / 2;
-			}
-			else if(direction > 0){
+			} else if (direction > 0) {
 				time_interval = total_interval / 2;
 				time_interval = (total_interval / 2) + ((total_interval / 2) - Mathf.Abs (direction) / 180 * (total_interval / 2));
 			}
 
 			//start coroutine instead of using invoke
-			StartCoroutine(PingWithObject(gos[i], time_interval, i));
+			StartCoroutine (PingWithObject (gos [i], time_interval, i));
 //			invoke location_ping(myTeammate, time_interval)
 		}
 
@@ -172,19 +175,21 @@ public class AudioComponent : MonoBehaviour {
 			me_ping.Play ();
 		}
 
-		Invoke("team_location_ping", reinvoke_interval);
+		Invoke ("team_location_ping", reinvoke_interval);
 	}
 			              
-	IEnumerator PingWithObject(GameObject go, float time_interval, int team_index){
-				yield return new WaitForSeconds (time_interval);
-				location_ping (go, team_index);
+	IEnumerator PingWithObject (GameObject go, float time_interval, int team_index)
+	{
+		yield return new WaitForSeconds (time_interval);
+		location_ping (go, team_index);
 
 		//this needs multiple sound sources to play overlapping
 	}
 
 	//accept a GameObject target and pass it through to the recipes
 	//used for team location ping
-	void location_ping(GameObject target, int team_index){
+	void location_ping (GameObject target, int team_index)
+	{
 		//frequency not included in this since it will be controlled by team_location_ping()
 		
 		AudioSource myPing = ping;
@@ -208,14 +213,14 @@ public class AudioComponent : MonoBehaviour {
 		
 		//set pitch
 		if (audio_pitch != null) {
-			myPing.pitch = audio_pitch.get_pitch(target);
+			myPing.pitch = audio_pitch.get_pitch (target);
 		} else {
 			myPing.pitch = 1;
 		}
 		
 		//set volume
 		if (audio_volume != null) {
-			myPing.volume = audio_volume.get_volume(target);
+			myPing.volume = audio_volume.get_volume (target);
 		} else {
 			myPing.volume = 1;
 		}
@@ -223,7 +228,7 @@ public class AudioComponent : MonoBehaviour {
 		//set panning
 		if (audio_panning != null) {
 			//			AudioSource.PlayClipAtPoint(ping.clip, audio_panning.get_target_location());
-			myPing.panStereo = audio_panning.get_panning(target);
+			myPing.panStereo = audio_panning.get_panning (target);
 		} else {
 			
 		}
@@ -231,40 +236,80 @@ public class AudioComponent : MonoBehaviour {
 		myPing.Play ();
 	}
 
-	void historical_ping(){
+	void historical_ping ()
+	{
 		//get my location
 		Vector3 myPos = myTransform.position;
 
+		float interval = 1f;
 
 		float freshness = 0f;
 
 		//get teammates
 		GameObject[] gos = data.getTeam ();
-		for (int i = 0; i < gos.Length; i++) {
-			//get points for each teammate
-			List<Marker> team_markers = data.get_trail (gos[i]);
-			if(team_markers.Count > 0){
-			foreach(Marker mark in team_markers){
+
+		List<Marker> historical_trail = historical_data.get_imported_trail ();
+
+		if (historical_trail.Count > 0) {
+
+			int close_markers = 0;
+			float most_recent = 0;
+
+			float first_timestamp = historical_trail[0].timeCreated;
+			float last_timestamp = historical_trail[0].timeCreated;
+
+			foreach (Marker mark in historical_trail) {
 				//check which ones are within the bounding radius
 //				Debug.Log (mark);
-				float dist = Vector3.Distance(myPos, mark.position);
+				float dist = Vector3.Distance (myPos, mark.position);
 //				Debug.Log (dist);
-				if(dist < 4){
+
+				if(mark.timeCreated < first_timestamp){
+					first_timestamp = mark.timeCreated;
+				}
+				if(mark.timeCreated > last_timestamp){
+					last_timestamp = mark.timeCreated;
+				}
+
+//				Debug.Log ("my Y: "+myPos.y);
+//				Debug.Log ("marker Y: "+mark.position.y);
+				if (dist < 3 && (Mathf.Abs (Mathf.Abs (myPos.y) - Mathf.Abs (mark.position.y)) < 2)) {
 					Debug.Log ("close");
-				//update freshness
-				//update time spent
+					//check for z-axis distance
+
+					//set ping frequency relative to number of markers
+					//update time spent
+					close_markers++;
+
+
+					//update freshness
+					if (mark.timeCreated > most_recent) {
+						most_recent = mark.timeCreated;
+					}
+
+
+
 				}
 			}
+			if (close_markers > 0) {
+				//set ping frequency
+				interval = 1f / close_markers;
+
+
+
+				//set pitch
+				ping.Play ();
 			}
-
-
 		}
+
+
+//		}
 		//how do you deal with self data?
 
 		//log freshness
 
 		//log time spent
 
-		Invoke ("historical_ping", 1f);
+		Invoke ("historical_ping", interval);
 	}
 }
