@@ -75,6 +75,13 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	public void StartGame(){
+
+		//container for the stepphase function because the button GUI 
+		//doesn't seem to reflect through delegates like it should.
+		StepPhase();
+	}
+
 	public void _StepPhase(){
 		//end current phase 
 		phases [currentPhase].EndPhase ();
