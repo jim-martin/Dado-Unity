@@ -266,6 +266,8 @@ namespace Data
 
 		public List<Marker> import_csv_into_markers (TextAsset file)
 		{
+
+
 			string[] lines = file.text.Split ("\n" [0]);
 			List<Marker> imported_markers = new List<Marker> ();
 			for (int i = 1; i < lines.Length - 1; i++) { //first line is header, last line is a blank line
@@ -420,6 +422,7 @@ namespace Data
 			if (fields.Length > 0) {
 
 				// 0 - timestamp
+				Debug.Log("BeforeFormatException");
 				timeCreated = float.Parse (fields [0]);
 
 				// 1 - phase
@@ -467,7 +470,9 @@ namespace Data
 				if (fields.Length > 18) { //looks like markers are being written in the menu before a condition is selected
 					targets = new int[fields [18].Length];
 					for (int i = 0; i < fields[18].Length; i++) {
-						targets [i] = int.Parse (fields [18].Substring (i, 1));
+						int val = 0;
+						if(int.TryParse ((fields [18].Substring (i, 1)), out val))
+							targets [i] = val;
 					}
 				}
 			}

@@ -1486,7 +1486,7 @@ MonoBehaviour:
   phase_idle: 0
   air: 0
   mobility: 0
-  import_csv: {fileID: 4900000, guid: 5647e5ab00f894dc1abd6d42e0df4289, type: 3}
+  import_csv: {fileID: 0}
   NPC: 0
   air_constant_decrease: 0
   air_movement_decrease: 0
