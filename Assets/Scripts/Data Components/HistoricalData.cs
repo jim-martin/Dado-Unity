@@ -24,12 +24,10 @@ namespace Data
 		public float air = 100f;
 		public float mobility;
 		public TextAsset import_csv;
-
 		public bool NPC; //don't log if NPC == true
 
 		public float air_constant_decrease;
 		public float air_movement_decrease;
-
 		int exported = 0;
 		
 		//game controller:
@@ -44,8 +42,9 @@ namespace Data
 		void Start ()
 		{
 			if (import_csv != null) {
-			//	imported_trail = import_csv_into_markers (import_csv);
-			//	test_imported_markers ();
+				imported_trail = import_csv_into_markers (import_csv);
+
+				test_imported_markers ();
 			}
 
 			if (air_constant_decrease == null || air_constant_decrease == 0) {
@@ -112,7 +111,11 @@ namespace Data
 		{
 			return air;
 		}
-		
+
+		public List<Marker> get_imported_trail(){
+			return imported_trail;
+		}
+
 		void LogMarker ()
 		{
 			if (gc.getPhase () == 4) {
@@ -193,7 +196,7 @@ namespace Data
 				//targets
 				//gc.getTargets() -- returns array
 				int[] targets_hit = gc.getTargetsHit ();
-				Debug.Log (targets_hit);
+//				Debug.Log (targets_hit);
 				m.targets = targets_hit;
 
 			
@@ -263,6 +266,8 @@ namespace Data
 
 		public List<Marker> import_csv_into_markers (TextAsset file)
 		{
+
+
 			string[] lines = file.text.Split ("\n" [0]);
 			List<Marker> imported_markers = new List<Marker> ();
 			for (int i = 1; i < lines.Length - 1; i++) { //first line is header, last line is a blank line
@@ -417,6 +422,7 @@ namespace Data
 			if (fields.Length > 0) {
 
 				// 0 - timestamp
+				Debug.Log("BeforeFormatException");
 				timeCreated = float.Parse (fields [0]);
 
 				// 1 - phase
@@ -461,9 +467,13 @@ namespace Data
 				key_frame = int.Parse (fields [17]);
 
 				// 18-? - Targets
-				targets = new int[fields [18].Length];
-				for (int i = 0; i < fields[18].Length; i++) {
-					targets [i] = int.Parse (fields [18].Substring (i, 1));
+				if (fields.Length > 18) { //looks like markers are being written in the menu before a condition is selected
+					targets = new int[fields [18].Length];
+					for (int i = 0; i < fields[18].Length; i++) {
+						int val = 0;
+						if(int.TryParse ((fields [18].Substring (i, 1)), out val))
+							targets [i] = val;
+					}
 				}
 			}
 
