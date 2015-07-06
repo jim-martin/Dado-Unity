@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GameController : MonoBehaviour {
 
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour {
 	void Awake(){
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 60);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 10);
 		clearFloor.name = "clearFloor";
 
 		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
@@ -57,7 +60,7 @@ public class GameController : MonoBehaviour {
 		idle.name = "idle";
 
 		//establish phase order
-		phases = new Phase[]{idle, clearFloor, targetSearch, exit, idle};
+		phases = new Phase[]{idle, clearFloor, targetSearch, exit};
 
 		//Define Delegates
 		StepPhase += _StepPhase;
@@ -99,11 +102,23 @@ public class GameController : MonoBehaviour {
 
 	public void _EndGame(){
 		//show logs?, move to new scene maybe
-		Debug.Log ("GAME OVER MUTHAFUCKA");
+		Debug.Log ("GAME ENDING IN 5...");
 		currentPhase = 0;
 		phases [currentPhase].StartPhase ();
+
+		Invoke("QuitApp", 5);
 	}
-	
+
+	void QuitApp(){
+
+		Debug.Log("Exiting application");
+		Application.Quit();
+
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+	}
+
 	
 	public int getPhase(){
 		return currentPhase;
