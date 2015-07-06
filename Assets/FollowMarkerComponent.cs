@@ -40,6 +40,7 @@ public class FollowMarkerComponent : MonoBehaviour {
 		if(import_csv != null){
 
 			trail = hdata.import_csv_into_markers(import_csv);
+
 		}else{
 
 			if (trail == null) {

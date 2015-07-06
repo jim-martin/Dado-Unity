@@ -5,7 +5,10 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
 using System.Reflection;
 
 public class ProfileComponent : MonoBehaviour {
