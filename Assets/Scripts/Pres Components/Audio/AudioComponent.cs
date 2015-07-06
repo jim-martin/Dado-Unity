@@ -24,6 +24,7 @@ public class AudioComponent : MonoBehaviour
 	public bool historical_ping_toggle;
 	public float total_interval;
 	private bool pinging = false;
+	public bool historical_binary;
 	
 	void Start ()
 	{
@@ -185,7 +186,6 @@ public class AudioComponent : MonoBehaviour
 
 		//this needs multiple sound sources to play overlapping
 	}
-
 	//accept a GameObject target and pass it through to the recipes
 	//used for team location ping
 	void location_ping (GameObject target, int team_index)
@@ -236,6 +236,70 @@ public class AudioComponent : MonoBehaviour
 		myPing.Play ();
 	}
 
+
+	IEnumerator PingWithMarker (Marker go, float time_interval, int team_index)
+	{
+		yield return new WaitForSeconds (time_interval);
+		location_ping (go, team_index);
+		
+		//this needs multiple sound sources to play overlapping
+	}
+
+	//accept a GameObject target and pass it through to the recipes
+	//used for team location ping
+	void location_ping (Marker target, int team_index)
+	{
+		//frequency not included in this since it will be controlled by team_location_ping()
+		
+		AudioSource myPing = ping;
+		switch (team_index) {
+		case 0:
+			myPing = ping;
+			break;
+		case 1:
+			myPing = team1;
+			break;
+		case 2:
+			myPing = team2;
+			break;
+		case 3:
+			myPing = team3;
+			break;
+		default:
+			myPing = ping;
+			break;
+		}
+		
+		//set pitch
+		if (audio_pitch != null) {
+//			myPing.pitch = audio_pitch.get_pitch (target);
+			myPing.pitch = 1;
+		} else {
+			myPing.pitch = 1;
+		}
+		
+		//set volume
+		if (audio_volume != null) {
+			myPing.volume = audio_volume.get_volume (target);
+		} else {
+			myPing.volume = 1;
+		}
+		
+		//set panning
+		if (audio_panning != null) {
+			//			AudioSource.PlayClipAtPoint(ping.clip, audio_panning.get_target_location());
+			myPing.panStereo = audio_panning.get_panning (target);
+		} else {
+			
+		}
+		
+		myPing.Play ();
+	}
+
+
+
+
+
 	void historical_ping ()
 	{
 		//get my location
@@ -249,6 +313,8 @@ public class AudioComponent : MonoBehaviour
 		GameObject[] gos = data.getTeam ();
 
 		List<Marker> historical_trail = historical_data.get_imported_trail ();
+
+		List<Marker> close_markers_list = new List<Marker> ();
 
 		if (historical_trail.Count > 0) {
 
@@ -273,15 +339,14 @@ public class AudioComponent : MonoBehaviour
 
 //				Debug.Log ("my Y: "+myPos.y);
 //				Debug.Log ("marker Y: "+mark.position.y);
-				if (dist < 3 && (Mathf.Abs (Mathf.Abs (myPos.y) - Mathf.Abs (mark.position.y)) < 2)) {
-					Debug.Log ("close");
-					//check for z-axis distance
+				if (dist < 3 && (Mathf.Abs (Mathf.Abs (myPos.y) - Mathf.Abs (mark.position.y)) < 2)) {//check for z-axis distance
+
+					close_markers_list.Add(mark);
 
 					//set ping frequency relative to number of markers
 					//update time spent
 					close_markers++;
-
-
+				
 					//update freshness
 					if (mark.timeCreated > most_recent) {
 						most_recent = mark.timeCreated;
@@ -293,12 +358,21 @@ public class AudioComponent : MonoBehaviour
 			}
 			if (close_markers > 0) {
 				//set ping frequency
-				interval = 1f / close_markers;
+
 
 
 
 				//set pitch
-				ping.Play ();
+				if(historical_binary){
+					ping.Play ();
+					interval = 1f / close_markers;
+					if(interval < .1f){
+						interval = .1f;
+					}
+				}
+				else{
+					historical_sonar(close_markers_list);
+				}
 			}
 		}
 
@@ -312,4 +386,43 @@ public class AudioComponent : MonoBehaviour
 
 		Invoke ("historical_ping", interval);
 	}
+
+	void historical_sonar(List<Marker> markers){
+		//for each team object
+		float total_interval = 1f;
+
+		for (int i = 0; i < markers.Count; i++) {
+			//get angle around
+			float direction = data.getDirection (markers [i]);
+			Debug.Log (direction);
+			
+			
+			
+			//-1 -> 0s
+			//-180 or 180 -> 1s
+			//1 -> 2s
+			float time_interval = 0f;
+			if (direction < 0) {
+				time_interval = Mathf.Abs (direction) / 180 * total_interval / 2;
+			} else if (direction > 0) {
+				time_interval = total_interval / 2;
+				time_interval = (total_interval / 2) + ((total_interval / 2) - Mathf.Abs (direction) / 180 * (total_interval / 2));
+			}
+
+
+			//start coroutine instead of using invoke
+			if(i == 0 || i == markers.Count - 1 || i == markers.Count / 2){
+				Debug.Log ("historical pinging: "+i);
+				StartCoroutine (PingWithMarker (markers [i], time_interval, i));
+				//invoke location_ping(myTeammate, time_interval)
+			}
+		}
+		
+		float reinvoke_interval = total_interval;
+		
+		if (self_ping == true) {
+			me_ping.Play ();
+		}
+	}
+
 }

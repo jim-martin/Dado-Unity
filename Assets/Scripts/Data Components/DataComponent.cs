@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using Data;
 
 namespace Data
 {
@@ -144,14 +145,43 @@ namespace Data
 			return direction;
 		}
 
-		//returns distance to given GameObject
-		public float getDistance(GameObject myGO){
+		public float getDistance(GameObject myGO)
+		{
 			float distance;
 			GameObject target = myGO;
 			
-			Vector3 vec = target.transform.position - t_Transform.position;
-			distance = Vector3.Magnitude (target.transform.position - t_Transform.position);
+			Vector3 vec = target.transform.position - transform.position;
+			distance = Vector3.Magnitude (target.transform.position - transform.position);
 			return distance;
+		}
+
+		//returns distance to given Marker
+		public float getDistance(Marker myGO){
+			float distance;
+			Marker target = myGO;
+			
+			Vector3 vec = target.position - t_Transform.position;
+			distance = Vector3.Magnitude (target.position - t_Transform.position);
+			return distance;
+		}
+
+		//returns direction to given Marker
+		public float getDirection(Marker myGO){
+			float direction;
+			Marker target = myGO;
+			
+			Vector3 tRot = target.position - transform.position;
+			
+			float angle = Vector3.Angle(target.position, transform.forward);
+			int angleDir;
+			if (Vector3.Cross (target.position, transform.forward).y > 0) {
+				angleDir = 1; //looking to the right of the target, pan to the left
+			} else {
+				angleDir = -1; //looking to the left of the target, pan to the right
+			}
+			
+			direction = angle*angleDir;
+			return direction;
 		}
 
 		public List<Marker> get_trail(GameObject go){
