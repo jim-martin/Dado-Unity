@@ -36,8 +36,6 @@ public class ProfileComponent : MonoBehaviour {
 		
 		Profile p;
 
-		Debug.Log (Application.persistentDataPath);
-		
 		//find serialized profile on default datapath
 		if (File.Exists (@"./Assets/logs/profiles" + "/" + filename + ".dat")) {
 			BinaryFormatter bf = new BinaryFormatter ();

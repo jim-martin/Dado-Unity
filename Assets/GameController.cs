@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GameController : MonoBehaviour {
 
@@ -7,6 +10,13 @@ public class GameController : MonoBehaviour {
 	public string p2_targets = "p2 target";
 	public string p3_targets = "p3 target";
 	public string p4_targets = "p4 target";
+
+	//define delegates
+	public delegate void delegate_StepPhase();
+	public delegate_StepPhase StepPhase;
+
+	public delegate void delegate_EndGame();
+	public delegate_EndGame EndGame;
 
 	
 	int currentPhase = 0;
@@ -25,7 +35,6 @@ public class GameController : MonoBehaviour {
 	string [] clearFloorProfiles = new string[]{"control", "paths", "control"};
 	string [] targetSearchProfiles = new string[]{"control", "radar", "pings"};
 	string [] exitProfiles = new string[]{"control", "control", "control"};
-	string [] idleProfiles = new string[]{"control", "control", "control"};
 
 
 
@@ -35,16 +44,27 @@ public class GameController : MonoBehaviour {
 	Phase exit;
 	Phase idle;
 
-	// Use this for initialization
-	void Start () {
-		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 60);
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
-		exit = new Phase (p4_targets, exitProfiles, 180);
-		idle = new Phase (idleProfiles);
+	void Awake(){
 
-		phases = new Phase[]{idle, clearFloor, targetSearch, exit, idle};
-		//start the first phase
+		//define phase parameters for each phase
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 10);
+		clearFloor.name = "clearFloor";
+
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
+		targetSearch.name = "targetSearch";
+
+		exit = new Phase (p4_targets, exitProfiles, 180);
+		exit.name = "exit";
+
+		idle = new Phase ();
+		idle.name = "idle";
+
+		//establish phase order
+		phases = new Phase[]{idle, clearFloor, targetSearch, exit};
+
+		//Define Delegates
+		StepPhase += _StepPhase;
+		EndGame += _EndGame;
 
 	}
 
@@ -58,14 +78,21 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void StepPhase(){
+	public void StartGame(){
+
+		//container for the stepphase function because the button GUI 
+		//doesn't seem to reflect through delegates like it should.
+		StepPhase();
+	}
+
+	public void _StepPhase(){
 		//end current phase 
 		phases [currentPhase].EndPhase ();
 
 		//start next phase if there is one, otherwise, end the game (return to idle phase);
 		if (currentPhase < phases.Length - 1) {
 			currentPhase++;
-			phases [currentPhase].StartPhase (condition);
+			phases [currentPhase].StartPhase ();
 			Debug.Log("NEW PHASE : " + currentPhase);
 			Debug.Log ("\tPROFILE : " + phases[currentPhase].profiles[condition]);
 		} else {
@@ -73,16 +100,32 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void EndGame(){
+	public void _EndGame(){
 		//show logs?, move to new scene maybe
-		Debug.Log ("GAME OVER MUTHAFUCKA");
+		Debug.Log ("GAME ENDING IN 5...");
 		currentPhase = 0;
-		phases [currentPhase].StartPhase (condition);
+		phases [currentPhase].StartPhase ();
+
+		Invoke("QuitApp", 5);
 	}
-	
+
+	void QuitApp(){
+
+		Debug.Log("Exiting application");
+		Application.Quit();
+
+		#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+	}
+
 	
 	public int getPhase(){
 		return currentPhase;
+	}
+
+	public Phase getPhaseObject(){
+		return phases[currentPhase];
 	}
 
 	public int[] getTargetsHit(){
@@ -90,8 +133,12 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void setCondition( int c ){
+		//set high level condition
 		condition = c;
-		//update profiles
+		//update phases' conditions
+		foreach( Phase p in phases ){
+			p.condition = c;
+		}
 	}
 
 	public int getCondition(){
@@ -100,7 +147,9 @@ public class GameController : MonoBehaviour {
 	
 }
 
-class Phase{
+public class Phase{
+	public string name;
+
 	public float timeLimit;
 	float timeStart;
 	
@@ -108,41 +157,69 @@ class Phase{
 	public GameObject[] targets;
 	public int[] targetsHit;
 	public int targetsLeft;
-	
+
 	public bool success = true;
 	
 	public string[] profiles;
 	public int condition;
+
+
+	//define Delegates
+	public delegate void delegate_StartPhase();
+	public delegate_StartPhase StartPhase;
+
+	public delegate void delegate_EndPhase();
+	public delegate_StartPhase EndPhase;
 	
 	
 	//Constructor for a target/timelimit phase
 	public Phase( string tag, string[] p, int t ){
 		timeLimit = t;
 		targetTag = tag;
-		FindTargets();
-		
+
+		if(!FindTargets()){
+			Debug.Log ("Couldn't find any targets with tag : " + targetTag);
+		}
+
+		//define profiles
 		profiles = p;
+
+		//subscribe delegates
+		StartPhase += _StartPhase;
+		EndPhase += _EndPhase;
 	}
 	
 	//constructor for a time unlimitted phase
 	public Phase( string tag, string[] p ){
 		timeLimit = -1;
 		targetTag = tag;
-		FindTargets();
-		
+		if(!FindTargets()){
+			Debug.Log ("Couldn't find any targets with tag : " + targetTag);
+		}
+
+		//define profiles
 		profiles = p;
+
+		//subscribe delegates
+		StartPhase += _StartPhase;
+		EndPhase += _EndPhase;
 	}
 	
 	
 	//constructor for the idle phase ( no parameters means no constraints )
-	public Phase( string[] p ){
+	public Phase(){
 		targetsLeft = 1;
 		timeLimit = -1;
-		
-		profiles = p;
+
+		//define profiles
+		profiles = new string[]{"control", "control", "control"};
+
+		//subscribe Delegates
+		StartPhase += _StartPhase;
+		EndPhase += _EndPhase;
 	}
 	
-	public void StartPhase( int condition ){
+	public void _StartPhase(){
 		timeStart = Time.time;
 		
 		//update feedback profiles
@@ -157,7 +234,7 @@ class Phase{
 		}
 	}
 
-	public void EndPhase(){
+	public void _EndPhase(){
 
 		//disable the targets for this phase
 		if (targets != null) {
@@ -200,7 +277,7 @@ class Phase{
 		}
 	}
 	
-	public void FindTargets(){
+	public bool FindTargets(){
 		targets = GameObject.FindGameObjectsWithTag (targetTag);
 		targetsHit = new int[targets.Length];
 		
@@ -209,5 +286,10 @@ class Phase{
 		}
 		
 		targetsLeft = targets.Length;
+		if(targets.Length < 1){
+			return false;
+		}else{
+			return true;
+		}
 	}
 }

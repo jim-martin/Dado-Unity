@@ -11928,7 +11928,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1720464074}
-        m_MethodName: StepPhase
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15827,6 +15827,10 @@ Prefab:
     - target: {fileID: 11412242, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
       propertyPath: instantiationId
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194912, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
