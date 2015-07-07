@@ -428,7 +428,7 @@ namespace Data
 			if (fields.Length > 0) {
 
 				// 0 - timestamp
-				Debug.Log("BeforeFormatException");
+//				Debug.Log("BeforeFormatException");
 				timeCreated = float.Parse (fields [0]);
 
 				// 1 - phase

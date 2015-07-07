@@ -25,7 +25,7 @@ public class FollowMarkerComponent : MonoBehaviour {
 
 	void CheckForData(){
 
-		Debug.Log ("Checking for data....");
+//		Debug.Log ("Checking for data....");
 
 		if (hdata == null) {
 			try{

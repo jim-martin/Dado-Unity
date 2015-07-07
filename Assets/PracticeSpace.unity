@@ -736,7 +736,7 @@ GameObject:
   - 96: {fileID: 1394488718}
   - 33: {fileID: 1394488717}
   - 23: {fileID: 1394488716}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: trail (1)
   m_TagString: TeamTrail
   m_Icon: {fileID: 0}
@@ -1165,7 +1165,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694704253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5571}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.05243719, y: 1.05243719, z: 1.05243719}
   m_Children:
   - {fileID: 262953772}
@@ -1313,14 +1313,6 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8219332, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11418850, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8194912, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

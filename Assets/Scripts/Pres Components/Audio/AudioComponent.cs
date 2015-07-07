@@ -40,7 +40,7 @@ public class AudioComponent : MonoBehaviour
 		AudioSource[] audio_sources = GetComponents<AudioSource> ();
 
 		ping = audio_sources [0];
-		Debug.Log (ping);
+//		Debug.Log (ping);
 		team1 = audio_sources [1];
 		team2 = audio_sources [2];
 		team3 = audio_sources [3];

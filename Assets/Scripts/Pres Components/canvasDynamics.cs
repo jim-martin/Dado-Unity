@@ -16,6 +16,8 @@ public class canvasDynamics : MonoBehaviour {
 
 	}
 
+	Camera HUDCam;
+
 	DataComponent data;
 	Canvas canvas;
 	Text text;  
@@ -51,6 +53,8 @@ public class canvasDynamics : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		HUDCam = GameObject.Find ("FirstPersonCharacter").GetComponent<Camera> ();
+
 		data = GetComponent<DataComponent> ();
 		canvas = GetComponent<Canvas> ();
 
@@ -162,15 +166,11 @@ public class canvasDynamics : MonoBehaviour {
 
 		if (showTrails) {
 
-			for (int i = 0; i < trails.Length; i++) {
-				trails [i].GetComponent<TrailRenderer> ().enabled = true;
-			}
+			HUDCam.cullingMask |= 1 << LayerMask.NameToLayer("Paths");
 
 		} else {
 
-			for( int i = 0; i < trails.Length; i++){
-				trails[i].GetComponent<TrailRenderer>().enabled = false;
-			}
+			HUDCam.cullingMask &=  ~(1 << LayerMask.NameToLayer("Paths"));
 
 		}
 
