@@ -95,8 +95,10 @@ function spreadFire()
 		for (var all : Collider in InRange)
 			{
 				yield WaitForSeconds(Random.value * randomRange);
-				if (all.GetComponent("FirePoint"))
-					all.SendMessage("startFire");
+				if(all != null){		
+					if (all.GetComponent("FirePoint"))
+						all.SendMessage("startFire"); 
+					}
 			}
 }
 
