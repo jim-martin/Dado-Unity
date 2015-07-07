@@ -242,7 +242,6 @@ public class Phase{
 				targets[i].GetComponent<MeshRenderer>().enabled = false;
 			}
 		}
-
 	}
 	
 	public bool CheckComplete(){
