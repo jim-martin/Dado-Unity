@@ -118,6 +118,10 @@ namespace Data
 
 		void LogMarker ()
 		{
+			//stop logging if the data has already been exported
+			if (exported == 1) 
+				return;
+
 			if (gc.getPhase () == 4) {
 				Debug.Log ("Idle phase");
 				if (exported == 0 && NPC == false) {
@@ -232,7 +236,7 @@ namespace Data
 		{
 			Debug.Log ("export to CSV");
 			//export the current scenario / presentation profile
-			
+
 			//choose file
 
 			//make the last frame key_frame=2
@@ -248,6 +252,8 @@ namespace Data
 
 
 			}
+
+			exported = 1;
 		}
 
 		public void test_imported_markers ()
@@ -277,8 +283,8 @@ namespace Data
 				imported_markers.Add (new_marker);
 			}
 
-			Debug.Log ("imported markers:");
-			Debug.Log (imported_markers);
+			//Debug.Log ("imported markers");
+			//Debug.Log (imported_markers);
 			return imported_markers;
 		}
 	}
@@ -381,7 +387,7 @@ namespace Data
 				}
 			}
 			
-//			Debug.Log (csv_line);
+			//Debug.Log (csv_line);
 			
 			return csv_line;
 		}
@@ -416,7 +422,7 @@ namespace Data
 		public void import_from_csv_line (string line)
 		{
 
-			Debug.Log (line);
+			//Debug.Log (line);
 
 			string[] fields = line.Split ("," [0]); //split on ','
 			if (fields.Length > 0) {
