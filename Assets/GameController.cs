@@ -125,8 +125,21 @@ public class GameController : MonoBehaviour {
 		return currentPhase;
 	}
 
-	public Phase getPhaseObject(){
-		return phases[currentPhase];
+	public Phase getPhaseByName( string name ){
+
+		int p = -1;
+
+		for (int i = 0; i < phases.Length; i++) {
+			if(phases[i].name == name){
+				p = i;
+			}
+		}
+
+		if (p > -1) {
+			return phases [p];
+		} else {
+			return null;
+		}
 	}
 
 	public int[] getTargetsHit(){
