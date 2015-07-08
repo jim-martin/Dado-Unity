@@ -77,6 +77,9 @@ namespace Data
 			
 			//log da shit
 			StartLogging ();
+
+			//subscribe export function to gc's endgame
+			gc.EndGame += export_all_markers_to_csv;
 		}
 		
 		void Update ()
@@ -121,16 +124,6 @@ namespace Data
 			//stop logging if the data has already been exported
 			if (exported == 1) 
 				return;
-
-			if (gc.getPhase () == 4) {
-				Debug.Log ("Idle phase");
-				if (exported == 0 && NPC == false) {
-					Debug.Log ("Exporting");
-					export_all_markers_to_csv ();
-					exported = 1;
-				}
-
-			} else {
 
 				//create a new marker
 				Marker m = new Marker ();
@@ -209,7 +202,6 @@ namespace Data
 			
 				//add it to the list
 				trail.Add (m);
-			}
 		}
 		
 		void DrawDebugTrail ()
