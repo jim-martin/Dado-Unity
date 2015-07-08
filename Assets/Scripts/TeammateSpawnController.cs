@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TeammateSpawnController : MonoBehaviour {
 
 	GameController gc;
+	GameObject p;
 	GameObject[] spawns;
 
 	// Use this for initialization
@@ -21,6 +23,39 @@ public class TeammateSpawnController : MonoBehaviour {
 	}
 	
 	void PlaceTarget () {
-		Debug.Log ("PLACE TEAM TARGET");
+		//get the player's position
+		try{
+			p = GameObject.FindGameObjectWithTag ("Player");
+		}catch( UnityException e){
+			Debug.Log(e);
+			return;
+		}
+
+		//place target on the second(?) nearest spawn to the player
+
+		//get distances for all the points
+		float[] dist = new float[spawns.Length];
+		for (int i = 0; i < spawns.Length; i++) {
+ 			dist[i] = Vector3.Distance(p.transform.position, spawns[i].transform.position);
+			Debug.Log("Unsorted : " + dist[i]);
+		}
+
+		//sort the points
+		float[] sorted = (float[])(dist.Clone());
+		Array.Sort (sorted); 
+		foreach (float s in sorted) {
+			Debug.Log("Sorted : " + s);
+		}
+
+		//get the original index of the point we want to spawn the player on
+		int index = 0;
+		for (int j = 0; j < dist.Length; j++) {
+			if (dist [j].Equals (sorted [1])) {
+				index = j;
+			}
+		}
+
+		//apply the transform
+		transform.position = spawns [index].transform.position;
 	}
 }
