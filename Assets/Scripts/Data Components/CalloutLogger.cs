@@ -107,7 +107,7 @@ namespace Data
 			csv_line += responseDelay.ToString() + ",";
 			csv_line += succes.ToString ();
 
-			Debug.Log(csv_line);
+//			Debug.Log(csv_line);
 			airLogs.Add (csv_line);
 		}
 
