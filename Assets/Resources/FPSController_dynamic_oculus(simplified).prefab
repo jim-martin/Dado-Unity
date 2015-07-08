@@ -226,6 +226,7 @@ GameObject:
   - 82: {fileID: 8219598}
   - 82: {fileID: 8262872}
   - 82: {fileID: 8219332}
+  - 114: {fileID: 11421458}
   m_Layer: 0
   m_Name: FPSController_dynamic_oculus(simplified)
   m_TagString: Player
@@ -289,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
   m_LocalRotation: {x: 0, y: .0379878171, z: 0, w: .999278247}
-  m_LocalPosition: {x: -6.50263691, y: 1.42999995, z: -9.923769}
+  m_LocalPosition: {x: -.150000006, y: -3.04999995, z: -3.71000004}
   m_LocalScale: {x: .766680539, y: .766680539, z: .766680539}
   m_Children:
   - {fileID: 472164}
@@ -690,7 +691,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b40bb91cae3614d60824b8275db83db8, type: 3}
@@ -1164,6 +1165,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Air Level: 93%'
+--- !u!114 &11421458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed6cee126a915a4a9470ca1aef056b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airCalloutFreq: 5
 --- !u!114 &11430078
 MonoBehaviour:
   m_ObjectHideFlags: 1
