@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Target
-  - Spawn Location
+  - player_spawn
   - Team
   - push
   - p1 target
@@ -13,6 +13,7 @@ TagManager:
   - p3 target
   - p4 target
   - TeamTrail
+  - team_spawn
   layers:
   - Default
   - TransparentFX
