@@ -178,28 +178,29 @@ public class ProfileComponent : MonoBehaviour {
 			}else{
 				Type t = c.GetType();
 				//Debug.Log("Component Type : " + t.Name);
+
+				//ignore the profilecomponents settings itself in the profile
+				if( t != this.GetType()){
 				
-				
-				System.Reflection.FieldInfo[] fieldInfo = t.GetFields();
-				foreach (System.Reflection.FieldInfo info in fieldInfo){
+					System.Reflection.FieldInfo[] fieldInfo = t.GetFields();
+					foreach (System.Reflection.FieldInfo info in fieldInfo){
 
-					//Debug.Log("\tType in field:  " + info.GetValue(c).GetType());
+						//Debug.Log("\tType in field:  " + info.GetValue(c).GetType());
 
-					if( info.GetValue(c).GetType() == typeof(bool)){
+						if( info.GetValue(c).GetType() == typeof(bool)){
 
-						ProfileEntry e = new ProfileEntry();
-						e.component = t.FullName;
-						e.key = info.Name;
-						e.value = (Boolean)info.GetValue(c);
+							ProfileEntry e = new ProfileEntry();
+							e.component = t.FullName;
+							e.key = info.Name;
+							e.value = (Boolean)info.GetValue(c);
 
-						list.Add(e);
+							list.Add(e);
 
+						}
 					}
 					
-
-					
 				}
-				
+
 				System.Reflection.PropertyInfo[] propertyInfo = t.GetProperties();
 				foreach (System.Reflection.PropertyInfo info in propertyInfo){
 				}
