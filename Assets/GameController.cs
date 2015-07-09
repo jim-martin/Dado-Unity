@@ -97,6 +97,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void _StepPhase(){
+
 		//end current phase 
 		phases [currentPhase].EndPhase ();
 
@@ -133,6 +134,11 @@ public class GameController : MonoBehaviour {
 	
 	public int getPhase(){
 		return currentPhase;
+	}
+
+	public Phase getPhaseObject(){
+
+		return phases [currentPhase];
 	}
 
 	public Phase getPhaseByName( string name ){
@@ -247,18 +253,8 @@ public class Phase{
 		timeStart = Time.time;
 		
 		//update feedback profiles
-		ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
+	//	ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
 
-		//split profiles in condition by ','
-		string[] toLoad = profiles[condition].Split(',');
-
-		//load 1st profile
-		player.loadProfile( toLoad[0]);
-
-		//load_add the rest, if any
-		for(int i = 1; i < toLoad.Length; i++){
-			player.loadProfile_Add( toLoad[i]);
-		}
 
 		//ensure that the targets for this phase are enabled
 		if (targets != null) {

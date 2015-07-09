@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System;
@@ -13,12 +13,87 @@ using System.Reflection;
 
 public class ProfileComponent : MonoBehaviour {
 
-	public string saveFileName = "default";
-	public string loadFileName = "default";
+	public KeyCode key;
 
-	public void saveProfile( string filename ){
+	[SerializeField]
+	bool pull = false;
+
+	GameController gc;
+
+
+	void Awake(){
+
+		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
+		if(pull){
+
+			//pull doesn't need anything initilized on awake
+
+		}else{
+
+			//subscribe to stepphase() on gc
+			gc.StepPhase += loadPhaseProfiles;
+
+		}
+
+	}
+
+	void Update(){
+
+		if(pull){
+
+			//check keydown
+			if(Input.GetKeyDown(key)){
+				loadPhaseProfiles();
+			}
+
+			//check keyup
+			if(Input.GetKeyUp(key)){
+				loadProfile("control");
+			}
+			
+		}else{
+
+			//!pull doesnt' need anything per frame	
+			
+		}
+
+	}
+
+	public void TogglePull(){
+
+		pull = !pull;
+
+		if(pull){
+
+			//unsubscribe the loadphaseprofiles function since we want it to be off all the time with pull
+			gc.StepPhase -= loadPhaseProfiles;
+			
+		}else{
+
+			//subscribe the loadphaseprofiles function
+			gc.StepPhase += loadPhaseProfiles;
+		}
+
+	}
+
+	void loadPhaseProfiles(){
+
+		//split profiles in condition by ','
+		string[] toLoad = gc.getPhaseObject().profiles[gc.getCondition()].Split(',');
 		
+		//load 1st profile
+		loadProfile( toLoad[0]);
 		
+		//load_add the rest, if any
+		for(int i = 1; i < toLoad.Length; i++){
+			loadProfile_Add( toLoad[i]);
+		}
+
+	}
+
+
+	public void saveProfile( string filename ){		
 		
 		//create serializer
 		BinaryFormatter bf = new BinaryFormatter ();
