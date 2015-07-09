@@ -57,6 +57,35 @@ public class ProfileComponent : MonoBehaviour {
 			Debug.Log ("PROFILE DATA" + filename + ".dat NOT FOUND");
 		}
 	}
+
+	public void loadProfile_Add( string filename ){
+
+		Profile p;
+		
+		//find serialized profile on default datapath
+		if (File.Exists (@"./Assets/logs/profiles" + "/" + filename + ".dat")) {
+			BinaryFormatter bf = new BinaryFormatter ();
+			FileStream file = File.Open (@"./Assets/logs/profiles" + "/" + filename + ".dat", FileMode.Open);
+			p = (Profile)bf.Deserialize (file);
+			file.Close ();
+			
+			//adjust "profile" Class settings
+			for (int i = 0; i < p.entries.Length; i++) {
+				
+				//				Debug.Log(p.entries[i].component);
+				//				Debug.Log("\t" + p.entries[i].key);
+				//				Debug.Log("\t" + p.entries[i].value);
+
+				//only change positive values stored by the profile
+				Component c = GetComponent (p.entries [i].component);
+				if( (bool)c.GetType().GetField(p.entries[i].key).GetValue(c) ){
+					c.GetType ().GetField (p.entries [i].key).SetValue (c, p.entries [i].value);
+				}
+			}		
+		} else {
+			Debug.Log ("PROFILE DATA" + filename + ".dat NOT FOUND");
+		}
+	}
 	
 	Profile Introspect(){
 		
