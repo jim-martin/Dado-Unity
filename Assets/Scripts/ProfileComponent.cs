@@ -78,7 +78,7 @@ public class ProfileComponent : MonoBehaviour {
 
 				//only change positive values stored by the profile
 				Component c = GetComponent (p.entries [i].component);
-				if( (bool)c.GetType().GetField(p.entries[i].key).GetValue(c) ){
+				if( p.entries [i].value ){
 					c.GetType ().GetField (p.entries [i].key).SetValue (c, p.entries [i].value);
 				}
 			}		
