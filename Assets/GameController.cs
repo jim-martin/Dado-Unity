@@ -47,11 +47,10 @@ public class GameController : MonoBehaviour {
 	void Awake(){
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 5
-		                        );
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 10);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 10);
 		targetSearch.name = "targetSearch";
 
 		exit = new Phase (p4_targets, exitProfiles, 180);

@@ -37,15 +37,11 @@ public class TeammateSpawnController : MonoBehaviour {
 		float[] dist = new float[spawns.Length];
 		for (int i = 0; i < spawns.Length; i++) {
  			dist[i] = Vector3.Distance(p.transform.position, spawns[i].transform.position);
-			Debug.Log("Unsorted : " + dist[i]);
 		}
 
 		//sort the points
 		float[] sorted = (float[])(dist.Clone());
 		Array.Sort (sorted); 
-		foreach (float s in sorted) {
-			Debug.Log("Sorted : " + s);
-		}
 
 		//get the original index of the point we want to spawn the player on
 		int index = 0;

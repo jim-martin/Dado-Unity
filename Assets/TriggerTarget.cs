@@ -5,13 +5,26 @@ public class TriggerTarget : MonoBehaviour {
 
 	public bool isTriggered = false;
 
-	void OnCollisionEnter( Collision col ){
+	MeshRenderer mesh;
 
-		MeshRenderer mesh = GetComponent<MeshRenderer> ();
+	void Awake (){
+		mesh = GetComponent<MeshRenderer> ();
+	}
+
+	void OnCollisionEnter( Collision col ){
 
 		if (col.gameObject.tag == "push" && mesh.enabled) {
 			isTriggered = true;
 		}
 
+	}
+
+	void OnTriggerEnter( Collider other ){
+
+		Debug.Log ("TRIGGERENTER");
+
+		if (other.gameObject.tag == "Player" && mesh.enabled) {
+			isTriggered = true;
+		}
 	}
 }
