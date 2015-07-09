@@ -227,6 +227,7 @@ GameObject:
   - 82: {fileID: 8262872}
   - 82: {fileID: 8219332}
   - 114: {fileID: 11421458}
+  - 114: {fileID: 11482684}
   m_Layer: 0
   m_Name: FPSController_dynamic_oculus(simplified)
   m_TagString: Player
@@ -289,8 +290,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
-  m_LocalRotation: {x: 0, y: .0379878171, z: 0, w: .999278247}
-  m_LocalPosition: {x: -.150000006, y: -3.04999995, z: -3.71000004}
+  m_LocalRotation: {x: 0, y: .0119100567, z: 0, w: .99992913}
+  m_LocalPosition: {x: -36.6927376, y: -5.25, z: -30.6592369}
   m_LocalScale: {x: .766680539, y: .766680539, z: .766680539}
   m_Children:
   - {fileID: 472164}
@@ -1145,7 +1146,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123628}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -1416,6 +1417,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11482684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb560a570a6d374daf13a455bbd8987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tag: player_spawn
+  spawnPhase: awake
 --- !u!114 &11485930
 MonoBehaviour:
   m_ObjectHideFlags: 1

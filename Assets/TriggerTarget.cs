@@ -21,8 +21,6 @@ public class TriggerTarget : MonoBehaviour {
 
 	void OnTriggerEnter( Collider other ){
 
-		Debug.Log ("TRIGGERENTER");
-
 		if (other.gameObject.tag == "Player" && mesh.enabled) {
 			isTriggered = true;
 		}
