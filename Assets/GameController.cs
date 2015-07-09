@@ -32,6 +32,11 @@ public class GameController : MonoBehaviour {
 
 	//profile arrays for all conditions defined for each phase (profile names)
 	//
+	/*	control	--nothing
+	 *  paths 	--trails
+	 * 	radar	--radar disk
+	 * 	pings	--targetted search style pings
+	 */
 	string [] clearFloorProfiles = new string[]{"control", "paths", "control"};
 	string [] targetSearchProfiles = new string[]{"control", "radar", "pings"};
 	string [] exitProfiles = new string[]{"control", "control", "control"};
@@ -243,7 +248,17 @@ public class Phase{
 		
 		//update feedback profiles
 		ProfileComponent player = GameObject.FindGameObjectWithTag ("Player").GetComponent<ProfileComponent> ();
-		player.loadProfile (profiles [condition]);
+
+		//split profiles in condition by ','
+		string[] toLoad = profiles[condition].Split(',');
+
+		//load 1st profile
+		player.loadProfile( toLoad[0]);
+
+		//load_add the rest, if any
+		for(int i = 1; i < toLoad.Length; i++){
+			player.loadProfile_Add( toLoad[i]);
+		}
 
 		//ensure that the targets for this phase are enabled
 		if (targets != null) {
