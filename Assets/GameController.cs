@@ -46,6 +46,9 @@ public class GameController : MonoBehaviour {
 
 	void Awake(){
 
+		//pause game time until the game starts
+		Time.timeScale = 0;
+
 		//define phase parameters for each phase
 		clearFloor = new Phase (p1_targets, clearFloorProfiles, 10);
 		clearFloor.name = "clearFloor";
@@ -83,6 +86,9 @@ public class GameController : MonoBehaviour {
 		//container for the stepphase function because the button GUI 
 		//doesn't seem to reflect through delegates like it should.
 		StepPhase();
+
+		//start the timescale normally on game start
+		Time.timeScale = 1;
 	}
 
 	public void _StepPhase(){
