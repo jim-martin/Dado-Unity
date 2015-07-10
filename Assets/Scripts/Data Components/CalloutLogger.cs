@@ -115,7 +115,9 @@ namespace Data
 
 			Debug.Log ("Exporting Callout Logs");
 
-			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/callout_log_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
+			int playerID = (int)Mathf.Floor(PlayerPrefs.GetInt("testStep") / PlayerPrefs.GetInt("totalTestSteps"));
+			int logID = (PlayerPrefs.GetInt("testStep") % PlayerPrefs.GetInt("totalTestSteps"));
+			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/participant" + playerID + "callout_log" + logID + "_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
 				//write header line
 				file.WriteLine (csv_header);
 
