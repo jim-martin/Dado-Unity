@@ -7,12 +7,14 @@ public class TeammateSpawnController : MonoBehaviour {
 	GameController gc;
 	GameObject p;
 	GameObject[] spawns;
+	GameObject[] trails;
 
 	// Use this for initialization
 	void Awake () {
 
 		gc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		spawns = GameObject.FindGameObjectsWithTag ("team_spawn");
+		trails = GameObject.FindGameObjectsWithTag ("TeamTrail");
 
 	}
 
@@ -23,6 +25,7 @@ public class TeammateSpawnController : MonoBehaviour {
 	}
 	
 	void PlaceTarget () {
+
 		//get the player's position
 		try{
 			p = GameObject.FindGameObjectWithTag ("Player");
@@ -53,5 +56,13 @@ public class TeammateSpawnController : MonoBehaviour {
 
 		//apply the transform
 		transform.position = spawns [index].transform.position;
+
+		//clear the trails that aren't associated with the chosen spawn location
+		string n = spawns[index].gameObject.name;
+		for(int k = 0; k < trails.Length; k++){
+			if(!trails[k].name.Equals(n)){
+				trails[k].gameObject.SetActive(false);
+			}
+		}
 	}
 }

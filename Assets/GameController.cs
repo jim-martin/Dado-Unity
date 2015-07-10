@@ -54,10 +54,10 @@ public class GameController : MonoBehaviour {
 		string [] exitProfiles = new string[]{"control", "paths", "audio_paths", PlayerPrefs.GetString("customProfile")};
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 100);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 5);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 5);
 		targetSearch.name = "targetSearch";
 
 		exit = new Phase (p4_targets, exitProfiles, 180);
