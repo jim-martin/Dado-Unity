@@ -226,13 +226,15 @@ namespace Data
 		
 		public void export_all_markers_to_csv ()
 		{
-			Debug.Log ("export to CSV");
+			Debug.Log ("Exporting makers");
 			//export the current scenario / presentation profile
 
 			//choose file
 
 			//make the last frame key_frame=2
-			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/test_log_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
+			int playerID = (int)Mathf.Floor(PlayerPrefs.GetInt("testStep") / PlayerPrefs.GetInt("totalTestSteps"));
+			int logID = (PlayerPrefs.GetInt("testStep") % PlayerPrefs.GetInt("totalTestSteps"));
+			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/participant" + playerID +"_log" + logID +"_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
 				//write header line
 				file.WriteLine (trail [0].csv_header_line ());
 				

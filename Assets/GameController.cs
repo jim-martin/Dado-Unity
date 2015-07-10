@@ -120,9 +120,10 @@ public class GameController : MonoBehaviour {
 
 		int i = PlayerPrefs.GetInt( "testStep" );
 		int j = PlayerPrefs.GetInt( "totalTestSteps" );
-		PlayerPrefs.SetInt( "testStep" , i+1 );
+		i++;
 
-		Debug.Log(i);
+		PlayerPrefs.SetInt( "testStep" , i);
+
 		Debug.Log(i%j);
 		if((i % j) == 0 ){
 			Invoke("QuitApp", 3);
