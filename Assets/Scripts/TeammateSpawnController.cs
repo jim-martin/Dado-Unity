@@ -23,6 +23,8 @@ public class TeammateSpawnController : MonoBehaviour {
 		gc.getPhaseByName ("targetSearch").StartPhase += PlaceTarget;
 
 	}
+
+	//hotfix for fucked up transform behavior
 	
 	void PlaceTarget () {
 

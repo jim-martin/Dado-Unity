@@ -51,15 +51,15 @@ public class GameController : MonoBehaviour {
 	 * 	pings		--targetted search style pings
 	 *  audio_paths	--trails represented with audio
 	 */
-		string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths,paths", PlayerPrefs.GetString("customProfile")};
-		string [] targetSearchProfiles = new string[]{"control", "radar", "pings", PlayerPrefs.GetString("customProfile")};
+		string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths", PlayerPrefs.GetString("customProfile")};
+		string [] targetSearchProfiles = new string[]{"control", "radar,paths", "pings", PlayerPrefs.GetString("customProfile")};
 		string [] exitProfiles = new string[]{"control", "paths", "audio_paths", PlayerPrefs.GetString("customProfile")};
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 400);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 100);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 5);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
 		targetSearch.name = "targetSearch";
 
 		exit = new Phase (p4_targets, exitProfiles, 180);
