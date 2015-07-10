@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d348437d4aeee469f6b3a714ddb986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testStep: 0
+  testStep: 4
   totalTestSteps: 4
   customProfile: control
 --- !u!1 &1644160304

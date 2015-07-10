@@ -232,7 +232,7 @@ namespace Data
 			//choose file
 
 			//make the last frame key_frame=2
-			int playerID = (int)Mathf.Floor(PlayerPrefs.GetInt("testStep") / PlayerPrefs.GetInt("totalTestSteps"));
+			int playerID = (int)Mathf.Floor((PlayerPrefs.GetInt("testStep")-1) / PlayerPrefs.GetInt("totalTestSteps"));
 			int logID = (PlayerPrefs.GetInt("testStep") % PlayerPrefs.GetInt("totalTestSteps"));
 			using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"./Assets/logs/participant" + playerID +"_log" + logID +"_"+System.DateTime.Now.ToString("yyyyMMddHHmmssffff")+".csv", true)) {
 				//write header line
