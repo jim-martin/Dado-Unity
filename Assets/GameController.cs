@@ -54,13 +54,13 @@ public class GameController : MonoBehaviour {
 		string [] exitProfiles = new string[]{"control", "control", "control", PlayerPrefs.GetString("customProfile")};
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 200);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 5);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 200);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 5);
 		targetSearch.name = "targetSearch";
 
-		exit = new Phase (p4_targets, exitProfiles, 180);
+		exit = new Phase (p4_targets, exitProfiles, 5);
 		exit.name = "exit";
 
 		idle = new Phase ();
@@ -113,11 +113,27 @@ public class GameController : MonoBehaviour {
 
 	public void _EndGame(){
 		//show logs?, move to new scene maybe
-		Debug.Log ("GAME ENDING IN 5...");
 		currentPhase = 0;
 		phases [currentPhase].StartPhase ();
 
-		Invoke("QuitApp", 5);
+		int i = PlayerPrefs.GetInt( "testStep" );
+		int j = PlayerPrefs.GetInt( "totalTestSteps" );
+		PlayerPrefs.SetInt( "testStep" , i+1 );
+
+		Debug.Log(i);
+		Debug.Log(i%j);
+		if((i % j) == 0 ){
+			Invoke("QuitApp", 3);
+			Debug.Log ("GAME ENDING IN 3...");
+		}else{
+			Invoke("LoadNextScene", 3);
+			Debug.Log("NEXT TEST LOADING IN 3...");
+		}
+
+	}
+
+	void LoadNextScene(){
+		Application.LoadLevel(0);
 	}
 
 	void QuitApp(){

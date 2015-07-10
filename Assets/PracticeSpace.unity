@@ -1148,6 +1148,7 @@ GameObject:
   - 4: {fileID: 1528007148}
   - 114: {fileID: 1528007147}
   - 114: {fileID: 1528007149}
+  - 114: {fileID: 1528007150}
   m_Layer: 0
   m_Name: GameLogic
   m_TagString: GameController
@@ -1193,6 +1194,20 @@ MonoBehaviour:
   p2_targets: p2 target
   p3_targets: p3 target
   p4_targets: p4 target
+--- !u!114 &1528007150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528007146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66a0c31633b159448f821404d0d9569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTestSteps: 4
+  testStep: 0
+  customProfile: control
 --- !u!1 &1644160304
 GameObject:
   m_ObjectHideFlags: 0
