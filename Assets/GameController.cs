@@ -51,16 +51,16 @@ public class GameController : MonoBehaviour {
 	 */
 		string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths,paths", PlayerPrefs.GetString("customProfile")};
 		string [] targetSearchProfiles = new string[]{"control", "radar", "pings", PlayerPrefs.GetString("customProfile")};
-		string [] exitProfiles = new string[]{"control", "control", "control", PlayerPrefs.GetString("customProfile")};
+		string [] exitProfiles = new string[]{"control", "paths", "audio_paths", PlayerPrefs.GetString("customProfile")};
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 5);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 100);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 5);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
 		targetSearch.name = "targetSearch";
 
-		exit = new Phase (p4_targets, exitProfiles, 5);
+		exit = new Phase (p4_targets, exitProfiles, 180);
 		exit.name = "exit";
 
 		idle = new Phase ();
