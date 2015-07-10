@@ -1202,11 +1202,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1528007146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b66a0c31633b159448f821404d0d9569, type: 3}
+  m_Script: {fileID: 11500000, guid: 99d348437d4aeee469f6b3a714ddb986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTestSteps: 4
   testStep: 0
+  totalTestSteps: 4
   customProfile: control
 --- !u!1 &1644160304
 GameObject:

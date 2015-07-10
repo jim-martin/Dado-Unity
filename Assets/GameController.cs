@@ -104,7 +104,7 @@ public class GameController : MonoBehaviour {
 		if (currentPhase < phases.Length - 1) {
 			currentPhase++;
 			phases [currentPhase].StartPhase ();
-			Debug.Log("NEW PHASE : " + currentPhase);
+			Debug.Log("NEW PHASE : " + phases[currentPhase].name);
 			Debug.Log ("\tPROFILE : " + phases[currentPhase].profiles[condition]);
 		} else {
 			EndGame();
@@ -223,7 +223,7 @@ public class Phase{
 		targetTag = tag;
 
 		if(!FindTargets()){
-			Debug.Log ("Couldn't find any targets with tag : " + targetTag);
+			//Debug.Log ("Couldn't find any targets with tag : " + targetTag);
 		}
 
 		//define profiles
@@ -239,7 +239,7 @@ public class Phase{
 		timeLimit = -1;
 		targetTag = tag;
 		if(!FindTargets()){
-			Debug.Log ("Couldn't find any targets with tag : " + targetTag);
+			//Debug.Log ("Couldn't find any targets with tag : " + targetTag);
 		}
 
 		//define profiles
