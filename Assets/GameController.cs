@@ -30,20 +30,6 @@ public class GameController : MonoBehaviour {
 	int condition;
 
 
-	//profile arrays for all conditions defined for each phase (profile names)
-	//
-	/*	control		--nothing
-	 *  paths 		--trails
-	 * 	radar		--radar disk
-	 * 	pings		--targetted search style pings
-	 *  audio_paths	--trails represented with audio
-	 */
-	string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths,paths"};
-	string [] targetSearchProfiles = new string[]{"control", "radar", "pings"};
-	string [] exitProfiles = new string[]{"control", "control", "control"};
-
-
-
 	Phase[] phases;
 	Phase clearFloor;
 	Phase targetSearch;
@@ -54,6 +40,18 @@ public class GameController : MonoBehaviour {
 
 		//pause game time until the game starts
 		Time.timeScale = 0;
+
+		//profile arrays for all conditions defined for each phase (profile names)
+		//
+		/*	control		--nothing
+	 *  paths 		--trails
+	 * 	radar		--radar disk
+	 * 	pings		--targetted search style pings
+	 *  audio_paths	--trails represented with audio
+	 */
+		string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths,paths", PlayerPrefs.GetString("customProfile")};
+		string [] targetSearchProfiles = new string[]{"control", "radar", "pings", PlayerPrefs.GetString("customProfile")};
+		string [] exitProfiles = new string[]{"control", "control", "control", PlayerPrefs.GetString("customProfile")};
 
 		//define phase parameters for each phase
 		clearFloor = new Phase (p1_targets, clearFloorProfiles, 200);
@@ -243,7 +241,7 @@ public class Phase{
 		timeLimit = -1;
 
 		//define profiles
-		profiles = new string[]{"control", "control", "control"};
+		profiles = new string[]{"control", "control", "control", "control"};
 
 		//subscribe Delegates
 		StartPhase += _StartPhase;
