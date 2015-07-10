@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour {
 		//pause game time until the game starts
 		Time.timeScale = 0;
 
+		Screen.lockCursor = true;
+
 		//profile arrays for all conditions defined for each phase (profile names)
 		//
 		/*	control		--nothing

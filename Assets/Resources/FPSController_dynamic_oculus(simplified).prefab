@@ -1063,8 +1063,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b55b0bcbb9a0648825f08d538c7c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveFileName: radar
+  key: 102
+  saveFileName: 
   loadFileName: control
+  pull: 0
 --- !u!114 &11404922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1177,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed6cee126a915a4a9470ca1aef056b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  airCalloutFreq: 5
+  airCalloutFreq: 10
 --- !u!114 &11430078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1750,14 +1752,14 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 298.605011}
-  m_LocalScale: {x: 4.82024717, y: 4.82024765, z: 2.722121}
+  m_LocalPosition: {x: 0, y: 0, z: 185}
+  m_LocalScale: {x: 5.88000011, y: 7.28000021, z: 2.722121}
   m_Children: []
   m_Father: {fileID: 22451378}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -785.694092, y: 699.999817}
+  m_AnchoredPosition: {x: 78, y: -470}
   m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22482192
