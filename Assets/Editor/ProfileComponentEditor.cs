@@ -11,17 +11,15 @@ public class ProfileComponentEditor : Editor {
 		DrawDefaultInspector ();
 
 		ProfileComponent p = (ProfileComponent)target;
-
-		string saveFileName = "default";
-		EditorGUILayout.TextField("Save File : ", saveFileName);
-		if (GUILayout.Button ("Save Profile to " + saveFileName + ".dat")) {
-			p.saveProfile( saveFileName );
+				
+		p.saveFileName = EditorGUILayout.TextField("Save File : ", p.saveFileName);
+		if (GUILayout.Button ("Save Profile to " + p.saveFileName + ".dat")) {
+			p.saveProfile( p.saveFileName );
 		}
 
-		string loadFileName = "default";
-		EditorGUILayout.TextField("Load File : ", loadFileName);
-		if (GUILayout.Button ("Load Profile from " + loadFileName + ".dat")) {
-			p.loadProfile( loadFileName );
+		p.loadFileName = EditorGUILayout.TextField("Load File : ", p.loadFileName);
+		if (GUILayout.Button ("Load Profile from " + p.loadFileName + ".dat")) {
+			p.loadProfile( p.loadFileName );
 		}
 	}
 }

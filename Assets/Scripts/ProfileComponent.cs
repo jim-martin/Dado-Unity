@@ -14,6 +14,8 @@ using System.Reflection;
 public class ProfileComponent : MonoBehaviour {
 
 	public KeyCode key;
+	public string saveFileName;
+	public string loadFileName;
 
 	[SerializeField]
 	bool pull = false;
