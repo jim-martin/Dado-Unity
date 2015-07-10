@@ -14,6 +14,7 @@ TagManager:
   - p4 target
   - TeamTrail
   - team_spawn
+  - SelfTrail
   layers:
   - Default
   - TransparentFX

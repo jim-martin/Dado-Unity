@@ -23,6 +23,10 @@ public class FollowMarkerComponent : MonoBehaviour {
 		//figure out lerp
 	}
 
+	public List<Marker> GetTrail(){
+		return trail;
+	}
+
 	void CheckForData(){
 
 //		Debug.Log ("Checking for data....");
@@ -69,7 +73,9 @@ public class FollowMarkerComponent : MonoBehaviour {
 
 	void Step(){
 		currentStep++;
-		transform.position = trail [currentStep].position + (Vector3.down * 0.5f);
-		transform.rotation = trail [currentStep].rotation;
+		if(currentStep < trail.Count){
+			transform.position = trail [currentStep].position + (Vector3.down * 0.5f);
+			transform.rotation = trail [currentStep].rotation;
+		}
 	}
 }

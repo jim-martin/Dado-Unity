@@ -297,6 +297,23 @@ public class AudioComponent : MonoBehaviour
 	}
 
 
+	List<Marker> concatenateTrails( GameObject[] trails ){
+
+		//create return list
+		List<Marker> r = new List<Marker>();
+
+		//concat each array into return list
+		for(int i = 0; i < trails.Length; i++){
+			try{
+				r.AddRange(trails[i].GetComponent<FollowMarkerComponent>().GetTrail());
+			}catch(UnityException e){
+				Debug.Log("Trail at " + trails[i].name + " isn't providing a marker list.");
+			}
+		}
+
+		//return the list
+		return r;
+	}
 
 
 
@@ -312,7 +329,8 @@ public class AudioComponent : MonoBehaviour
 		//get teammates
 		GameObject[] gos = data.getTeam ();
 
-		List<Marker> historical_trail = historical_data.get_imported_trail ();
+		GameObject[] trails = GameObject.FindGameObjectsWithTag("TeamTrail");
+		List<Marker> historical_trail = concatenateTrails( trails );
 
 		List<Marker> close_markers_list = new List<Marker> ();
 

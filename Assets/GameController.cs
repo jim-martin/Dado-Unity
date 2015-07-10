@@ -32,12 +32,13 @@ public class GameController : MonoBehaviour {
 
 	//profile arrays for all conditions defined for each phase (profile names)
 	//
-	/*	control	--nothing
-	 *  paths 	--trails
-	 * 	radar	--radar disk
-	 * 	pings	--targetted search style pings
+	/*	control		--nothing
+	 *  paths 		--trails
+	 * 	radar		--radar disk
+	 * 	pings		--targetted search style pings
+	 *  audio_paths	--trails represented with audio
 	 */
-	string [] clearFloorProfiles = new string[]{"control", "paths", "control"};
+	string [] clearFloorProfiles = new string[]{"control", "paths", "audio_paths,paths"};
 	string [] targetSearchProfiles = new string[]{"control", "radar", "pings"};
 	string [] exitProfiles = new string[]{"control", "control", "control"};
 
@@ -55,10 +56,10 @@ public class GameController : MonoBehaviour {
 		Time.timeScale = 0;
 
 		//define phase parameters for each phase
-		clearFloor = new Phase (p1_targets, clearFloorProfiles, 10);
+		clearFloor = new Phase (p1_targets, clearFloorProfiles, 200);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 10);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 200);
 		targetSearch.name = "targetSearch";
 
 		exit = new Phase (p4_targets, exitProfiles, 180);
