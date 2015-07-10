@@ -22,9 +22,14 @@ namespace Data
 		HistoricalData h;
 		GameController gc;
 
-		float stepStartTime;
+		float stepStartTime_air;
 		float stepStartAir;
-		bool responded = true;
+		bool respondedAir = true;
+
+		float[] callTimes = new float[6]{26.0f, 30.0f, 42.0f, 55.0f, 65.0f, 100.0f};
+		int currentStep_ladder = 0;
+		float stepStartTime_ladder;
+		bool respondedLadder = true;
 
 		// Use this for initialization
 		void Start () {
@@ -34,7 +39,8 @@ namespace Data
 			airLogs = new List<string> ();
 
 			stepStartAir = h.air;
-			stepStartTime = Time.time;
+			stepStartTime_air = Time.time;
+			stepStartTime_ladder = Time.time;
 
 			//subscribe the export function to endgame
 			gc.EndGame += Export;
@@ -46,30 +52,38 @@ namespace Data
 
 			//check for air status, call step if neccessary
 			if (h.air < Mathf.Floor(stepStartAir - airCalloutFreq)) { //floor rounding is so that the key can be pressed right when the # changes in the HUD
-				StepCallout();
+				StepCalloutAir();
 			}
 
+			//compare gametime to the logged ladder6 times to see if the state needs to be stepped.
+			if ((Time.time % 151.0f) > callTimes[(currentStep_ladder % callTimes.Length)]){
+				StepCalloutLadder();
+			}
 
 			//check for response input
 			if (Input.GetKeyDown ("space")) {
-				if(!responded){
+				if(!respondedAir){
 					LogResponse( true , "air" );
+				}
+
+				if(!respondedLadder){
+					LogResponse( true, "ladder");
 				}
 			}
 		
 		}
 
-		void StepCallout(){
+		void StepCalloutAir(){
 			//if !responded, log the last step as a failure
-			if (!responded) {
+			if (!respondedAir) {
 				LogResponse(false, "air" );
 			}
 
 			//start listening for a new response
-			responded = false;
+			respondedAir = false;
 
 			//store start time of step
-			stepStartTime = Time.time;
+			stepStartTime_air = Time.time;
 
 			//store start air of step
 			stepStartAir -= airCalloutFreq;
@@ -79,20 +93,47 @@ namespace Data
 //			Debug.Log ("\tAir : " + stepStartAir);
 		}
 
+		void StepCalloutLadder(){
+
+			//Debug.Log("LADDERCALLOUT STEP : " + currentStep_ladder);
+
+			currentStep_ladder++;
+
+			if (!respondedLadder) {
+				//Debug.Log("\tYOU FAILED");
+				LogResponse(false, "ladder" );
+			}
+
+			respondedLadder = false;
+
+
+		}
+
 		//always called before callout is stepped
 		void LogResponse( bool succes, string type ){
 
+			//-1 in output means something wasn't assigned properly
+			float responseDelay = -1.0f;
+
 			//stop listening for new responses
-			responded = true;
+			if(type.Equals("air")){
+				respondedAir = true;
+				//ResponseDelay
+				responseDelay = Time.time - stepStartTime_air;
+			}
+
+			if(type.Equals("ladder")){
+				//Debug.Log("LADDER CALLOUT LOGGED");
+				respondedLadder = true;
+				//ResponseDelay
+				responseDelay = Time.time - stepStartTime_ladder;
+			}
 
 			//FIELDS TO LOG:
 			//TimeStamp
 			float tStamp = Time.time;
 
 			//CalloutType
-
-			//ResponseDelay
-			float responseDelay = Time.time - stepStartTime;
 
 			//Success
 
