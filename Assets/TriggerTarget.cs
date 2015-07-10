@@ -4,6 +4,7 @@ using System.Collections;
 public class TriggerTarget : MonoBehaviour {
 
 	public bool isTriggered = false;
+	public Texture2D tex;
 
 	MeshRenderer mesh;
 
@@ -15,6 +16,7 @@ public class TriggerTarget : MonoBehaviour {
 
 		if (col.gameObject.tag == "push" && mesh.enabled) {
 			isTriggered = true;
+			mesh.material.mainTexture = tex;
 		}
 
 	}
