@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 764c94d74e0a30b448e42e6ae2c9257b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 51
+  key: 52
 --- !u!114 &918118157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1345,8 @@ GameObject:
   - 222: {fileID: 1694704257}
   - 114: {fileID: 1694704256}
   - 114: {fileID: 1694704255}
+  - 114: {fileID: 1694704258}
+  - 114: {fileID: 1694704259}
   m_Layer: 5
   m_Name: end practice
   m_TagString: Untagged
@@ -1409,8 +1411,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1694704258}
+        m_MethodName: StoreProfile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1528007147}
-        m_MethodName: LoadNextScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1449,6 +1462,29 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694704253}
+--- !u!114 &1694704258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694704253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16b919eebd56974ba9f52e1858b67cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1694704259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1694704253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764c94d74e0a30b448e42e6ae2c9257b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
 --- !u!1001 &1772962347
 Prefab:
   m_ObjectHideFlags: 0

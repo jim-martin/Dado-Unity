@@ -92,12 +92,13 @@ public class AudioComponent : MonoBehaviour
 		//adjust panning in rate of change in direction
 
 
+
 	}
 
 	//find target
 	void location_ping ()
 	{
-		Debug.Log ("calling location_ping");
+		//Debug.Log ("calling location_ping");
 		//set ping frequency
 		if (audio_ping_frequency != null) {
 			interval = audio_ping_frequency.get_interval ();
@@ -131,8 +132,11 @@ public class AudioComponent : MonoBehaviour
 		}
 
 		ping.Play ();
-
-		Invoke ("location_ping", interval);
+		if(target_search){
+			Invoke ("location_ping", interval);
+		}else{
+			pinging = false;
+		}
 	}
 
 
@@ -176,7 +180,13 @@ public class AudioComponent : MonoBehaviour
 			me_ping.Play ();
 		}
 
-		Invoke ("team_location_ping", reinvoke_interval);
+
+		if(target_search){
+			Invoke ("team_location_ping", reinvoke_interval);
+		}else{
+			pinging = false;
+		}
+
 	}
 			              
 	IEnumerator PingWithObject (GameObject go, float time_interval, int team_index)
@@ -401,8 +411,11 @@ public class AudioComponent : MonoBehaviour
 		//log freshness
 
 		//log time spent
-
-		Invoke ("historical_ping", interval);
+		if(historical_ping_toggle){
+			Invoke ("historical_ping", interval);
+		}else{
+			pinging = false;
+		}
 	}
 
 	void historical_sonar(List<Marker> markers){
