@@ -62,6 +62,8 @@ public class AudioComponent : MonoBehaviour
 		if (historical_ping_toggle) {
 			Invoke ("historical_ping", 2);
 		}
+
+		Invoke ("height_feedback", 1);
 	}
 	
 	// Update is called once per frame
@@ -423,6 +425,18 @@ public class AudioComponent : MonoBehaviour
 		if (self_ping == true) {
 			me_ping.Play ();
 		}
+	}
+
+	void height_feedback(){
+		GameObject target = data.getTarget ();
+		float height_dif = data.getHeightDifference (target);
+		Debug.Log ("height_dif: "+height_dif);
+
+		ping.pitch = audio_pitch.get_pitch_by_height (height_dif);
+
+		ping.Play ();
+
+		Invoke ("height_feedback", 1);
 	}
 
 }

@@ -15,6 +15,8 @@ namespace Data
 		void Start(){
 			t_Transform = GetComponent<Transform> ();
 
+			Time.timeScale = 1;
+
 //			Debug.Log (t_Transform);
 
 			if (view_Transform == null) {
@@ -191,5 +193,59 @@ namespace Data
 			HistoricalData go_history = go.GetComponent<HistoricalData> ();
 			return go_history.get_trail();
 		}
+
+		//given a GameObject
+		//return different in height between the player and the GameObject
+		//positive value indicates that the target is above the player
+		//negative value indicates that the target is below the player
+		public float getHeightDifference(GameObject go){
+			float distance;
+			GameObject target = go;
+			distance =  t_Transform.position.y - target.transform.position.y;
+			return distance;
+		}
+
+		public float getHeightDifference(Marker go){
+			float distance;
+			Marker target = go;
+			distance =  t_Transform.position.y - target.position.y;
+			return distance;
+		}
+
+
+		//trail methods need testing
+		//given a trail
+		//return direction to the closest marker
+		public float getDirectionToTrail(List<Marker> trail){
+			Marker closestMarker = trail[0];
+			float curDistance = getDistance (closestMarker);
+
+			foreach (Marker mark in trail) {
+				if(getDistance(mark) < curDistance){
+					curDistance = getDistance (mark);
+					closestMarker = mark;
+				}
+			}
+
+			return getDirection (closestMarker);
+		}
+
+		//given a trail
+		//return distance to the closest marker
+		public float getDistanceToTrail(List<Marker> trail){
+			Marker closestMarker = trail[0];
+			float curDistance = getDistance (closestMarker);
+			
+			foreach (Marker mark in trail) {
+				if(getDistance(mark) < curDistance){
+					curDistance = getDistance (mark);
+					closestMarker = mark;
+				}
+			}
+			
+			return curDistance;
+		}
+
+
 	}
 }

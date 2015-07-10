@@ -94,4 +94,27 @@ public class AudioPitch : MonoBehaviour {
 		
 		return pitch;
 	}
+
+	public float get_pitch_by_height(float distance){
+		//discrete or continuous?
+		float myDistance = distance;
+
+		//continuous
+		float pitch = 1.0f;
+		if (myDistance > 6) {
+			myDistance = 6f;
+		}
+		if (myDistance < -6) {
+			myDistance = -6f;
+		}
+
+		if(myDistance > 0){
+			pitch = 1.0f + myDistance * 1/6;
+		}
+		if (myDistance < 0) {
+			pitch = 1.0f - Mathf.Abs (myDistance) * 0.1f;
+		}
+
+		return pitch;
+	}
 }
