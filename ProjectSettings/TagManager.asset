@@ -15,6 +15,7 @@ TagManager:
   - TeamTrail
   - team_spawn
   - SelfTrail
+  - practice_button
   layers:
   - Default
   - TransparentFX
