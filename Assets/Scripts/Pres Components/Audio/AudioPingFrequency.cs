@@ -34,6 +34,10 @@ public class AudioPingFrequency : MonoBehaviour {
 				interval = .1f;
 			}
 
+			if (interval > 1.2f){
+			interval = 1.2f;
+			}
+
 		return interval;
 	}
 }

@@ -1563,6 +1563,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2016572, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016572, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
   m_IsPrefabParent: 0
