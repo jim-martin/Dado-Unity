@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 0ab2bff764a59e14f80f9c4b4065d0f0
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: BUILDING_flat_01_ceiling
+    100004: BUILDING_flat_01_floor
+    100006: BUILDING_flat_01_walls
+    100008: BUILDING_flat_01_plinthe001
+    100010: BUILDING_flat_01_plinthe
+    100012: BUILDING_flat_01_bigwall_01
+    100014: BUILDING_flat_01_bigwall_02
+    100016: BUILDING_flat_01_wall_01
+    100018: BUILDING_flat_01_wall_02
+    100020: BUILDING_flat_01_wall_03
+    100022: BUILDING_flat_01_wall_04
+    100024: BUILDING_flat_01_wall_05
+    100026: BUILDING_flat_01_wall_06
+    100028: BUILDING_flat_01_wall_07
+    100030: BUILDING_flat_01_wall_08
+    100032: BUILDING_flat_01_bigwall_03
+    100034: BUILDING_flat_01_bigwall_04
+    100036: BUILDING_flat_01_bigwall_05
+    100038: BUILDING_flat_01_bigwall_06
+    100040: BATHROOM_faucet_02_mixer
+    400000: //RootNode
+    400002: BUILDING_flat_01_ceiling
+    400004: BUILDING_flat_01_floor
+    400006: BUILDING_flat_01_walls
+    400008: BUILDING_flat_01_plinthe001
+    400010: BUILDING_flat_01_plinthe
+    400012: BUILDING_flat_01_bigwall_01
+    400014: BUILDING_flat_01_bigwall_02
+    400016: BUILDING_flat_01_wall_01
+    400018: BUILDING_flat_01_wall_02
+    400020: BUILDING_flat_01_wall_03
+    400022: BUILDING_flat_01_wall_04
+    400024: BUILDING_flat_01_wall_05
+    400026: BUILDING_flat_01_wall_06
+    400028: BUILDING_flat_01_wall_07
+    400030: BUILDING_flat_01_wall_08
+    400032: BUILDING_flat_01_bigwall_03
+    400034: BUILDING_flat_01_bigwall_04
+    400036: BUILDING_flat_01_bigwall_05
+    400038: BUILDING_flat_01_bigwall_06
+    400040: BATHROOM_faucet_02_mixer
+    2300000: BUILDING_flat_01_ceiling
+    2300002: BUILDING_flat_01_floor
+    2300004: BUILDING_flat_01_walls
+    2300006: BUILDING_flat_01_plinthe001
+    2300008: BUILDING_flat_01_plinthe
+    2300010: BUILDING_flat_01_bigwall_01
+    2300012: BUILDING_flat_01_bigwall_02
+    2300014: BUILDING_flat_01_wall_01
+    2300016: BUILDING_flat_01_wall_02
+    2300018: BUILDING_flat_01_wall_03
+    2300020: BUILDING_flat_01_wall_04
+    2300022: BUILDING_flat_01_wall_05
+    2300024: BUILDING_flat_01_wall_06
+    2300026: BUILDING_flat_01_wall_07
+    2300028: BUILDING_flat_01_wall_08
+    2300030: BUILDING_flat_01_bigwall_03
+    2300032: BUILDING_flat_01_bigwall_04
+    2300034: BUILDING_flat_01_bigwall_05
+    2300036: BUILDING_flat_01_bigwall_06
+    2300038: BATHROOM_faucet_02_mixer
+    3300000: BUILDING_flat_01_ceiling
+    3300002: BUILDING_flat_01_floor
+    3300004: BUILDING_flat_01_walls
+    3300006: BUILDING_flat_01_plinthe001
+    3300008: BUILDING_flat_01_plinthe
+    3300010: BUILDING_flat_01_bigwall_01
+    3300012: BUILDING_flat_01_bigwall_02
+    3300014: BUILDING_flat_01_wall_01
+    3300016: BUILDING_flat_01_wall_02
+    3300018: BUILDING_flat_01_wall_03
+    3300020: BUILDING_flat_01_wall_04
+    3300022: BUILDING_flat_01_wall_05
+    3300024: BUILDING_flat_01_wall_06
+    3300026: BUILDING_flat_01_wall_07
+    3300028: BUILDING_flat_01_wall_08
+    3300030: BUILDING_flat_01_bigwall_03
+    3300032: BUILDING_flat_01_bigwall_04
+    3300034: BUILDING_flat_01_bigwall_05
+    3300036: BUILDING_flat_01_bigwall_06
+    3300038: BATHROOM_faucet_02_mixer
+    4300000: BUILDING_flat_01_ceiling
+    4300002: BUILDING_flat_01_floor
+    4300004: BUILDING_flat_01_walls
+    4300006: BUILDING_flat_01_plinthe001
+    4300008: BUILDING_flat_01_plinthe
+    4300010: BUILDING_flat_01_wall_08
+    4300012: BUILDING_flat_01_bigwall_01
+    4300014: BUILDING_flat_01_bigwall_02
+    4300016: BUILDING_flat_01_wall_01
+    4300018: BUILDING_flat_01_wall_02
+    4300020: BUILDING_flat_01_wall_03
+    4300022: BUILDING_flat_01_wall_04
+    4300024: BUILDING_flat_01_wall_05
+    4300026: BUILDING_flat_01_wall_06
+    4300028: BUILDING_flat_01_wall_07
+    4300030: BUILDING_flat_01_bigwall_03
+    4300032: BUILDING_flat_01_bigwall_04
+    4300034: BUILDING_flat_01_bigwall_05
+    4300036: BUILDING_flat_01_bigwall_06
+    4300038: BATHROOM_faucet_02_mixer
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
