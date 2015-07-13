@@ -8,6 +8,9 @@ public class FireTrail : MonoBehaviour {
 	public TextAsset import_csv;
 	public Object firePrefab;
 
+	public Vector3 upperBound;
+	public Vector3 lowerBound;
+
 	List<Marker> trail;
 	List<Object> firePoints;
 
@@ -23,16 +26,22 @@ public class FireTrail : MonoBehaviour {
 	}
 
 	private void CreateFire(){
+		int i = 0;
 		foreach(Marker m in trail){
 			//add a fire object at that marker pos, keep a list of them too?
-			firePoints.Add(Instantiate(firePrefab, m.position, Quaternion.identity));
+			firePoints.Add(Instantiate(firePrefab, m.position, m.rotation));
 
 			//adjust fire's y pos based on it's distance from the fire and/or it's step on the path
+//			GameObject p = (GameObject)firePoints[i];
+//			Vector3 delta = Vector3.Lerp(lowerBound, upperBound, (i/trail.Count));
+//			p.transform.position = p.transform.position + delta;
 
 			//adjust the fire's colors based on distance from fire
 
 			//how to address the spread of the particles....
 				//BAKE SCALE - 360 raycast to see the space, then adjust the spread of particles to fit the space/add more emitters
+
+			i++;
 		}
 	}
 

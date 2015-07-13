@@ -4,22 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Target
   - player_spawn
-  - Team
-  - push
+  - team_spawn
   - p1 target
   - p2 target
   - p3 target
   - p4 target
   - TeamTrail
-<<<<<<< HEAD
-  - team_spawn
-  - SelfTrail
-  - practice_button
-=======
-  - Road
->>>>>>> Lightmapping
+  - FireTrail
   layers:
   - Default
   - TransparentFX
@@ -29,7 +21,7 @@ TagManager:
   - UI
   - 
   - 
-  - Paths
+  - 
   - 
   - 
   - 

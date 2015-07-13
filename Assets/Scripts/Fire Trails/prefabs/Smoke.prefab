@@ -61,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.80000019, y: -.660000026, z: -3.9000001}
+  m_LocalPosition: {x: -13.9677792, y: -9.69999981, z: -6.4501524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474422}
@@ -74,8 +74,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.08667469, z: 0}
+  m_LocalRotation: {x: 0, y: .995269835, z: 0, w: .0971491188}
+  m_LocalPosition: {x: 0, y: -.262000084, z: 0}
   m_LocalScale: {x: .449999988, y: .449999988, z: .449999988}
   m_Children: []
   m_Father: {fileID: 423000}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.87, z: 0}
   m_LocalScale: {x: .449999988, y: .449999988, z: .449999988}
   m_Children: []
   m_Father: {fileID: 423000}
@@ -137,18 +137,18 @@ ParticleAnimator:
     rgba: 690040135
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 3576705072
+    rgba: 2066755632
   colorAnimation[3]:
     serializedVersion: 2
-    rgba: 2049978416
+    rgba: 1461459996
   colorAnimation[4]:
     serializedVersion: 2
-    rgba: 3158064
-  worldRotationAxis: {x: -.649999976, y: 0, z: 0}
-  localRotationAxis: {x: 1.91999996, y: .779999971, z: .720000029}
-  sizeGrow: .569999993
-  rndForce: {x: 2.8499999, y: 9.14999962, z: 3.44000006}
-  force: {x: 0, y: 3.73000002, z: 0}
+    rgba: 855309
+  worldRotationAxis: {x: 0, y: 0, z: 0}
+  localRotationAxis: {x: 0, y: .779999971, z: 0}
+  sizeGrow: .449999988
+  rndForce: {x: 4.8499999, y: 3.29999995, z: 2.13000011}
+  force: {x: 2.56999993, y: 2, z: 0}
   damping: .0799999982
   stopSimulation: 0
   autodestruct: 1
@@ -163,19 +163,19 @@ EllipsoidParticleEmitter:
   m_Emit: 1
   minSize: 1.75
   maxSize: 2.11999989
-  minEnergy: 3
+  minEnergy: 4
   maxEnergy: 5
   minEmission: 10
   maxEmission: 20
   worldVelocity: {x: 0, y: 0, z: 0}
-  localVelocity: {x: 0, y: 3.14999986, z: 0}
-  rndVelocity: {x: 0, y: -1.13999999, z: -1.92999995}
+  localVelocity: {x: 0, y: 0, z: 0}
+  rndVelocity: {x: 0, y: 0, z: 0}
   emitterVelocityScale: 0
-  tangentVelocity: {x: 0, y: 1.74000001, z: 0}
-  angularVelocity: 2.53999996
-  rndAngularVelocity: 2.93000007
+  tangentVelocity: {x: 0, y: 0, z: 0}
+  angularVelocity: 2
+  rndAngularVelocity: 3.56999993
   rndRotation: 1
-  Simulate in Worldspace?: 1
+  Simulate in Worldspace?: 0
   m_OneShot: 0
   m_Ellipsoid: {x: .200000003, y: 0, z: .200000003}
   m_MinEmitterRange: 0
@@ -253,7 +253,7 @@ ParticleRenderer:
   - {fileID: 2100000, guid: eb5315e2f77c540b6bf545720e84d3a5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
+  m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
