@@ -1,6 +1,6 @@
 var fireParticle : Transform;
 var firePoints : Transform[]; //Fire particles will be created at these positions once alight.
-var fuel : float = 100.0; //The amount of fuel stored in this object. Fuel will burn out over time.
+var fuel : float = 200.0; //The amount of fuel stored in this object. Fuel will burn out over time.
 var fuelConsumption : float = 30.0; //The amount of fuel consumed per second by the object.
 var fireSpread : float = 2.0; //The radius at which fire will spread
 var spreadTime : float = 6.0; //The time after which fire will spread

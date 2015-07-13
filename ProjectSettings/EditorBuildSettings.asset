@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PracticeSpace.unity
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Haven_Apts_v3.2 (fire).unity
+=======
+    path: Assets/Scenarios (older)/Haven_Apts_v1.5.1 - jim.unity
+>>>>>>> Lightmapping

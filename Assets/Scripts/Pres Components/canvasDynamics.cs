@@ -15,8 +15,14 @@ public class canvasDynamics : MonoBehaviour {
 		}
 
 	}
-
+#if UNITY_EDITOR_OSX
+	Camera HUDCam_left;
+	Camera HUDCam_right;
+#endif
+#if UNITY_EDITOR_WIN
 	Camera HUDCam;
+#endif
+
 
 	DataComponent data;
 	Canvas canvas;
@@ -53,8 +59,19 @@ public class canvasDynamics : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		HUDCam = GameObject.Find ("FirstPersonCharacter").GetComponent<Camera> ();
 
+#if UNITY_EDITOR_OSX
+		try{
+			HUDCam_left = GameObject.Find("OVRCameraRig - World/TrackingSpace/LeftEyeAnchor").GetComponent<Camera>();
+			HUDCam_right = GameObject.Find("OVRCameraRig - World/TrackingSpace/RightEyeAnchor").GetComponent<Camera>();
+		}catch(UnityException e){
+			Debug.Log("CAN'T FIND CAMERAS ON HUD RIG");
+		}
+#endif
+
+#if UNITY_EDITOR_WIN
+		HUDCam = GameObject.Find ("FirstPersonCharacter").GetComponent<Camera> ();
+#endif
 		data = GetComponent<DataComponent> ();
 		canvas = GetComponent<Canvas> ();
 
@@ -96,6 +113,7 @@ public class canvasDynamics : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+//		Debug.Log (historical_data.getAir().ToString());
 		airText.text = Mathf.Round (historical_data.getAir ()).ToString();
 
 		distance =  data.getDistance();
@@ -163,7 +181,9 @@ public class canvasDynamics : MonoBehaviour {
 			Debug.Log(e);
 			return;
 		}
+		
 
+#if UNITY_EDITOR_WIN
 		if (showTrails) {
 
 			HUDCam.cullingMask |= 1 << LayerMask.NameToLayer("Paths");
@@ -173,6 +193,20 @@ public class canvasDynamics : MonoBehaviour {
 			HUDCam.cullingMask &=  ~(1 << LayerMask.NameToLayer("Paths"));
 
 		}
+#endif
 
+#if UNITY_EDITOR_OSX
+		if (showTrails) {
+			
+			HUDCam_left.cullingMask |= 1 << LayerMask.NameToLayer("Paths");
+			HUDCam_right.cullingMask |= 1 << LayerMask.NameToLayer("Paths");
+			
+		} else {
+
+			HUDCam_left.cullingMask &=  ~(1 << LayerMask.NameToLayer("Paths"));
+			HUDCam_right.cullingMask &=  ~(1 << LayerMask.NameToLayer("Paths"));
+			
+		}
+#endif
 	}
 }

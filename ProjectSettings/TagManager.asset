@@ -13,9 +13,13 @@ TagManager:
   - p3 target
   - p4 target
   - TeamTrail
+<<<<<<< HEAD
   - team_spawn
   - SelfTrail
   - practice_button
+=======
+  - Road
+>>>>>>> Lightmapping
   layers:
   - Default
   - TransparentFX

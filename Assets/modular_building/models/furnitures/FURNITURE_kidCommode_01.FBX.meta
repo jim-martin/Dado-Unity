@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 028c75dc4bf3c3a4995c2c215205a5fc
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: FURNITURE_kidCommode_01_base
+    100004: FURNITURE_kidCommode_01_drawer_01
+    100006: FURNITURE_kidCommode_01_drawer_01_inside
+    100008: FURNITURE_kidCommode_01_drawer_02
+    100010: FURNITURE_kidCommode_01_drawer_02_inside
+    100012: FURNITURE_kidCommode_01_drawer_03
+    100014: FURNITURE_kidCommode_01_drawer_03_inside
+    100016: FURNITURE_kidCommode_01_drawer_04
+    100018: FURNITURE_kidCommode_01_drawer_04_inside
+    100020: FURNITURE_kidCommode_01_drawer_05
+    100022: FURNITURE_kidCommode_01_drawer_05_inside
+    100024: FURNITURE_kidCommode_01_drawer_06
+    100026: FURNITURE_kidCommode_01_drawer_06_inside
+    400000: //RootNode
+    400002: FURNITURE_kidCommode_01_base
+    400004: FURNITURE_kidCommode_01_drawer_01
+    400006: FURNITURE_kidCommode_01_drawer_01_inside
+    400008: FURNITURE_kidCommode_01_drawer_02
+    400010: FURNITURE_kidCommode_01_drawer_02_inside
+    400012: FURNITURE_kidCommode_01_drawer_03
+    400014: FURNITURE_kidCommode_01_drawer_03_inside
+    400016: FURNITURE_kidCommode_01_drawer_04
+    400018: FURNITURE_kidCommode_01_drawer_04_inside
+    400020: FURNITURE_kidCommode_01_drawer_05
+    400022: FURNITURE_kidCommode_01_drawer_05_inside
+    400024: FURNITURE_kidCommode_01_drawer_06
+    400026: FURNITURE_kidCommode_01_drawer_06_inside
+    2300000: FURNITURE_kidCommode_01_base
+    2300002: FURNITURE_kidCommode_01_drawer_01
+    2300004: FURNITURE_kidCommode_01_drawer_01_inside
+    2300006: FURNITURE_kidCommode_01_drawer_02
+    2300008: FURNITURE_kidCommode_01_drawer_02_inside
+    2300010: FURNITURE_kidCommode_01_drawer_03
+    2300012: FURNITURE_kidCommode_01_drawer_03_inside
+    2300014: FURNITURE_kidCommode_01_drawer_04
+    2300016: FURNITURE_kidCommode_01_drawer_04_inside
+    2300018: FURNITURE_kidCommode_01_drawer_05
+    2300020: FURNITURE_kidCommode_01_drawer_05_inside
+    2300022: FURNITURE_kidCommode_01_drawer_06
+    2300024: FURNITURE_kidCommode_01_drawer_06_inside
+    3300000: FURNITURE_kidCommode_01_base
+    3300002: FURNITURE_kidCommode_01_drawer_01
+    3300004: FURNITURE_kidCommode_01_drawer_01_inside
+    3300006: FURNITURE_kidCommode_01_drawer_02
+    3300008: FURNITURE_kidCommode_01_drawer_02_inside
+    3300010: FURNITURE_kidCommode_01_drawer_03
+    3300012: FURNITURE_kidCommode_01_drawer_03_inside
+    3300014: FURNITURE_kidCommode_01_drawer_04
+    3300016: FURNITURE_kidCommode_01_drawer_04_inside
+    3300018: FURNITURE_kidCommode_01_drawer_05
+    3300020: FURNITURE_kidCommode_01_drawer_05_inside
+    3300022: FURNITURE_kidCommode_01_drawer_06
+    3300024: FURNITURE_kidCommode_01_drawer_06_inside
+    4300000: FURNITURE_kidCommode_01_base
+    4300002: FURNITURE_kidCommode_01_drawer_01
+    4300004: FURNITURE_kidCommode_01_drawer_01_inside
+    4300006: FURNITURE_kidCommode_01_drawer_02
+    4300008: FURNITURE_kidCommode_01_drawer_02_inside
+    4300010: FURNITURE_kidCommode_01_drawer_03
+    4300012: FURNITURE_kidCommode_01_drawer_03_inside
+    4300014: FURNITURE_kidCommode_01_drawer_06
+    4300016: FURNITURE_kidCommode_01_drawer_06_inside
+    4300018: FURNITURE_kidCommode_01_drawer_05
+    4300020: FURNITURE_kidCommode_01_drawer_05_inside
+    4300022: FURNITURE_kidCommode_01_drawer_04
+    4300024: FURNITURE_kidCommode_01_drawer_04_inside
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
