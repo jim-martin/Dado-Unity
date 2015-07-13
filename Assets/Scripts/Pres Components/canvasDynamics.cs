@@ -207,7 +207,6 @@ public class canvasDynamics : MonoBehaviour {
 			HUDCam_right.cullingMask &=  ~(1 << LayerMask.NameToLayer("Paths"));
 			
 		}
-
-	}
 #endif
+	}
 }
