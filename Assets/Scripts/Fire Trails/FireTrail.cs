@@ -23,6 +23,7 @@ public class FireTrail : MonoBehaviour {
 
 	public void Start(){
 		CreateFire();
+		Invoke ("Disable", 2);
 	}
 
 	private void CreateFire(){
@@ -32,9 +33,9 @@ public class FireTrail : MonoBehaviour {
 			firePoints.Add(Instantiate(firePrefab, m.position, m.rotation));
 
 			//adjust fire's y pos based on it's distance from the fire and/or it's step on the path
-//			GameObject p = (GameObject)firePoints[i];
-//			Vector3 delta = Vector3.Lerp(lowerBound, upperBound, (i/trail.Count));
-//			p.transform.position = p.transform.position + delta;
+			GameObject p = (GameObject)firePoints[i];
+			Vector3 delta = Vector3.Lerp(lowerBound, upperBound, (i/trail.Count));
+			p.transform.position = p.transform.position + delta;
 
 			//adjust the fire's colors based on distance from fire
 
@@ -60,6 +61,34 @@ public class FireTrail : MonoBehaviour {
 		//Debug.Log ("imported markers");
 		//Debug.Log (imported_markers);
 		return imported_markers;
+	}
+
+	void OnTriggerEnter( Collider c ){
+		if(c.gameObject.tag == "Player"){
+			Debug.Log("Player in box");
+			foreach( Object o in firePoints ){
+				GameObject go = (GameObject)o;
+				go.SetActive(true);
+			}
+		}
+	}
+
+	void OnTriggerExit( Collider c ){
+		if( c.gameObject.tag == "Player"){
+			Debug.Log("Player not in box");
+			foreach( Object o in firePoints ){
+				GameObject go = (GameObject)o;
+				go.SetActive(false);
+			}
+
+		}
+	}
+
+	private void Disable(){
+		foreach( Object o in firePoints ){
+			GameObject go = (GameObject)o;
+			go.SetActive(false);
+		}
 	}
 
 }
