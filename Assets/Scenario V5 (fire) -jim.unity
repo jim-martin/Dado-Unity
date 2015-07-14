@@ -32602,38 +32602,6 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 167606, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056798, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: field of view
-      value: 92.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056798, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: far clip plane
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 14390306, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Center.y
-      value: -.699999988
-      objectReference: {fileID: 0}
-    - target: {fileID: 14390306, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Height
-      value: 3.01999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 11418850, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2316762, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 14390306, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
-      propertyPath: m_Radius
-      value: .49000001
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
   m_IsPrefabParent: 0

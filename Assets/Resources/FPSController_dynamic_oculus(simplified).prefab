@@ -234,7 +234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &184748
 GameObject:
   m_ObjectHideFlags: 1
@@ -290,8 +290,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
-  m_LocalRotation: {x: 0, y: .0119100567, z: 0, w: .99992913}
-  m_LocalPosition: {x: -36.6927376, y: -5.25, z: -30.6592369}
+  m_LocalRotation: {x: 0, y: .0379878171, z: 0, w: .999278247}
+  m_LocalPosition: {x: -18.7999992, y: -13.21, z: 10.71}
   m_LocalScale: {x: .766680539, y: .766680539, z: .766680539}
   m_Children:
   - {fileID: 472164}
@@ -441,7 +441,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -1571,13 +1571,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.58000004
+  m_Height: 2.4000001
   m_Radius: .370000005
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -.889999986, z: 0}
 --- !u!222 &22218312
 CanvasRenderer:
   m_ObjectHideFlags: 1
