@@ -8,7 +8,7 @@ PhysicMaterial:
   m_Name: Door
   dynamicFriction: .600000024
   staticFriction: .300000012
-  bounciness: 1
+  bounciness: .200000003
   frictionCombine: 0
   bounceCombine: 3
   frictionDirection2: {x: 0, y: 0, z: 0}
