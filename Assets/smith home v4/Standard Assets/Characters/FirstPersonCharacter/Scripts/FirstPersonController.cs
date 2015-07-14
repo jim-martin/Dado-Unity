@@ -71,7 +71,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_Jump)
             {
 				//disabled to use the spacebar
-               // m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
