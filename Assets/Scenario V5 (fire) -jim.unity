@@ -11891,6 +11891,38 @@ Prefab:
       propertyPath: import_csv
       value: 
       objectReference: {fileID: 4900000, guid: 710953b7432cc0246ae4dd6935d191c7, type: 3}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Time
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 4278255611
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4278255615
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 2902523903
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 1677787135
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 1107361791
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_MinVertexDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112196, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
   m_IsPrefabParent: 0
@@ -17315,6 +17347,42 @@ Prefab:
       propertyPath: import_csv
       value: 
       objectReference: {fileID: 4900000, guid: 2da4050f22e5be54888b6262e3a5718d, type: 3}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Time
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_MinVertexDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_StartWidth
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_EndWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 4278190335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
   m_IsPrefabParent: 0
@@ -21906,19 +21974,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4278255369
+      rgba: 4294967295
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4278255400
+      rgba: 4294967295
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4278248447
+      rgba: 2919235583
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4278218751
+      rgba: 1694498815
     m_Color[4]:
       serializedVersion: 2
-      rgba: 2415919359
+      rgba: 536870911
   m_MinVertexDistance: 0
   m_Autodestruct: 0
 --- !u!114 &643799910
@@ -22319,6 +22387,23 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 86ff591f12750c84c9365efde84b1b34, type: 3}
+--- !u!1 &654939492 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 112196, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+  m_PrefabInternal: {fileID: 499288528}
+--- !u!114 &654939493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654939492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c25e496cd99534790d113631b6e0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 1
+  shiftColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &655632862
 GameObject:
   m_ObjectHideFlags: 0
@@ -31857,7 +31942,7 @@ MonoBehaviour:
   coldOrHotTextToggle: 0
   showRadar: 0
   scaleTargetArrowWithDistance: 0
-  showTrails: 0
+  showTrails: 1
 --- !u!23 &948275428
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46782,6 +46867,38 @@ Prefab:
       propertyPath: import_csv
       value: 
       objectReference: {fileID: 4900000, guid: 15c6fb6ea80f8aa4ebb1d68ac9b003eb, type: 3}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Time
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4294901760
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 2919170048
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 1694433280
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 889126912
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_MinVertexDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112196, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
   m_IsPrefabParent: 0
@@ -53074,6 +53191,38 @@ Prefab:
       propertyPath: import_csv
       value: 
       objectReference: {fileID: 4900000, guid: d58712e0fa0342d49bb500a5f5fa0774, type: 3}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Time
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 4278255360
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4278255360
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 2902523648
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 1677786880
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 1090584320
+      objectReference: {fileID: 0}
+    - target: {fileID: 9613860, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_MinVertexDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112196, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eb16c26edb6060c4e96345fec7447239, type: 2}
   m_IsPrefabParent: 0
