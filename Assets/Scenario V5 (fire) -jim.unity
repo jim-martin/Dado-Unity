@@ -894,7 +894,7 @@ GameObject:
   - 4: {fileID: 23036652}
   - 114: {fileID: 23036651}
   - 65: {fileID: 23036653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 1 (2)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2132,7 +2132,7 @@ GameObject:
   - 4: {fileID: 55203482}
   - 114: {fileID: 55203484}
   - 65: {fileID: 55203483}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 4 (2)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3536,7 +3536,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 85808361}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -5292,7 +5292,7 @@ GameObject:
   - 4: {fileID: 152519955}
   - 114: {fileID: 152519957}
   - 65: {fileID: 152519956}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 3 (3)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -5830,7 +5830,7 @@ GameObject:
   - 4: {fileID: 162371424}
   - 114: {fileID: 162371425}
   - 65: {fileID: 162371426}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 1 (1)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -7107,7 +7107,7 @@ GameObject:
   - 4: {fileID: 207951390}
   - 114: {fileID: 207951392}
   - 65: {fileID: 207951391}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 3 (2)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -13635,7 +13635,7 @@ GameObject:
   - 4: {fileID: 395641853}
   - 114: {fileID: 395641855}
   - 65: {fileID: 395641854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 3 (4)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -23755,9 +23755,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 696038976}
   - 20: {fileID: 696038978}
-  - 81: {fileID: 696038977}
   m_Layer: 0
-  m_Name: HUD
+  m_Name: HUD_screenspace
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23777,14 +23776,6 @@ Transform:
   - {fileID: 439347473}
   m_Father: {fileID: 1547432170}
   m_RootOrder: 0
---- !u!81 &696038977
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8194912, guid: 4425a6e54d9e5bc41b5f3055cda8548c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 696038975}
-  m_Enabled: 0
 --- !u!20 &696038978
 Camera:
   m_ObjectHideFlags: 0
@@ -25764,9 +25755,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 751564198}
   - 20: {fileID: 751564202}
-  - 124: {fileID: 751564201}
-  - 92: {fileID: 751564200}
-  - 81: {fileID: 751564199}
   m_Layer: 0
   m_Name: MiniMapCamera
   m_TagString: Untagged
@@ -25786,30 +25774,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 948275444}
   m_RootOrder: 1
---- !u!81 &751564199
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8127150, guid: 4425a6e54d9e5bc41b5f3055cda8548c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 751564197}
-  m_Enabled: 0
---- !u!92 &751564200
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9248728, guid: 4425a6e54d9e5bc41b5f3055cda8548c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 751564197}
-  m_Enabled: 1
---- !u!124 &751564201
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12468962, guid: 4425a6e54d9e5bc41b5f3055cda8548c,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 751564197}
-  m_Enabled: 1
 --- !u!20 &751564202
 Camera:
   m_ObjectHideFlags: 0
@@ -25835,7 +25799,7 @@ Camera:
   m_Depth: 3
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -29102,7 +29066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &886303530
 Transform:
   m_ObjectHideFlags: 0
@@ -33099,7 +33063,7 @@ GameObject:
   - 4: {fileID: 974891965}
   - 114: {fileID: 974891968}
   - 65: {fileID: 974891967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 2 (1)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -35078,7 +35042,7 @@ GameObject:
   - 4: {fileID: 1066598640}
   - 114: {fileID: 1066598639}
   - 65: {fileID: 1066598638}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 3 (1)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -35823,7 +35787,7 @@ GameObject:
   - 4: {fileID: 1084133896}
   - 114: {fileID: 1084133898}
   - 65: {fileID: 1084133897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 3 (5)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -37700,6 +37664,66 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1141862828}
   m_Mesh: {fileID: 4300000, guid: 25020537bc4277d4d846f98afbe11882, type: 3}
+--- !u!1 &1149384869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1149384870}
+  - 108: {fileID: 1149384871}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149384870
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149384869}
+  m_LocalRotation: {x: -.0496369712, y: .0110901659, z: -.000609090901, w: .998705566}
+  m_LocalPosition: {x: -1.25000048, y: -1.23000026, z: -.269999623}
+  m_LocalScale: {x: 1.30432427, y: 1.30432403, z: 1.30432391}
+  m_Children: []
+  m_Father: {fileID: 1547432170}
+  m_RootOrder: 2
+--- !u!108 &1149384871
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1149384869}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 51.141449
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &1151317435
 GameObject:
   m_ObjectHideFlags: 0
@@ -49348,6 +49372,7 @@ Transform:
   m_Children:
   - {fileID: 696038976}
   - {fileID: 85808362}
+  - {fileID: 1149384870}
   m_Father: {fileID: 948275444}
   m_RootOrder: 0
 --- !u!20 &1547432171
@@ -51697,7 +51722,7 @@ GameObject:
   - 4: {fileID: 1607349530}
   - 114: {fileID: 1607349532}
   - 65: {fileID: 1607349531}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 4 (1)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -59978,7 +60003,7 @@ GameObject:
   - 4: {fileID: 1873861512}
   - 114: {fileID: 1873861514}
   - 65: {fileID: 1873861513}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 2 (3)
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -63573,7 +63598,7 @@ GameObject:
   - 4: {fileID: 1960652461}
   - 114: {fileID: 1960652463}
   - 65: {fileID: 1960652462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor 2 (2)
   m_TagString: 
   m_Icon: {fileID: 0}
