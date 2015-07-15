@@ -26,8 +26,6 @@ public class SpawnController : MonoBehaviour {
 
 	void SetPos(){
 
-		Debug.Log("calling exit");
-
 		transform.position = spawns [gc.getCondition()].transform.position;
 		transform.rotation = spawns [gc.getCondition()].transform.rotation;
 

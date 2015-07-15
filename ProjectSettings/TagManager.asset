@@ -12,6 +12,11 @@ TagManager:
   - p4 target
   - TeamTrail
   - FireTrail
+  - push
+  - p1 spawn
+  - p2 spawn
+  - p3 spawn
+  - p4 spawn
   layers:
   - Default
   - TransparentFX
