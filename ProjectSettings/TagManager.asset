@@ -17,6 +17,7 @@ TagManager:
   - p2 spawn
   - p3 spawn
   - p4 spawn
+  - practice_button
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Paths
   - 
   - 
   - 

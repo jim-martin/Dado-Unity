@@ -72,9 +72,10 @@ public class FollowMarkerComponent : MonoBehaviour {
 	}
 
 	void Step(){
+
 		currentStep++;
 		if(currentStep < trail.Count){
-			transform.position = trail [currentStep].position + (Vector3.down * 0.5f);
+			transform.position = trail [currentStep].position + (Vector3.down * 1.0f);
 			transform.rotation = trail [currentStep].rotation;
 		}
 	}
