@@ -277,7 +277,7 @@ public class Phase{
 		//ensure that the targets for this phase are enabled
 		if (targets != null) {
 			for(int i = 0; i < targets.Length; i++){
-				targets[i].GetComponent<MeshRenderer>().enabled = true;
+				//targets[i].GetComponent<MeshRenderer>().enabled = true;
 			}
 		}
 	}

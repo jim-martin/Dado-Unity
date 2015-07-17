@@ -70,7 +70,7 @@ public class FireTrail : MonoBehaviour {
 
 	void OnTriggerEnter( Collider c ){
 		if(c.gameObject.tag == "Player"){
-			Debug.Log("Player in box");
+			//Debug.Log("Player in box");
 			foreach( Object o in firePoints ){
 				GameObject go = (GameObject)o;
 				go.SetActive(true);
@@ -80,7 +80,7 @@ public class FireTrail : MonoBehaviour {
 
 	void OnTriggerExit( Collider c ){
 		if( c.gameObject.tag == "Player"){
-			Debug.Log("Player not in box");
+			//Debug.Log("Player not in box");
 			foreach( Object o in firePoints ){
 				GameObject go = (GameObject)o;
 				go.SetActive(false);

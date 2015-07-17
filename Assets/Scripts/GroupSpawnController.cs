@@ -10,7 +10,7 @@ public class GroupSpawnController : MonoBehaviour {
 
 	GameObject[] spawns;
 
-	void Awake () {
+	void Start () {
 
 		spawns = GameObject.FindGameObjectsWithTag(tag);
 
@@ -22,7 +22,7 @@ public class GroupSpawnController : MonoBehaviour {
 		for(int j = 0; j < groupSize; j++){
 
 			//choose the location of the next spawn
-			int i = (int)Mathf.Floor(UnityEngine.Random.Range(0, spawns.Length));
+ 			int i = (int)Mathf.Floor(UnityEngine.Random.Range(0, spawns.Length));
 
 			//spawn the chosen prefab
 			GameObject go = (GameObject)Instantiate(prefab, spawns[i].transform.position, Quaternion.identity);
@@ -33,6 +33,7 @@ public class GroupSpawnController : MonoBehaviour {
 			Array.Copy(spawns, 0, s, 0, i);
 			Array.Copy (spawns, i+1, s, i, spawns.Length - i - 1);			
 			spawns = s;
+
 
 		}
 	
