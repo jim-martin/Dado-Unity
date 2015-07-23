@@ -38,7 +38,7 @@ public class AudioPitch : MonoBehaviour {
 
 		} else if (direction_input){
 			//modulate pitch based on direction
-			pitch = 2.0f - Mathf.Abs(data.getDirection()) / 180;
+			pitch = 2.0f - Mathf.Abs(data.getDirectionWithView()) / 180;
 		}
 
 		if (pitch < .12f) {

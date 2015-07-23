@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour {
 
 		//pause game time until the game starts
 		Time.timeScale = 0;
+		PlayerPrefs.SetInt("CurrentPlayerScore", 0);
 
 		Screen.lockCursor = true;
 
@@ -79,11 +80,7 @@ public class GameController : MonoBehaviour {
 
 	void Update (){
 		if (phases [currentPhase].CheckComplete ()) {
-			if(phases[currentPhase].success){
-				StepPhase();
-			}else{
-				EndGame();
-			}
+			StepPhase();
 		}
 	}
 
@@ -126,10 +123,13 @@ public class GameController : MonoBehaviour {
 
 		Debug.Log(i%j);
 		if((i % j) == 0 ){
-			Invoke("QuitApp", 3);
+			//stop game time
+			Time.timeScale = 0;
+
+			//Invoke("QuitApp", 3);
 			Debug.Log ("GAME ENDING IN 3...");
 		}else{
-			Invoke("LoadNextScene", 3);
+			//Invoke("LoadNextScene", 3);
 			Debug.Log("NEXT TEST LOADING IN 3...");
 		}
 
@@ -139,7 +139,7 @@ public class GameController : MonoBehaviour {
 		Application.LoadLevel(0);
 	}
 
-	void QuitApp(){
+	public void QuitApp(){
 
 		Debug.Log("Exiting application");
 		Application.Quit();
@@ -207,6 +207,7 @@ public class Phase{
 	public int targetsLeft;
 
 	public bool success = true;
+	public int successValue = 500;
 	
 	public string[] profiles;
 	public int condition;
@@ -316,8 +317,19 @@ public class Phase{
 		
 		//return true if the target was reached or if the time is up 
 		//(include other failure conditions here)
-		if (targetsLeft < 1 || 						//target(s) are found
-		    (Time.time - timeStart > timeLimit && timeLimit > 0)) {	//timelimit for phase is up, assuming time is limited
+		if (targetsLeft < 1 ){
+			//add to the score for success
+			success = true;
+			int s = PlayerPrefs.GetInt("CurrentPlayerScore", 0);
+			s += successValue;
+
+			Debug.Log ("** SCORE ** : " + s);
+			PlayerPrefs.SetInt("CurrentPlayerScore", s);
+
+			return true;
+		}else if(Time.time - timeStart > timeLimit && timeLimit > 0) {	//timelimit for phase is up, assuming time is limited
+			//subtract from score?
+			success = false;
 			return true;
 		} else {
 			return false;

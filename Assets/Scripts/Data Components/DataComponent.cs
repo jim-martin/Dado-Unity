@@ -131,11 +131,11 @@ namespace Data
 			float direction;
 			GameObject target = myGO;
 			
-			Vector3 tRot = target.transform.position - transform.position;
+			Vector3 tRot = target.transform.position - view_Transform.position;
 			
-			float angle = Vector3.Angle(target.transform.position, transform.forward);
+			float angle = Vector3.Angle(target.transform.position, view_Transform.forward);
 			int angleDir;
-			if (Vector3.Cross (target.transform.position, transform.forward).y > 0) {
+			if (Vector3.Cross (target.transform.position, view_Transform.forward).y > 0) {
 				angleDir = 1; //looking to the right of the target, pan to the left
 			} else {
 				angleDir = -1; //looking to the left of the target, pan to the right

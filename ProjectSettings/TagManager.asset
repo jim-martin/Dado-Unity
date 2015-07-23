@@ -18,6 +18,7 @@ TagManager:
   - p3 spawn
   - p4 spawn
   - practice_button
+  - Self Trail
   layers:
   - Default
   - TransparentFX

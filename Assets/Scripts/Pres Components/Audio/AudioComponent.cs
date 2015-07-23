@@ -337,7 +337,7 @@ public class AudioComponent : MonoBehaviour
 		float freshness = 0f;
 
 		//get teammates
-		GameObject[] gos = data.getTeam ();
+		//GameObject[] gos = data.getTeam ();
 
 		GameObject[] trails = GameObject.FindGameObjectsWithTag("TeamTrail");
 		List<Marker> historical_trail = concatenateTrails( trails );

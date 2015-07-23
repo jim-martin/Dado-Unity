@@ -80,6 +80,7 @@ namespace Data
 
 			//subscribe export function to gc's endgame
 			gc.EndGame += export_all_markers_to_csv;
+			gc.EndGame += CalcScore;
 		}
 		
 		void Update ()
@@ -89,6 +90,13 @@ namespace Data
 			}
 			
 			DrawDebugTrail ();
+		}
+
+		void CalcScore(){
+			float s = (float)PlayerPrefs.GetInt("CurrentPlayerScore", 0);
+
+			s = s * (air * .1f);
+			PlayerPrefs.SetInt("CurrentPlayerScore", (int)s);
 		}
 		
 		void StartLogging ()

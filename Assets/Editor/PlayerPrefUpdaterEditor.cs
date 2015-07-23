@@ -15,5 +15,9 @@ public class PlayerPrefUpdaterEditor : Editor {
 			p.UpdatePrefs();
 		}
 
+		if (GUILayout.Button ("Save Score for Player : " + p.playerName)){
+			p.SaveScore();
+		}
+
 	}
 }
