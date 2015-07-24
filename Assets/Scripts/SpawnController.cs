@@ -14,12 +14,14 @@ public class SpawnController : MonoBehaviour {
 
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController> ();
 		spawns = GameObject.FindGameObjectsWithTag(tag);
-		
-		if(spawnPhase.Equals("awake")){
-			transform.position = spawns [gc.getCondition()].transform.position;
-			transform.rotation = spawns [gc.getCondition()].transform.rotation;
-		}else{
-			gc.getPhaseByName(spawnPhase).StartPhase += SetPos;
+
+		if(spawns.Length > 0){
+			if(spawnPhase.Equals("awake")){
+				transform.position = spawns [gc.getCondition()].transform.position;
+				transform.rotation = spawns [gc.getCondition()].transform.rotation;
+			}else{
+				gc.getPhaseByName(spawnPhase).StartPhase += SetPos;
+			}
 		}
 
 	}

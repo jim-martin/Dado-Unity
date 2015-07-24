@@ -22,6 +22,6 @@ public class PlayerPrefUpdater : MonoBehaviour {
 
 		int s = PlayerPrefs.GetInt("CurrentPlayerScore", 0);
 		PlayerPrefs.SetInt( playerName, s);
-		Debug.Log("Saved Score for Player : " + playerName);
+		Debug.Log("Saved Score for Player : " + playerName + " - **" + s + "**");
 	}
 }

@@ -425,7 +425,7 @@ public class AudioComponent : MonoBehaviour
 		for (int i = 0; i < markers.Count; i++) {
 			//get angle around
 			float direction = data.getDirection (markers [i]);
-			Debug.Log (direction);
+//			Debug.Log (direction);
 			
 			
 			
@@ -443,7 +443,7 @@ public class AudioComponent : MonoBehaviour
 
 			//start coroutine instead of using invoke
 			if(i == 0 || i == markers.Count - 1 || i == markers.Count / 2){
-				Debug.Log ("historical pinging: "+i);
+//				Debug.Log ("historical pinging: "+i);
 				StartCoroutine (PingWithMarker (markers [i], time_interval, i));
 				//invoke location_ping(myTeammate, time_interval)
 			}
