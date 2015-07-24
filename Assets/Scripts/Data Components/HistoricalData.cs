@@ -93,9 +93,10 @@ namespace Data
 		}
 
 		void CalcScore(){
-			float s = (float)PlayerPrefs.GetInt("CurrentPlayerScore", 0);
+			float airmod = 100 * air;
 
-			s = s * (air * .1f);
+			float s = (float)PlayerPrefs.GetInt("CurrentPlayerScore", 0);
+			s += airmod;
 			PlayerPrefs.SetInt("CurrentPlayerScore", (int)s);
 		}
 		
@@ -116,6 +117,9 @@ namespace Data
 			air -= distance_change * air_movement_decrease;
 //			Debug.Log ("new air: " + air);
 			//todo: needs to be scaled	
+
+			if(air < 0) air = 0;
+
 		}
 
 		public float getAir ()

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Data;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -18,6 +19,9 @@ public class GameController : MonoBehaviour {
 	public delegate void delegate_EndGame();
 	public delegate_EndGame EndGame;
 
+	public delegate void delegate_LateStepPhase();
+	public delegate_LateStepPhase LateStepPhase;
+
 	
 	int currentPhase = 0;
 	int phaseTime = 60;
@@ -35,6 +39,10 @@ public class GameController : MonoBehaviour {
 	Phase targetSearch;
 	Phase exit;
 	Phase idle;
+
+	//HACK AS FUCK -- shouldn't be reaching into player data in the gamecontroller, but this is easiest for now.
+	HistoricalData h;
+
 
 	void Awake(){
 
@@ -60,10 +68,10 @@ public class GameController : MonoBehaviour {
 		clearFloor = new Phase (p1_targets, clearFloorProfiles, 100);
 		clearFloor.name = "clearFloor";
 
-		targetSearch = new Phase (p3_targets, targetSearchProfiles, 180);
+		targetSearch = new Phase (p3_targets, targetSearchProfiles, 100);
 		targetSearch.name = "targetSearch";
 
-		exit = new Phase (p4_targets, exitProfiles, 180);
+		exit = new Phase (p4_targets, exitProfiles, 100);
 		exit.name = "exit";
 
 		idle = new Phase ();
@@ -76,11 +84,22 @@ public class GameController : MonoBehaviour {
 		StepPhase += _StepPhase;
 		EndGame += _EndGame;
 
+		//HACK AS FUCK -- shouldn't be reaching into player data in the gamecontroller, but this is easiest for now.
+		h = GameObject.FindGameObjectWithTag("Player").GetComponent<HistoricalData>();
+
+
 	}
 
 	void Update (){
 		if (phases [currentPhase].CheckComplete ()) {
 			StepPhase();
+		}
+
+		if(h.air < 1.0f){
+			if(!(phases [currentPhase].name.Equals("exit") || phases [currentPhase].name.Equals("idle"))){
+				currentPhase = 2;
+				StepPhase();
+			}
 		}
 	}
 
@@ -108,6 +127,8 @@ public class GameController : MonoBehaviour {
 		} else {
 			EndGame();
 		}
+
+		LateStepPhase();
 	}
 
 	public void _EndGame(){
@@ -206,7 +227,7 @@ public class Phase{
 	public int[] targetsHit;
 	public int targetsLeft;
 
-	public bool success = true;
+	public bool success = false;
 	public int successValue = 500;
 	
 	public string[] profiles;
@@ -314,7 +335,7 @@ public class Phase{
 				}
 			}
 		}
-		
+
 		//return true if the target was reached or if the time is up 
 		//(include other failure conditions here)
 		if (targetsLeft < 1 ){

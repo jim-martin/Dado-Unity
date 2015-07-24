@@ -23,7 +23,7 @@ public class ProfileComponent : MonoBehaviour {
 	GameController gc;
 
 
-	void Awake(){
+	void Start(){
 
 		gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
@@ -34,7 +34,7 @@ public class ProfileComponent : MonoBehaviour {
 		}else{
 
 			//subscribe to stepphase() on gc
-			gc.StepPhase += loadPhaseProfiles;
+			gc.LateStepPhase += loadPhaseProfiles;
 
 		}
 
@@ -80,6 +80,8 @@ public class ProfileComponent : MonoBehaviour {
 	}
 
 	void loadPhaseProfiles(){
+
+		Debug.Log("LOADING PROFILE : " + gc.getCondition());
 
 		//split profiles in condition by ','
 		string[] toLoad = gc.getPhaseObject().profiles[gc.getCondition()].Split(',');
