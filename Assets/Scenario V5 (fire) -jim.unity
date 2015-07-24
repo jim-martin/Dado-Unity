@@ -1042,9 +1042,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: d4d200d545894ee40b1e28049188f1da, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: 0, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!4 &23036652
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,9 +2501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: 7508a0c11914a084e92f13a1905022d0, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: .699999988, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &56300744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5891,9 +5891,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: ddfccc7109f840247bd49bd8a84c2c07, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: -1.32000005, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &153275083
 GameObject:
   m_ObjectHideFlags: 0
@@ -6417,9 +6417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: 8eef0692fb6d5af459f8ce47b258cdd1, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: 0, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!65 &162371426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7706,9 +7706,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: a07a78a21b8764b4ea1d65828625ce62, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: -1.32000005, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &208221600
 GameObject:
   m_ObjectHideFlags: 0
@@ -14422,9 +14422,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: b8c4cab92e1ba854680d67d0fd0b7b23, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: -.360000014, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &397146829
 GameObject:
   m_ObjectHideFlags: 0
@@ -22761,7 +22761,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11499230, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
       propertyPath: air_movement_decrease
-      value: 3
+      value: .0700000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499230, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
+      propertyPath: air_constant_decrease
+      value: .0299999993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4425a6e54d9e5bc41b5f3055cda8548c, type: 2}
@@ -34113,9 +34117,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: fd9b1c0f5094c0b4f8102a7791261fee, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: 0, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &976279692
 GameObject:
   m_ObjectHideFlags: 0
@@ -36422,9 +36426,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: d95620c045c065a4b8e4b6aab00b1e5d, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: -1.32000005, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!4 &1066598640
 Transform:
   m_ObjectHideFlags: 0
@@ -37179,9 +37183,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: 5c7a6c60b3ad46c4e814996b230f27b6, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: .699999988, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &1084158611
 GameObject:
   m_ObjectHideFlags: 0
@@ -53580,9 +53584,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: 48f5c677160060648b95b57a8754bd94, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: .699999988, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1001 &1607463259
 Prefab:
   m_ObjectHideFlags: 0
@@ -62200,9 +62204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: c84522657c09ce646b259b70270e3611, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: 0, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &1874273573
 GameObject:
   m_ObjectHideFlags: 0
@@ -65923,9 +65927,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   import_csv: {fileID: 4900000, guid: a8dcc14a6def01f44a4c0e18d7ef6bed, type: 3}
   firePrefab: {fileID: 115146, guid: da9619cabdce08341869590f966d5f08, type: 2}
-  upperBound: {x: 0, y: 2, z: 0}
+  upperBound: {x: 0, y: 2.5, z: 0}
   lowerBound: {x: 0, y: 0, z: 0}
-  intensityStep: {x: 0, y: -.000349999988, z: 0}
+  intensityStep: {x: 0, y: -.000150000007, z: 0}
 --- !u!1 &1971600992
 GameObject:
   m_ObjectHideFlags: 0

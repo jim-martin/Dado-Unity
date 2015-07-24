@@ -26,8 +26,8 @@ namespace Data
 		public TextAsset import_csv;
 		public bool NPC; //don't log if NPC == true
 
-		public float air_constant_decrease;
-		public float air_movement_decrease;
+		public float air_constant_decrease = 0.03f;
+		public float air_movement_decrease = 0.07f;
 		int exported = 0;
 		
 		//game controller:
@@ -45,13 +45,6 @@ namespace Data
 				imported_trail = import_csv_into_markers (import_csv);
 
 				test_imported_markers ();
-			}
-
-			if (air_constant_decrease == null || air_constant_decrease == 0) {
-				air_constant_decrease = 0.05f;
-			}
-			if (air_movement_decrease == null || air_movement_decrease == 0) {
-				air_movement_decrease = 0.3f;
 			}
 
 			trail = new List<Marker> ();
